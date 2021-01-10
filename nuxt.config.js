@@ -38,7 +38,8 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    'nuxt-cookie-control'
+    'nuxt-cookie-control',
+    'vue-scrollto/nuxt'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
