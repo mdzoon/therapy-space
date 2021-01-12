@@ -11,23 +11,23 @@
             Welcome
           </b-nav-item>
           <b-nav-item-dropdown text="Services">
-            <b-dropdown-item href="/consuelling">
+            <b-dropdown-item href="/services/consuelling">
               Consuelling
             </b-dropdown-item>
-            <b-dropdown-item href="/cbt">
+            <b-dropdown-item href="/services/cbt">
               CBT
             </b-dropdown-item>
-            <b-dropdown-item href="/emdr">
+            <b-dropdown-item href="/services/emdr">
               EMDR
             </b-dropdown-item>
-            <b-dropdown-item href="/walk_and_talk">
+            <b-dropdown-item href="/services/walk-and-talk">
               Walk & Talk
             </b-dropdown-item>
-            <b-dropdown-item href="/supervision">
+            <b-dropdown-item href="/services/supervision">
               Supervision
             </b-dropdown-item>
           </b-nav-item-dropdown>
-          <b-nav-item href="/what_to_expect">
+          <b-nav-item href="/what-to-expect">
             What to Expect
           </b-nav-item>
           <b-nav-item href="/contact">
