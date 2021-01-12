@@ -54,6 +54,11 @@ export default {
     'vue-scrollto/nuxt'
   ],
 
+  bootstrapVue: {
+    // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)
+    icons: true
+  },
+
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
 

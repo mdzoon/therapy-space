@@ -11,7 +11,7 @@
       href="#"
       :class="{ 'return-top--hidden': hideScrollTo }"
     >
-      <i class="material-icons-outlined md-36">expand_less</i>
+      <b-icon icon="chevron-double-up" font-scale="2" />
     </a>
   </div>
 </template>
