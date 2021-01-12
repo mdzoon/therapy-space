@@ -1,5 +1,7 @@
 <template>
   <div>
+    <TheHeader />
+
     <nuxt />
 
     <ScrollTo />
@@ -11,13 +13,14 @@
 </template>
 
 <script>
+import TheHeader from '@/components/navigation/TheHeader.vue'
 import ScrollTo from '@/components/utilities/ScrollTo.vue'
 import CookiesModal from '@/components/utilities/CookiesModal.vue'
 import TheFooter from '@/components/navigation/TheFooter.vue'
 
 export default {
   components: {
-    // TheHeader,
+    TheHeader,
     ScrollTo,
     CookiesModal,
     TheFooter

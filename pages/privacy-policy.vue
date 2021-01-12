@@ -13,7 +13,7 @@
     <p><span style="font-weight:bold;">Functional:</span> TThese are the cookies that help certain non-essential functionalities on our website. These functionalities include embedding content like videos or sharing content of the website on social media platforms.</p>
     <p><span style="font-weight:bold;">Preferences:</span> These cookies help us store your settings and browsing preferences like language preferences so that you have a better and efficient experience on future visits to the website.</p>
     <h3>How can I control the cookie preferences ?</h3>
-    <p>Should you decide to change your preferences later through your browsing session, you can click on the "Privacy &amp; Cookie Policy" tab on your screen. This will display the consent notice again enabling you to change your preferences or withdraw your consent entirely.</p>
+    <p>Should you decide to change your preferences later through your browsing session, you can click on the "Privacy &amp; Cookie Policy" tab on your screen (in a shape of a small cookie). This will display the consent notice again enabling you to change your preferences or withdraw your consent entirely.</p>
     <p>In addition to this, different browsers provide different methods to block and delete cookies used by websites. You can change the settings of your browser to block/delete the cookies. To find out more about how to manage and delete cookies, visit <a href="https://en.wikipedia.org/wiki/HTTP_cookie" rel="nofollow" target="_blank">wikipedia.org</a>, <a href="http://www.allaboutcookies.org/" rel="nofollow" target="_blank">www.allaboutcookies.org.</a> </p>
   </div>
 </template>
