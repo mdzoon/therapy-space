@@ -10,6 +10,10 @@
     url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+:root {
+  --veryLight-grayscale: #f9f9f9ee;
+}
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;

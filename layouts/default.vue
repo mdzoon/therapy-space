@@ -2,7 +2,9 @@
   <div>
     <TheHeader />
 
-    <nuxt class="mt-5" />
+    <div style="height:6rem;" />
+
+    <nuxt />
 
     <ScrollTo />
 

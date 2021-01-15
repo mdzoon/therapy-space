@@ -3,7 +3,9 @@
     <b-navbar toggleable="sm" fixed="top">
       <b-navbar-toggle target="nav-text-collapse" />
 
-      <b-navbar-brand href="/">Therapy Space</b-navbar-brand>
+      <b-navbar-brand href="/">
+        Therapy Space
+      </b-navbar-brand>
 
       <b-collapse id="nav-text-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
@@ -38,3 +40,30 @@
     </b-navbar>
   </div>
 </template>
+
+<script>
+export default {
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll (e) {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.querySelector('.navbar').classList.add('on-scroll')
+      } else {
+        document.querySelector('.navbar').classList.remove('on-scroll')
+      }
+    }
+  }
+}
+</script>
+
+<style>
+.navbar.on-scroll {
+  border-bottom: solid 1px var(--veryLight-grayscale);
+  background-color: rgba(255 ,255 ,255 , 0.9);
+}
+</style>
