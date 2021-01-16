@@ -12,7 +12,7 @@
           <b-nav-item href="/">
             Welcome
           </b-nav-item>
-          <b-nav-item-dropdown text="Services">
+          <b-dropdown split split-href="/services" href="/services" text="Services">
             <b-dropdown-item href="/services/consuelling">
               Consuelling
             </b-dropdown-item>
@@ -28,7 +28,7 @@
             <b-dropdown-item href="/services/supervision">
               Supervision
             </b-dropdown-item>
-          </b-nav-item-dropdown>
+          </b-dropdown>
           <b-nav-item href="/what-to-expect">
             What to Expect
           </b-nav-item>
