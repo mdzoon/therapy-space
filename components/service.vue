@@ -1,10 +1,10 @@
 <template>
   <b-container>
-    <div class="therapy-header">
-      <h3>Therapy Header</h3>
+    <div :id="service.id" class="therapy-header">
+      <h3>{{ service.name }}</h3>
     </div>
     <div class="therapy-body">
-      <div>Therapy Content</div>
+      <div>{{ service.content }}</div>
     </div>
     <BookingButton />
   </b-container>
@@ -18,7 +18,21 @@ export default {
     BookingButton
   },
   props: {
-    service: Object
+    service: {
+      type: Object,
+      default () {
+        return { id: 'Service', name: 'Therapy Name', content: 'Therapy Description' }
+      },
+
+      validator: (value) => {
+        return [
+          'syncing',
+          'synced',
+          'version-conflict',
+          'error'
+        ].includes(value)
+      }
+    }
   }
 }
 </script>

@@ -13,20 +13,20 @@
             Welcome
           </b-nav-item>
           <b-dropdown split split-href="/services" href="/services" text="Services">
-            <b-dropdown-item href="/services/consuelling">
-              Consuelling
-            </b-dropdown-item>
-            <b-dropdown-item href="/services/cbt">
+            <b-dropdown-item href="/services/#cbt">
               CBT
             </b-dropdown-item>
-            <b-dropdown-item href="/services/emdr">
+            <b-dropdown-item href="/services/#consuelling">
+              Consuelling
+            </b-dropdown-item>
+            <b-dropdown-item href="/services/#emdr">
               EMDR
             </b-dropdown-item>
-            <b-dropdown-item href="/services/walk-and-talk">
-              Walk & Talk
-            </b-dropdown-item>
-            <b-dropdown-item href="/services/supervision">
+            <b-dropdown-item href="/services/#supervision">
               Supervision
+            </b-dropdown-item>
+            <b-dropdown-item href="/services/#walk-and-talk">
+              Walk & Talk
             </b-dropdown-item>
           </b-dropdown>
           <b-nav-item href="/what-to-expect">
