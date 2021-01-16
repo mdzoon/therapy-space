@@ -1,6 +1,6 @@
 <template>
   <div class="header-wrapper">
-    <b-navbar toggleable="sm" fixed="top">
+    <b-navbar toggleable="sm" fixed="top" class="container">
       <b-navbar-toggle target="nav-text-collapse" />
 
       <b-navbar-brand href="/">
