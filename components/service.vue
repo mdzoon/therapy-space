@@ -1,13 +1,13 @@
 <template>
-  <b-container>
+  <b-row class="pt-4 pb-4">
     <div :id="service.id" class="therapy-header">
       <h3>{{ service.name }}</h3>
     </div>
-    <div class="therapy-body">
+    <div class="mt-3 mb-3 therapy-body">
       <div>{{ service.content }}</div>
     </div>
     <BookingButton />
-  </b-container>
+  </b-row>
 </template>
 
 <script>
@@ -22,16 +22,16 @@ export default {
       type: Object,
       default () {
         return { id: 'Service', name: 'Therapy Name', content: 'Therapy Description' }
-      },
-
-      validator: (value) => {
-        return [
-          'syncing',
-          'synced',
-          'version-conflict',
-          'error'
-        ].includes(value)
       }
+
+      // validator: (value) => {
+      //   return [
+      //     'syncing',
+      //     'synced',
+      //     'version-conflict',
+      //     'error'
+      //   ].includes(value)
+      // }
     }
   }
 }

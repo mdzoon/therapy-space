@@ -1,22 +1,22 @@
 <template>
   <div class="container-fluid footer-wrapper">
+    <hr>
     <div class="row">
       <div class="container">
         <div class="row contact-wrapper">
           <div class="col-md-6">
-            <nav class="nav flex-column text-center text-md-left">
+            <nav class="nav flex-column text-left">
               <a class="nav-link" href="/">Home</a>
               <a class="nav-link" href="/privacy-policy">Privacy Policy</a>
             </nav>
           </div>
-        </div>
-        <hr>
-        <div class="row copywright-wrapper">
-          <div class="col-md-6 text-center text-md-left">
-            Copyright &copy; {{ currentYear }} Therapy Space
-          </div>
-          <div class="col-md-6 text-center text-md-right">
-            Created by <a href="https://www.michaeldyczkowski.co.uk">Michael Dyczkowski</a>
+          <div class="col-md-6 text-right">
+            <div>
+              Copyright &copy; {{ currentYear }} Therapy Space
+            </div>
+            <div>
+              Created by <a href="https://www.michaeldyczkowski.co.uk">Michael Dyczkowski</a>
+            </div>
           </div>
         </div>
       </div>

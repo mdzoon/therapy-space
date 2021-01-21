@@ -10,8 +10,18 @@
             </div>
           </div>
           <div class="contact-body">
-            <b-form v-if="show" @submit="onSubmit" @reset="onReset">
+            <b-form
+              v-if="show"
+              name="contact"
+              netlify-honeypot="input-phone"
+              action="/thank-you"
+              method="post"
+              netlify
+              @submit.prevent="onSubmit"
+              @reset="onReset"
+            >
               <b-row>
+                <input type="hidden" name="form-name" value="contact">
                 <b-col cols="6">
                   <b-form-group id="input-group-name" label="" label-for="input-name">
                     <b-form-input
@@ -19,6 +29,16 @@
                       v-model="form.name"
                       placeholder="Name"
                       required
+                    />
+                  </b-form-group>
+                </b-col>
+                <b-col style="display:none;" cols="6">
+                  <b-form-group id="input-group-phone" label="" label-for="input-phone">
+                    <b-form-input
+                      id="input-phone"
+                      v-model="form.phone"
+                      type="phone"
+                      name="input-phone"
                     />
                   </b-form-group>
                 </b-col>
@@ -51,7 +71,6 @@
                   rows="3"
                   max-rows="6"
                 />
-                <pre class="mt-3 mb-0">{{ text }}</pre>
               </div>
 
               <b-button type="submit" variant="primary">
@@ -83,6 +102,7 @@ export default {
       form: {
         email: '',
         name: '',
+        phone: '',
         subject: '',
         message: ''
       },

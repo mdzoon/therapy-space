@@ -66,4 +66,14 @@ export default {
   border-bottom: solid 1px var(--veryLight-grayscale);
   background-color: rgba(255 ,255 ,255 , 0.9);
 }
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus,
+.show > .btn-secondary.dropdown-toggle {
+  color: initial;
+  background-color: initial;
+  border: none;
+  padding: .5rem 1rem;
+}
 </style>

@@ -1,6 +1,5 @@
 <template>
   <main class="container">
-    <h1>This is services page</h1>
     <service v-for="service in services" :key="service.id" :service="service" />
   </main>
 </template>
