@@ -2,7 +2,7 @@
   <div>
     <TheHeader />
 
-    <div style="height:6rem;" />
+    <div style="height:8rem;" />
 
     <nuxt />
 

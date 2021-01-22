@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import treatmentsMixin from '@/assets/data/servicesMixin.js'
+import treatmentsMixin from '@/content/servicesMixin.js'
 import service from '@/components/service.vue'
 
 export default {

@@ -11,7 +11,25 @@
 }
 
 :root {
+  --colour-font: #616168;
+  --colour-primary: #00c6ff;
+  --colour-secondary: #FF71CD;
   --veryLight-grayscale: #f9f9f9ee;
+  --font-secondary: 'Quicksand', sans-serif;
+  --radius: 15px;
+  --transition: .4s;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--colour-font);
+}
+h1, h2, h3, h4, h5, h6, .font-secondary {
+  font-family: var(--font-secondary);
+}
+
+.font-secondary {
+  font-family: var(--font-secondary);
 }
 
 .material-icons {

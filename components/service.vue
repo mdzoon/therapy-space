@@ -1,13 +1,13 @@
 <template>
-  <b-row class="pt-4 pb-4">
-    <div :id="service.id" class="therapy-header">
+  <div class="text-center pt-5 pb-5 therapy-card">
+    <div :id="service.id" class="therapy-header w-100">
       <h3>{{ service.name }}</h3>
     </div>
     <div class="mt-3 mb-3 therapy-body">
       <div>{{ service.content }}</div>
     </div>
     <BookingButton />
-  </b-row>
+  </div>
 </template>
 
 <script>
@@ -36,3 +36,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.therapy-card h3 {
+  letter-spacing: 4px;
+}
+.therapy-card a {
+  margin: auto;
+}
+</style>
