@@ -47,3 +47,29 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#return-top {
+  position: fixed;
+  left: 2rem;
+  bottom: 2rem;
+  width: 50px;
+  height: 50px;
+  z-index: 9999;
+  border: 1px solid var(--colour-primary);
+  border-radius: var(--radius);
+  color: var(--colour-primary);
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#return-top:hover,
+#return-top:active,
+#return-top:focus {
+  text-decoration: none;
+}
+#return-top.return-top--hidden {
+  display: none;
+}
+</style>
