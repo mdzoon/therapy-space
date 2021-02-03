@@ -52,7 +52,26 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    'nuxt-cookie-control',
+    ['nuxt-cookie-control', {
+      css: true,
+      locales: ['en'],
+      colors: false,
+      text: {
+        barTitle: 'Cookies',
+        barDescription: 'We use our own cookies and third-party cookies so that we can show you this website and better understand how you use it, with a view to improving the services we offer. If you continue browsing, we consider that you have accepted the cookies.',
+        acceptAll: 'Accept all',
+        declineAll: 'Delete all',
+        manageCookies: 'Manage cookies',
+        unsaved: 'You have unsaved settings',
+        close: 'Close',
+        save: 'Save',
+        necessary: 'Necessary cookies',
+        optional: 'Optional cookies',
+        functional: 'Functional cookies',
+        blockedIframe: 'To see this, please enable functional cookies',
+        here: 'here'
+      }
+    }],
     'vue-scrollto/nuxt'
   ],
 
