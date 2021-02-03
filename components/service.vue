@@ -11,12 +11,7 @@
 </template>
 
 <script>
-import BookingButton from '@/components/utilities/BookingButton.vue'
-
 export default {
-  components: {
-    BookingButton
-  },
   props: {
     service: {
       type: Object,
