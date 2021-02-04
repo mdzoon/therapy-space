@@ -1,42 +1,44 @@
 <template>
   <div class="header-wrapper">
-    <b-navbar toggleable="sm" fixed="top" class="container">
-      <b-navbar-toggle target="nav-text-collapse" />
+    <b-navbar toggleable="sm" fixed="top" class="container-fluid">
+      <div class="container">
+        <b-navbar-toggle target="nav-text-collapse" />
 
-      <b-navbar-brand href="/" class="font-secondary">
-        Therapy Space
-      </b-navbar-brand>
+        <b-navbar-brand href="/" class="font-secondary">
+          Therapy Space
+        </b-navbar-brand>
 
-      <b-collapse id="nav-text-collapse" is-nav>
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item href="/">
-            Welcome
-          </b-nav-item>
-          <b-dropdown split split-href="/services" href="/services" text="| Services">
-            <b-dropdown-item href="/services/#cbt">
-              CBT
-            </b-dropdown-item>
-            <b-dropdown-item href="/services/#consuelling">
-              Consuelling
-            </b-dropdown-item>
-            <b-dropdown-item href="/services/#emdr">
-              EMDR
-            </b-dropdown-item>
-            <b-dropdown-item href="/services/#supervision">
-              Supervision
-            </b-dropdown-item>
-            <b-dropdown-item href="/services/#walk-and-talk">
-              Walk & Talk
-            </b-dropdown-item>
-          </b-dropdown>
-          <b-nav-item href="/what-to-expect">
-            | What to Expect
-          </b-nav-item>
-          <b-nav-item href="/contact">
-            | Contact
-          </b-nav-item>
-        </b-navbar-nav>
-      </b-collapse>
+        <b-collapse id="nav-text-collapse" is-nav>
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item href="/">
+              Welcome
+            </b-nav-item>
+            <b-dropdown split split-href="/services" href="/services" text="| Services">
+              <b-dropdown-item href="/services/#cbt">
+                CBT
+              </b-dropdown-item>
+              <b-dropdown-item href="/services/#consuelling">
+                Consuelling
+              </b-dropdown-item>
+              <b-dropdown-item href="/services/#emdr">
+                EMDR
+              </b-dropdown-item>
+              <b-dropdown-item href="/services/#supervision">
+                Supervision
+              </b-dropdown-item>
+              <b-dropdown-item href="/services/#walk-and-talk">
+                Walk & Talk
+              </b-dropdown-item>
+            </b-dropdown>
+            <b-nav-item href="/what-to-expect">
+              | What to Expect
+            </b-nav-item>
+            <b-nav-item href="/contact">
+              | Contact
+            </b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </div>
     </b-navbar>
   </div>
 </template>
@@ -76,6 +78,10 @@ export default {
 .navbar-brand.font-secondary {
   letter-spacing: 3px;
   font-size: 1.5rem;
+  background-image: url("~assets/images/logo-background.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .btn-secondary,
 .btn-secondary:hover,
