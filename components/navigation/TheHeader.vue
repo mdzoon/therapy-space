@@ -5,7 +5,8 @@
         <b-navbar-toggle target="nav-text-collapse" />
 
         <b-navbar-brand href="/" class="font-secondary">
-          Therapy Space
+          <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo">
+          <span>Therapy Space</span>
         </b-navbar-brand>
 
         <b-collapse id="nav-text-collapse" is-nav>
@@ -75,13 +76,19 @@ export default {
   background-color: rgba(255 ,255 ,255 , 0.9);
   /* min-height: 5rem; */
 }
-.navbar-brand.font-secondary {
+.navbar-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   letter-spacing: 3px;
   font-size: 1.5rem;
   background-image: url("~assets/images/logo-background.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.navbar-brand img {
+  height: 4.5rem;
 }
 .btn-secondary,
 .btn-secondary:hover,
