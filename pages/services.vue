@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main>
     <service v-for="service in services" :key="service.id" :service="service" />
   </main>
 </template>
