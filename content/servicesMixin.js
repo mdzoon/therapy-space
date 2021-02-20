@@ -8,8 +8,8 @@ export default {
           content: 'Cognitive Behavioral Therapy (CBT) focuses on current problems and difficulties, rather than past events. It can be used to help us understand how our way of thinking and behavioural patterns contribute to maintaining low mood and anxiety. Past events and interactions are also considered which helps to create a better understanding of how problems have developed. The therapist and the client work together collaboratively to create the best treatment plan which helps to make positive changes and learn effective coping strategies. The sessions are structured and CBT supports clients to become \'their own therapists\'. Through exercises in the session as well as \'homework exercises\' outside of the sessions clients are encouraged to practice coping skills and learn to change their way of thinking.'
         },
         {
-          id: 'consuelling',
-          name: 'Consuelling',
+          id: 'counselling',
+          name: 'Counselling',
           content: 'Integrative Counselling draws on a variety of approaches to offer therapy that is tailored to a \'s individual needs. It offers the client an opportunity to explore their problems in a non-judgemental and empathic environment. The therapist uses attentive listening and inquisitive questioning to help the client gain an in-depth understanding of their issues. Developing a trusting and safe therapeutic relationship forms an important part of therapy. Understanding how the client relates to the therapist helps to increase their awareness of how they interact with others and relate to themselves. Integrative Counselling can be long-term or short-term as it follows clients needs and offers them space to voice their thoughts and explore their feelings.'
         },
         {

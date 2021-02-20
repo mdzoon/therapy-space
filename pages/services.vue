@@ -12,6 +12,10 @@ export default {
   components: {
     service
   },
-  mixins: [treatmentsMixin]
+  mixins: [treatmentsMixin],
+  mounted () {
+    const anchor = document.getElementById(window.location.hash)
+    anchor.scrollIntoView(window.location.hash)
+  }
 }
 </script>

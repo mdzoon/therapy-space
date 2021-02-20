@@ -37,17 +37,6 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid:nth-of-type(2n+1) {
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#00c6ff+0,00c6ff+100&0+5,0.03+90,0.08+97,0.15+100 */
-background: -moz-linear-gradient(left,  rgba(0,198,255,0) 0%, rgba(0,198,255,0) 5%, rgba(0,198,255,0.03) 90%, rgba(0,198,255,0.08) 97%, rgba(0,198,255,0.15) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left,  rgba(0,198,255,0) 0%,rgba(0,198,255,0) 5%,rgba(0,198,255,0.03) 90%,rgba(0,198,255,0.08) 97%,rgba(0,198,255,0.15) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right,  rgba(0,198,255,0) 0%,rgba(0,198,255,0) 5%,rgba(0,198,255,0.03) 90%,rgba(0,198,255,0.08) 97%,rgba(0,198,255,0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000c6ff', endColorstr='#2600c6ff',GradientType=1 ); /* IE6-9 */
-
-}
-.container-fluid:nth-of-type(2n) {
-
-}
 .container {
   margin-top: 6rem;
   margin-bottom: 6rem;
@@ -88,7 +77,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000c6ff', e
 }
 .therapy-card a {
   margin: auto;
-}
-.border-cbt {
 }
 </style>
