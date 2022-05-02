@@ -11,7 +11,7 @@
 
         <b-collapse id="nav-text-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item href="/">
+            <b-nav-item href="/welcome">
               Welcome
             </b-nav-item>
 
@@ -24,6 +24,9 @@
               </b-dropdown-item>
               <b-dropdown-item href="/services/#emdr">
                 EMDR
+              </b-dropdown-item>
+              <b-dropdown-item href="/services/#mediation">
+                Mediation
               </b-dropdown-item>
               <b-dropdown-item href="/services/#supervision">
                 Supervision

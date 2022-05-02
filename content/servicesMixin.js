@@ -10,12 +10,17 @@ export default {
         {
           id: 'counselling',
           name: 'Counselling',
-          content: 'Integrative Counselling draws on a variety of approaches to offer therapy that is tailored to a \'s individual needs. It offers the client an opportunity to explore their problems in a non-judgemental and empathic environment. The therapist uses attentive listening and inquisitive questioning to help the client gain an in-depth understanding of their issues. Developing a trusting and safe therapeutic relationship forms an important part of therapy. Understanding how the client relates to the therapist helps to increase their awareness of how they interact with others and relate to themselves. Integrative Counselling can be long-term or short-term as it follows clients needs and offers them space to voice their thoughts and explore their feelings.'
+          content: 'Integrative Counselling draws on a variety of approaches to offer therapy that is tailored to an individual\'s needs. It offers the client an opportunity to explore their problems in a non-judgemental and empathic environment. The therapist uses attentive listening and inquisitive questioning to help the client gain an in-depth understanding of their issues. Developing a trusting and safe therapeutic relationship forms an important part of therapy. Understanding how the client relates to the therapist helps to increase their awareness of how they interact with others and relate to themselves. Integrative Counselling can be long-term or short-term as it follows clients needs and offers them space to voice their thoughts and explore their feelings.'
         },
         {
           id: 'emdr',
           name: 'EMDR (Eye Movement Desensitization and Reprocessing)',
           content: 'EMDR (Eye Movement Desensitization and Reprocessing) is a specific therapeutic approach that helps people to heal and recover from emotional distress that is a result of disturbing life experiences. Evidence shows that with EMDR treatment people can experience positive changes and overcome their traumatic symptoms much faster than with traditional therapy. There is an assumption that severe and prolonged emotional pain requires a long time to heal.  However, EMDR therapy shows that the mind is geared towards self-healing and can recover from psychological trauma as the body recovers from physical trauma. If we cut a finger our body works to close the wound. However, if there is a foreign object or repeated injury irritating the wound, it festers and causes pain. Once the obstacle is removed, the healing resumes.  EMDR therapy shows that a similar sequence of events happens with healing emotional pain and mental blocks. Following the premise that the brain is naturally geared towards recovery EMDR therapy has developed a specific protocol which helps to establish an optimal state of mind for the brain to activate its natural healing processes and create positive changes that can happen rapidly.'
+        },
+        {
+          id: 'mediation',
+          name: 'Mediation',
+          content: 'Meditation description'
         },
         {
           id: 'supervision',
