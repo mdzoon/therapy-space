@@ -1,13 +1,14 @@
 <template>
   <div class="header-wrapper">
-    <b-navbar toggleable="sm" fixed="top" class="container-fluid">
+    <b-navbar toggleable="lg" fixed="top" class="container-fluid">
       <div class="container">
-        <b-navbar-toggle target="nav-text-collapse" />
 
         <b-navbar-brand href="/" class="font-secondary">
           <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo">
           <span>Therapy Space</span>
         </b-navbar-brand>
+
+        <b-navbar-toggle target="nav-text-collapse" />
 
         <b-collapse id="nav-text-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
@@ -107,7 +108,24 @@ export default {
 }
 .navbar-toggler {
   padding: 0.5rem 0.5rem;
-  border-radius: 50%;
+  border: none;
+  /* border-radius: 50%; */
+}
+.navbar-toggler-icon {
+  width: 2.5em;
+  height: 2.5em;
+}
+@media only screen and (max-width: 400px) {
+  .navbar-brand img {
+    height: 4rem;
+  }
+  .navbar-brand.font-secondary {
+    font-size: 1rem;
+  }
+  .navbar-toggler-icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
 }
 @media only screen and (min-width: 576px) {
   .navbar-brand.font-secondary {

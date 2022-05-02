@@ -56,9 +56,9 @@ export default {
   width: 50px;
   height: 50px;
   z-index: 9999;
-  border: 1px solid var(--colour-primary);
+  border: 1px solid var(--colour-font);
   border-radius: var(--radius);
-  color: var(--colour-primary);
+  color: var(--colour-font);
   outline: 0;
   display: flex;
   justify-content: center;

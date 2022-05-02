@@ -22,9 +22,9 @@ button.cookieControl__ControlButton {
   bottom: 2rem;
   width: 50px;
   height: 50px;
-  border: 1px solid var(--colour-primary);
+  border: 1px solid var(--colour-font);
   border-radius: var(--radius);
-  color: var(--colour-primary);
+  color: var(--colour-font);
   background-color: transparent;
   box-shadow: none;
 }
