@@ -1,5 +1,5 @@
 {
-  "name": "therapy-space",
+  "name": "therapy_space",
   "version": "1.0.0",
   "private": true,
   "author": "Michael Dyczkowski",
@@ -7,28 +7,23 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lint": "npm run lint:js"
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt/content": "^1.13.1",
-    "ansi-regex": "^6.0.1",
-    "bootstrap": "^5.1.3",
+    "@nuxt/content": "^1.15.1",
+    "@nuxtjs/eslint-module": "^3.1.0",
+    "bootstrap": "^4.6.1",
     "bootstrap-vue": "^2.21.2",
-    "core-js": "^3.19.1",
-    "glob-parent": "^6.0.2",
-    "nth-check": "^2.0.1",
-    "nuxt": "^2.13.3",
+    "core-js": "^3.19.3",
+    "nuxt": "^2.15.8",
     "nuxt-cookie-control": "^1.9.91",
+    "vue": "^2.6.14",
     "vue-scrollto": "^2.20.0",
-    "watchpack": "^2.2.0"
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
+    "webpack": "^4.46.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^7.0.0",
-    "@nuxtjs/eslint-module": "^3.0.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^8.3.0",
-    "eslint-plugin-nuxt": "^3.0.0"
+    "sass": "^1.51.0"
   }
 }
