@@ -11,11 +11,12 @@
 }
 
 :root {
-  --colour-font: #616168;
+  --colour-font: #444444;
   --colour-primary: #00C6FF;
   --colour-secondary: #FF71CD;
 
-  --veryLight-grayscale: #f9f9f9ee;
+  --colour-link: #004e65;
+  --colour-link-hover: #00637f;
   --font-secondary: 'Quicksand', sans-serif;
   
   --radius: 6px;
@@ -36,8 +37,21 @@ body {
 h1, h2, h3, h4, h5, h6, .font-secondary {
   font-family: var(--font-secondary);
 }
-a {
-  color: var(--colour-font);
+main {
+  margin-bottom: 6em;
+}
+main h3{
+  color: var(--colour-link);
+  font-weight: bold;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+main a {
+  color: var(--colour-link);
+}
+main a:hover {
+  color: var(--colour-link-hover);
+  text-decoration: none;
 }
 .font-secondary {
   font-family: var(--font-secondary);
@@ -70,7 +84,7 @@ a {
 
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 5s;
+  transition: opacity 2s;
 }
 .page-enter,
 .page-leave-to {
