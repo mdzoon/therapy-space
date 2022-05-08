@@ -13,9 +13,13 @@ export default {
     service
   },
   mixins: [treatmentsMixin],
-  mounted () {
-    const anchor = document.getElementById(window.location.hash)
-    anchor.scrollIntoView(window.location.hash)
-  }
+  // mounted () {
+  //   const anchor = document.getElementById(window.location.hash)
+  //   anchor.scrollIntoView(window.location.hash)
+  // }
 }
 </script>
+
+<style scoped>
+
+</style>

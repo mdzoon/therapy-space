@@ -20,7 +20,7 @@ export default {
         {
           id: 'mediation',
           name: 'Mediation',
-          content: 'Meditation description'
+          content: 'I offer mediation to organisations and private parties. The process usually takes one day and is focused on achieving an agreement satisfactory for both parties involved. The mediation day is structured and typically follows seven stages as presented below:\nStage 1 - Initial contact with Party 1 (9:00 am)\nStage 2 - Initial contact with Party 2 (10:30 am)\nStage 3 - Preparing to work on the dispute (12:00 pm)\nStage 4 - Joined session with Party 1 and Party 2 (2:00 pm)\n Stage 5 - Exploring and working on the issues (2:45 pm)\n Stage 6 - Building agreements (3:30 pm)\nStage 7 - Closure and follow up (4:00 pm)'
         },
         {
           id: 'supervision',
