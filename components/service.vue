@@ -9,7 +9,7 @@
           {{ service.content }}
         </div>
       </div>
-      <BookingButton />
+      <BookingButton link='/contact' design="boxed"/>
     </div>
   </div>
 </template>

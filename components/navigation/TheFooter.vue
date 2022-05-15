@@ -5,7 +5,7 @@
       <b-row class="my-5">
         <b-col md="6">
           <nav class="nav flex-column">
-            <NuxtLink to="/">Home</NuxtLink>
+            <NuxtLink to="/">About Me</NuxtLink>
             <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
             <NuxtLink to="/cookies-policy">Cookies Policy</NuxtLink>
           </nav>          

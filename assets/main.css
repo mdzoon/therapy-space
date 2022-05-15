@@ -1,19 +1,9 @@
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('Material Icons'),
-    local('MaterialIcons-Regular'),
-    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
-    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
-    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
-}
-
 :root {
   --colour-font: #444444;
   --colour-primary: #00C6FF;
+  --colour-primary-light: rgba(0, 198, 255, 0.5);
   --colour-secondary: #FF71CD;
+  --colour-secondary-light: rgba(255, 113, 205, 0.5);
 
   --colour-link: #004e65;
   --colour-link-hover: #00637f;
@@ -40,9 +30,11 @@ h1, h2, h3, h4, h5, h6, .font-secondary {
 main {
   margin-bottom: 6em;
 }
-main h3{
+main h3 {
   color: var(--colour-link);
-  font-weight: bold;
+  font-weight: bold;  
+}
+main > h3{
   margin-top: 3em;
   margin-bottom: 1em;
 }
@@ -56,32 +48,6 @@ main a:hover {
 .font-secondary {
   font-family: var(--font-secondary);
 }
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
 .page-enter-active,
 .page-leave-active {
   transition: opacity 2s;

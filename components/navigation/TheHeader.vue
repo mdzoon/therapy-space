@@ -12,11 +12,11 @@
 
         <b-collapse id="nav-text-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item href="/welcome">
-              Welcome
+            <b-nav-item href="/">
+              About Me
             </b-nav-item>
 
-            <b-nav-item-dropdown text="Services" right>
+            <b-nav-item-dropdown text="How Can I Help" right>
               <b-dropdown-item href="/services/#cbt">
                 CBT
               </b-dropdown-item>
