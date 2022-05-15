@@ -51,23 +51,26 @@ export default {
 <style scoped>
 #return-top {
   position: fixed;
-  left: 2rem;
-  bottom: 2rem;
-  width: 50px;
-  height: 50px;
+  left: 1rem;
+  bottom: 1rem;
+  width: 45px;
+  height: 45px;
   z-index: 9999;
   border: 1px solid var(--colour-font);
-  border-radius: var(--radius);
+  border-radius: var(--radius-small);
   color: var(--colour-font);
   outline: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 #return-top:hover,
 #return-top:active,
 #return-top:focus {
   text-decoration: none;
+  border: 1px solid var(--colour-link-hover);
+  color: var(--colour-link-hover);
 }
 #return-top.return-top--hidden {
   display: none;

@@ -56,7 +56,7 @@ export default {
 .page-break {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  height: 0.25rem;
+  height: 0.25em;
   background-image: url('~/assets/images/page-break.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,6 +69,7 @@ export default {
 }
 .logo-wrapper img {
   height: 5rem;
+  opacity: 0.65;
 }
 .footer-advice {
   padding-top: 1rem;
@@ -80,6 +81,11 @@ export default {
 }
 .copyright-wrapper > div {
   text-align: center;
+}
+@media only screen and (max-width: 400px) {
+  .copyright-wrapper {
+    padding-bottom: 2rem;
+  }
 }
 @media only screen and (max-width: 767px) {
   nav.nav.flex-column {
