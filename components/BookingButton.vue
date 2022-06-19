@@ -1,7 +1,7 @@
 <template>
   <NuxtLink :to="link">
     <button class="btn" :class="design" type="button">
-      <slot>Contact Me {{style}}</slot>
+      <slot>Contact Me</slot>
     </button>
   </NuxtLink>
 </template>
