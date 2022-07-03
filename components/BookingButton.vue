@@ -27,6 +27,7 @@ button.plain {
   padding: 0;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  text-align: left;
 }
 .column-info .footer .btn.plain {
   color: var(--colour-link);

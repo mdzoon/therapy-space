@@ -39,9 +39,13 @@ export default {}
   justify-content: center;
   align-items: center;
 }
-.column-box,
-.column-info {
-  padding: 2rem;
+
+@media only screen and (max-width: 991px) {
+  .column-box,
+  .column-info {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 .column-box img {
   width: 100%;

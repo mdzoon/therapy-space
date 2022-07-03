@@ -19,7 +19,7 @@
             id="name"
             v-model="$v.form.name.$model"
             name="name"
-            placeholder="Your name *"
+            placeholder="Name*"
             aria-describedby=""
           ></b-form-input>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.name.required">
@@ -39,7 +39,7 @@
             id="email"
             v-model="$v.form.email.$model"
             name="email"
-            placeholder="Your email *"
+            placeholder="Email*"
           ></b-form-input>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.email.required">
             This field shoud not be empty!
@@ -58,7 +58,7 @@
             id="phone"
             v-model="$v.form.phone.$model"
             name="phone"
-            placeholder="Your phone number"
+            placeholder="Phone"
           ></b-form-input>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.phone.numeric">
             Please enter only numbers!
@@ -77,7 +77,7 @@
             id="message"
             v-model="$v.form.message.$model"
             name="message"
-            placeholder="Your message"
+            placeholder="Type your message here"
             rows="3"
             max-rows="6"
           ></b-form-textarea>
@@ -105,7 +105,9 @@
         <b-form-group
           id="input-group-consent"
           label="* I take your privacy seriously. To find out more please visit Privacy Policy page."
-          label-for="consent">
+          label-for="consent"
+          class="consent"
+        >
           <b-form-checkbox
             id="consent"
             v-model="$v.form.consent.$model"
@@ -113,18 +115,17 @@
             :class="{invalid: formSubmitted && $v.form.consent.$invalid}"
             switch
           >
-            Consent
           </b-form-checkbox>
-          <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.consent.$model">
-            Please confirm you want me to contact you!
-          </p>
         </b-form-group>
+        <p class="alert-danger mt-1 consent" role="alert" v-if="formSubmitted && !$v.form.consent.$model">
+          Please confirm you want me to contact you!
+        </p>
 
         <div class="buttons-wrapper">
-          <b-button type="submit">
+          <b-button variant="outline-dark" type="submit">
             Submit <b-icon icon="envelope"></b-icon>
           </b-button>
-          <b-button type="reset">
+          <b-button variant="outline-dark" type="reset">
             Reset <b-icon icon="arrow-counterclockwise"></b-icon>
           </b-button>
         </div>
@@ -240,3 +241,70 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+form .form-group {
+  margin-bottom: 3rem;
+}
+form input,
+form textarea {
+  border: none;
+  border-bottom: 1px solid var(--colour-font);
+  border-radius: var(--radius-small);
+  transition: var(--transition);
+}
+form input:focus,
+form input:hover,
+form input:active,
+form textarea:focus,
+form textarea:active,
+form textarea:hover {
+  outline: none !important;
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+form input:focus,
+form textarea:focus {
+  border-bottom: 2px solid var(--colour-font);
+}
+form .form-group.address {
+  visibility: hidden;
+  height: 0;
+  margin-bottom: 0;
+}
+form .form-group.consent {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+form .alert-danger.consent {
+  margin-top: -3rem !important;
+  margin-bottom: 3rem !important;
+}
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+button {
+  border: 1px solid;
+  border-color: var(--colour-font);
+  border-radius: var(--radius-small);
+  background-color: initial;
+  color: initial;
+  transition: var(--transition);
+  padding: .75rem 1.25rem;
+  letter-spacing: 2px;
+  min-width: 35%;   
+}
+button:hover,
+button:active,
+button:focus {
+  background-color: initial;
+  border-color: var(--colour-link-hover);
+  color: var(--colour-link-hover);
+  box-shadow: var(--box-shadow);
+}
+</style>

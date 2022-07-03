@@ -12,7 +12,7 @@
   --radius: 6px;
   --radius-small: 2px;
 
-  --transition: .4s;
+  --transition: .8s;
   --webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
   --box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
 }
@@ -23,12 +23,41 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   color: var(--colour-font);
+  font-size: 1.25rem;
+}
+body * {
+  outline: none;  
 }
 h1, h2, h3, h4, h5, h6, .font-secondary {
   font-family: var(--font-secondary);
 }
 main {
+  margin-top: 2em;
   margin-bottom: 6em;
+}
+@media only screen and (max-width: 991px) {
+  main {
+    margin-top: 4em;
+    margin-bottom: 4em;
+  }
+}
+@media only screen and (max-width: 575px) {
+  main {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+}
+main h1 {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 0;
+  margin-bottom: 1em;
+  text-align: center;
+  background-color: #e1eaed;
+}
+main h2 {
+  margin-top: .75em;
+  margin-bottom: 1.25em;
 }
 main h3 {
   color: var(--colour-link);

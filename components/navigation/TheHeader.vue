@@ -96,7 +96,7 @@ export default {
 .navbar-brand img {
   height: 4.5rem;
 }
-.btn-secondary,
+/* .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:active,
 .btn-secondary:focus,
@@ -105,7 +105,7 @@ export default {
   background-color: initial;
   border: none;
   padding: .5rem 1rem;
-}
+} */
 .navbar-toggler {
   padding: 0.5rem 0.5rem;
   border: none;
