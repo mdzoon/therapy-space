@@ -1,7 +1,10 @@
 <template>
   <main>
-    <h1>Cookies Policy</h1>
     <b-container>
+      <div class="image-holder">
+        <div class="image-overlay"></div>
+        <h1>Cookies Policy</h1>
+      </div>      
       <h3>What are cookies ?</h3>
       <p>Cookies are small text files that are used to store small pieces of information. They are stored on your device when the website is loaded on your browser. These cookies help us make the website function properly, make it more secure, provide better user experience, and understand how the website performs and to analyze what works and where it needs improvement.</p>
       <h3>How do we use cookies ?</h3>

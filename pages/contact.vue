@@ -1,15 +1,18 @@
 <template>
   <main>
-    <h1>Contact Us</h1>
     <b-container>
+      <div class="image-holder">
+        <div class="image-overlay"></div>
+        <h1>Contact Us</h1>
+      </div>
       <b-row>
-        <b-col lg="6" class="left">
+        <b-col lg="8" class="left">
           <div class="column-contact">
             <h2>Get In Touch</h2>
             <ContactForm />
           </div>
         </b-col>
-        <b-col lg="6" class="right">
+        <b-col lg="4" class="right">
           <div class="column-address">
             <h2>Address Details</h2>
             <div>Get in touch by filling out our contact form, or by using the details provided below.</div>

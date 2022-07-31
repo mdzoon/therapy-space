@@ -104,9 +104,6 @@
 
         <b-form-group
           id="input-group-consent"
-          label="* I take your privacy seriously. To find out more please visit Privacy Policy page."
-          label-for="consent"
-          class="consent"
         >
           <b-form-checkbox
             id="consent"
@@ -115,6 +112,7 @@
             :class="{invalid: formSubmitted && $v.form.consent.$invalid}"
             switch
           >
+          <label class="consent" for="consent">* I take your privacy seriously. To find out more please visit <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink> page.</label>
           </b-form-checkbox>
         </b-form-group>
         <p class="alert-danger mt-1 consent" role="alert" v-if="formSubmitted && !$v.form.consent.$model">
@@ -153,7 +151,8 @@ export default {
         email: '',
         phone: '',
         message: '',
-        consent: false
+        consent: false,
+        labelText: ''
       },
     //   action: 'https://script.google.com/macros/s/AKfycbzSRh1hjrIynQQuTK3sVIjP45SoSyo_kz1IhfX_87k4aAJeAH0/exec',
       address: '',
