@@ -55,7 +55,7 @@ export default {
   bottom: 1rem;
   width: 45px;
   height: 45px;
-  z-index: 9999;
+  z-index: 1010;
   border: 1px solid var(--colour-font);
   border-radius: var(--radius-small);
   color: var(--colour-font);

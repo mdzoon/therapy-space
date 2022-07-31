@@ -110,6 +110,28 @@
   border-bottom: 2px solid transparent;
   position: relative;
 }
+@media only screen and (max-width: 600px) {
+  .accordion .card .card-header button {
+    font-size: 1.5rem;
+  }
+  .accordion .card .card-text h3 {
+    font-size: 1.5rem;
+  }
+  .accordion .card .card-text > * {
+    font-size: 0.9rem;
+  } 
+}
+@media only screen and (max-width: 400px) {
+  .accordion .card .card-header button {
+    font-size: 1rem;
+  }
+  .accordion .card .card-text h3 {
+    font-size: 1rem;
+  }
+  .accordion .card .card-text > * {
+    font-size: 0.8rem;
+  } 
+}
 /* .accordion .card .card-header button:active, */
 .accordion .card .card-header button:hover {
 /* .accordion .card .card-header button:focus { */

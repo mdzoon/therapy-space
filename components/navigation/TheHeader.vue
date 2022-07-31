@@ -44,7 +44,11 @@
               Contact
             </b-nav-item>
           </b-navbar-nav>
+
+          <div class="navbar-overlay"></div>
+
         </b-collapse>
+
       </div>
     </b-navbar>
   </header>
@@ -87,6 +91,42 @@ export default {
   min-height: 8rem;
   font-weight: bolder;
 }
+@media only screen and (max-width: 991px) {
+  .navbar {
+    display: block;
+    background-color: var(--colour-background);
+  }
+  .navbar .navbar-nav,
+  ul.dropdown-menu {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+  }
+  .navbar .navbar-nav {
+    padding-top: 1.5rem;
+  }
+  .navbar .navbar-nav .nav-link {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .navbar .navbar-nav .dropdown-item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .navbar .navbar-overlay {
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    opacity: 0;
+    transition: var(--transition);
+  }
+  .navbar-collapse.show .navbar-overlay {
+    opacity: 0.75;
+  }
+}
 .navbar.on-scroll {
   border-bottom: solid 1px var(--veryLight-grayscale);
 }
@@ -104,16 +144,6 @@ export default {
 .navbar-brand img {
   height: 4.5rem;
 }
-/* .btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:active,
-.btn-secondary:focus,
-.show > .btn-secondary.dropdown-toggle {
-  color: initial;
-  background-color: initial;
-  border: none;
-  padding: .5rem 1rem;
-} */
 .navbar-toggler {
   padding: 0.5rem 0.5rem;
   border: none;
