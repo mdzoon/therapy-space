@@ -1,5 +1,5 @@
 <template>
-  <div class="header-wrapper">
+  <header class="header-wrapper">
     <b-navbar toggleable="lg" fixed="top" class="container-fluid">
       <div class="container">
 
@@ -47,7 +47,7 @@
         </b-collapse>
       </div>
     </b-navbar>
-  </div>
+  </header>
 </template>
 
 <script>
@@ -72,15 +72,23 @@ export default {
 
 <style>
 .navbar {
+  /* ff 3.6+ */
+  background:-moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%); 
+  /* safari 5.1+,chrome 10+ */
+  background:-webkit-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+  /* opera 11.10+ */
+  background:-o-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+  /* ie 6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF', GradientType=1 );
+  /* ie 10+ */
+  background:-ms-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+  /* global 94%+ browsers support */
+  background:linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
   min-height: 8rem;
   font-weight: bolder;
-  /* transition: 500ms cubic-bezier(0.16, 1, 0.29, 0.99); */
-  background-color: #fff;
 }
 .navbar.on-scroll {
   border-bottom: solid 1px var(--veryLight-grayscale);
-  background-color: rgba(255 ,255 ,255 , 0.9);
-  /* min-height: 5rem; */
 }
 .navbar-brand {
   display: flex;

@@ -1,5 +1,6 @@
 <template>
   <main>
+    <div class="d-none d-lg-block background-holder-right"></div>
     <b-container>
       <div class="image-holder">
         <div class="image-overlay"></div>

@@ -1,5 +1,6 @@
 <template>
   <main class="container">
+    <div class="d-none d-lg-block background-holder-right"></div>
     <b-row>
       <b-col lg="6" class="left">
         <div class="column-box">

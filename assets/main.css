@@ -1,116 +1,154 @@
-:root {
-  --colour-font: #444444;
-  --colour-primary: #00C6FF;
-  --colour-primary-light: rgba(0, 198, 255, 0.5);
-  --colour-secondary: #FF71CD;
-  --colour-secondary-light: rgba(255, 113, 205, 0.5);
+  :root {
+    --colour-font: #444444;
+    --colour-primary: #00C6FF;
+    --colour-primary-light: rgba(0, 198, 255, 0.5);
+    --colour-secondary: #FF71CD;
+    --colour-secondary-light: rgba(255, 113, 205, 0.5);
+    --colour-background: #ffffff;
 
-  --colour-link: #004e65;
-  --colour-link-hover: #00637f;
-  --font-secondary: 'Quicksand', sans-serif;
-  
-  --radius: 6px;
-  --radius-small: 2px;
+    --colour-link: #004e65;
+    --colour-link-hover: #00637f;
+    --font-secondary: 'Quicksand', sans-serif;
+    
+    --radius: 6px;
+    --radius-small: 2px;
 
-  --transition: .8s;
-  --webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
-  --box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
-}
+    --transition: .8s;
+    --webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+    --box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
 
-html {
-	scroll-behavior: smooth;
-}
-body {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--colour-font);
-  font-size: 1.25rem;
-}
-body * {
-  outline: none;  
-}
-h1, h2, h3, h4, h5, h6, .font-secondary {
-  font-family: var(--font-secondary);
-}
-main {
-  margin-top: 2em;
-  margin-bottom: 6em;
-}
-@media only screen and (max-width: 991px) {
-  main {
-    margin-top: 4em;
-    margin-bottom: 4em;
+    --transition: .8s;
   }
-}
-@media only screen and (max-width: 575px) {
+
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--colour-font);
+    font-size: 1.25rem;
+  }
+  body * {
+    outline: none;
+    outline-color: var(--colour-background) !important;  
+  }
+  h1, h2, h3, h4, h5, h6, .font-secondary {
+    font-family: var(--font-secondary);
+  }
   main {
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 6em;
   }
-}
-main .container .image-holder {
-  background-image: url("~assets/images/magnolia-horizontal-bar.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 3em;
-  position: relative;
-}
-main .container .image-overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  /* ff 3.6+ */
-  background:-moz-radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
-  /* safari 5.1+,chrome 10+ */
-  background:-webkit-radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
-  /* opera 11.10+ */
-  background:-o-radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
-  /* ie 10+ */
-  background:-ms-radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
-  /* global 92%+ browsers support */
-  background:radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
-  opacity: 0.8;
-}
-main .container h1 {
-  position: relative;
-  padding: 1em;
-  margin: auto;
-  color: #fff;
-  /* padding-top: 1em;
-  padding-bottom: 1em; */
-  /* margin-top: 0;
-  margin-bottom: 1em; */
-  text-align: center;
-  font-weight: 900;
-  letter-spacing: 1rem;
-}
-main h2 {
-  margin-top: .75em;
-  margin-bottom: 1.25em;
-}
-main h3 {
-  color: var(--colour-link);
-  font-weight: bold;  
-}
-main > h3{
-  margin-top: 3em;
-  margin-bottom: 1em;
-}
-main a {
-  color: var(--colour-link);
-}
-main a:hover {
-  color: var(--colour-link-hover);
-  text-decoration: none;
-}
-.font-secondary {
-  font-family: var(--font-secondary);
-}
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 2s;
-}
-.page-enter,
-.page-leave-to {
-  opacity: 0;
-}
+  @media only screen and (max-width: 991px) {
+    main {
+      margin-top: 4em;
+      margin-bottom: 4em;
+    }
+  }
+  @media only screen and (max-width: 575px) {
+    main {
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+  }
+  main .container .image-holder {
+    background-image: url("~assets/images/magnolia-horizontal-bar.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 3em;
+    position: relative;
+  }
+  main .container .image-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* ff 3.6+ */
+    background:-moz-radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 75%);
+    opacity: 0.8;
+  }
+  main .container h1 {
+    position: relative;
+    padding: 1em;
+    margin: auto;
+    color: var(--colour-background);
+    /* padding-top: 1em;
+    padding-bottom: 1em; */
+    /* margin-top: 0;
+    margin-bottom: 1em; */
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 1rem;
+  }
+  main h2 {
+    margin-top: .75em;
+    margin-bottom: 1.25em;
+  }
+  main .container h3 {
+    color: var(--colour-link);
+    font-weight: bold;  
+  }
+  main .container > h3{
+    margin-top: 3em;
+    margin-bottom: 1em;
+  }
+  main a {
+    color: var(--colour-link);
+  }
+  main a:hover {
+    color: var(--colour-link-hover);
+    text-decoration: none;
+  }
+  .font-secondary {
+    font-family: var(--font-secondary);
+  }
+  .background-holder-left {
+    background-image: url('~/assets/images/magnolia-close-up.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    height: 100%;
+    width: 50vw;
+    opacity: 0.10;
+    z-index: -1;
+  }
+  @media screen and (max-width: 600px){
+    .background-holder-left {
+      width: 100vw;
+    }
+  }
+  .background-holder-right {
+    background-image: url('~/assets/images/magnolia-close-up-sq.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    height: 100%;
+    width: 40vw;
+    opacity: 0.08;
+    top: 15vh;
+    right: 0;
+    z-index: -1;
+  }
+  @media screen and (max-width: 600px){
+    .background-holder-left {
+      width: 100vw;
+    }
+  }
+  .page-enter-active,
+  .page-leave-active {
+    transition: opacity 2s;
+  }
+  .page-enter,
+  .page-leave-to {
+    opacity: 0;
+  }
