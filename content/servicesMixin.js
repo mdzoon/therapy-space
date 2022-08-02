@@ -24,7 +24,7 @@ export default {
         },
         {
           id: 'supervision',
-          name: 'Supervising',
+          name: 'Supervision',
           content: 'I am MBACP (Accred) and MBABCP Accredited Supervisor. I have been supervising trainees and qualified clinicians for a number of years whilst working in IAPT services and in private setting. I see supervision as collaborative endevour and enjoy sharing my expertise as well as learning from my peers. I am happy to offer supervision to qualified Counsellors, CBT therapists and Therapists in training.'
         },
         {

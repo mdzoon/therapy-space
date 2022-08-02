@@ -16,7 +16,7 @@
               About Me
             </b-nav-item>
 
-            <b-nav-item-dropdown text="How Can I Help" right>
+            <b-nav-item-dropdown text="How I Can Help" right>
               <b-dropdown-item href="/services/#cbt">
                 CBT
               </b-dropdown-item>
