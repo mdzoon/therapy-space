@@ -6,7 +6,7 @@
         <b-card no-body class="mb-1">
           <b-card-header header-tag="div" role="tab">
             <b-button block v-b-toggle.vision variant="info">
-              How I work
+              How I Work
               <b-icon icon="plus"></b-icon>
               <b-icon icon="dash"></b-icon>
             </b-button>

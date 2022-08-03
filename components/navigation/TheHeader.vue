@@ -91,6 +91,47 @@ export default {
   min-height: 8rem;
   font-weight: bolder;
 }
+.navbar .navbar-nav .nav-item a {
+  color: var(--colour-link) !important;
+}
+.navbar .navbar-nav .nav-item:hover a,
+.navbar .navbar-nav .nav-item:focus a,
+.navbar .navbar-nav .nav-item:active a {
+  color: var(--colour-link-hover) !important;
+}
+.navbar .navbar-nav .nav-item.dropdown a:after {
+  transition: all var(--transition);
+  transform: rotate(0deg);
+}
+.navbar .navbar-nav .nav-item.dropdown.show a:after {
+  transform: rotate(180deg);
+}
+.navbar .navbar-nav .dropdown-menu {
+  display: block;
+  border: none;
+  border-radius: 0;
+  transition: all var(--transition);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+}
+.navbar .navbar-nav .dropdown-menu.show{
+  height: 288px;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+}
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar .navbar-nav .dropdown-menu .dropdown-item:focus,
+.navbar .navbar-nav .dropdown-menu .dropdown-item:active {
+  border-left: 4px solid var(--colour-link-hover);
+  padding-left: calc( 1.5rem - 4px );
+}
 @media only screen and (max-width: 991px) {
   .navbar {
     display: block;
