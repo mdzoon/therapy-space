@@ -3,8 +3,6 @@
 
     <b-form 
       class="gform"
-      method="POST"
-      data-email="example@email.net"
       @submit="onSubmit"
       @reset="onReset"
       v-if="formVisible"
@@ -151,10 +149,9 @@ export default {
         email: '',
         phone: '',
         message: '',
-        consent: false,
-        labelText: ''
+        consent: false
       },
-    //   action: 'https://script.google.com/macros/s/AKfycbzSRh1hjrIynQQuTK3sVIjP45SoSyo_kz1IhfX_87k4aAJeAH0/exec',
+
       address: '',
       submitStatus: '',
       formSubmitted: false,
@@ -162,12 +159,10 @@ export default {
     }
   },
   methods: {
-    setContactName (value) {
-      this.name = value
-    },
     onSubmit (evt) {
       evt.preventDefault()
       this.$v.form.$touch()
+      
 
       if (this.$v.form.$invalid || !this.$v.form.consent.$model) {
 
@@ -176,32 +171,37 @@ export default {
 
       } else {
 
+        this.submitStatus = 'PENDING'
+
         if (this.address) {
           return false;
         }
-        const that = this
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', this.action, false);
-        // xhr.withCredentials = true;
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.onreadystatechange = function() {
-          that.submitStatus = 'PENDING'
-          if (xhr.readyState === 4 && xhr.status === 200) {
+
+        const url = 'https://formspree.io/f/mdojnvaj'
+        const that  = this
+
+        this.$axios.post(url, {
+          'Sender Name': that.form.name,
+          'Email': that.form.email,
+          'Phone': that.form.phone,
+          'Consent': that.form.consent,
+          'Message': that.form.message
+        })
+        .then(function (response) {
+          if (response) {
             that.submitStatus = 'OK'
+            that.form.name = ''
+            that.form.email = ''
+            that.form.phone = ''
+            that.form.message = ''
+            that.form.consent = false
+            that.address = ''
+            that.formVisible = false
           }
-        }
-        var encoded = Object.keys(that.form).map(function(k) {
-            return encodeURIComponent(k) + "=" + encodeURIComponent(that.form[k]);
-        }).join('&');
-        xhr.send(encoded);
-        
-        this.form.name = ''
-        this.form.email = ''
-        this.form.phone = ''
-        this.form.message = ''
-        this.form.consent = false
-        this.address = ''
-        this.formVisible = false
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
       }
     },
     onReset (evt) {
@@ -213,6 +213,11 @@ export default {
       this.form.message = ''
       this.form.consent = false
       this.address = ''
+      // Trick to reset/clear native browser form validation state
+      this.formVisible = false
+      this.$nextTick(() => {
+        this.formVisible = true
+      })      
     }
   },
   validations: {
