@@ -9,7 +9,6 @@
       <b-row>
         <b-col lg="8" class="left">
           <div class="column-contact">
-            <h2>Get In Touch</h2>
             <ContactForm />
           </div>
         </b-col>
@@ -50,6 +49,10 @@ export default {
 </script>
 
 <style scoped>
+.column-contact,
+.column-address  {
+  height: 100%;
+}
 .column-address ul {
   list-style-type: none;
   padding: 0;

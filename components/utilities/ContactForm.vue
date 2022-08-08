@@ -21,7 +21,7 @@
             aria-describedby=""
           ></b-form-input>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.name.required">
-            This field shoud not be empty!
+            This field should not be empty
           </p>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.name.minLength">
             Your name must contain at least {{$v.form.name.$params.minLength.min}} letters.
@@ -40,10 +40,10 @@
             placeholder="Email*"
           ></b-form-input>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.email.required">
-            This field shoud not be empty!
+            This field should not be empty
           </p>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.email.email">
-            Please provide valid email!
+            Please provide valid email
           </p>
         </b-form-group>
 
@@ -59,7 +59,7 @@
             placeholder="Phone"
           ></b-form-input>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.phone.numeric">
-            Please enter only numbers!
+            Please enter only numbers
           </p>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.phone.minLength">
             The phone number must be at least 10 digit long.
@@ -80,7 +80,7 @@
             max-rows="6"
           ></b-form-textarea>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.message.required">
-            This field shoud not be empty!
+            This field should not be empty
           </p>
           <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.message.minLength">
             This message must have at least {{$v.form.message.$params.minLength.min}} characters.
@@ -114,7 +114,7 @@
           </b-form-checkbox>
         </b-form-group>
         <p class="alert-danger mt-1 consent" role="alert" v-if="formSubmitted && !$v.form.consent.$model">
-          Please confirm you want me to contact you!
+          Please confirm you want me to contact you
         </p>
 
         <div class="buttons-wrapper">
@@ -130,8 +130,8 @@
     </b-form>
 
     <div class="response-container mt-3">
-      <h3 v-if="submitStatus === 'OK'">Thank you for contacting me! I will get back to you soon.</h3>
-      <!-- <p class="alert-danger" role="alert" v-if="submitStatus === 'ERROR'">Please fill in the form correctly.</p> -->
+      <h3 v-if="submitStatus === 'OK'">Thank you for contacting me. I will get back to you soon.</h3>
+      <p class="alert-danger" role="alert" v-if="submitStatus === 'ERROR'">Something gone wrong. Please contact website administrator</p>
       <p class="alert-info" role="alert" v-if="submitStatus === 'PENDING'">Sending...</p>
     </div>
   </div>
@@ -166,7 +166,6 @@ export default {
 
       if (this.$v.form.$invalid || !this.$v.form.consent.$model) {
 
-        this.submitStatus = 'ERROR'
         this.formSubmitted = true
 
       } else {
@@ -189,6 +188,7 @@ export default {
         })
         .then(function (response) {
           if (response) {
+
             that.submitStatus = 'OK'
             that.form.name = ''
             that.form.email = ''
@@ -200,8 +200,9 @@ export default {
           }
         })
         .catch(function (error) {
+          that.submitStatus = 'ERROR'
           console.log(error);
-        });
+        })
       }
     },
     onReset (evt) {
@@ -247,6 +248,21 @@ export default {
 </script>
 
 <style scoped>
+.form-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.response-container .alert-danger,
+.response-container .alert-info,
+.response-container h3 {
+  text-align: center;
+  background-color: transparent;
+  margin: 0;
+}
+
 form .form-group {
   margin-bottom: 3rem;
 }
@@ -286,6 +302,11 @@ form .form-group.consent {
 form .alert-danger.consent {
   margin-top: -3rem !important;
   margin-bottom: 3rem !important;
+}
+form .alert-danger {
+  font-size: small;
+  color: #bb1c2b;
+  background-color: transparent;
 }
 .buttons-wrapper {
   display: flex;
