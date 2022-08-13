@@ -54,63 +54,63 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    ['nuxt-cookie-control', {
-      css: true,
-      locales: ['en'],
-      colors: false,
-      cssPolyfill: true,
-      controlButton: true,
-      barPosition: 'top-full',
-      text: {
-        barTitle: 'Cookies',
-        barDescription: 'We use our own cookies and third-party cookies so that we can show you this website and better understand how you use it, with a view to improving the services we offer. If you continue browsing, we consider that you have accepted the cookies.',
-        acceptAll: 'Accept all',
-        declineAll: 'Delete all',
-        manageCookies: 'Manage cookies',
-        unsaved: 'You have unsaved settings',
-        close: 'X',
-        save: 'Save',
-        necessary: 'Necessary cookies',
-        optional: 'Optional cookies',
-        functional: 'Functional cookies',
-        blockedIframe: 'To see this, please enable functional cookies',
-        here: 'here'
-      }
-    }],
+    // ['nuxt-cookie-control', {
+    //   css: true,
+    //   locales: ['en'],
+    //   colors: false,
+    //   cssPolyfill: true,
+    //   controlButton: true,
+    //   barPosition: 'top-full',
+    //   text: {
+    //     barTitle: 'Cookies',
+    //     barDescription: 'We use our own cookies and third-party cookies so that we can show you this website and better understand how you use it, with a view to improving the services we offer. If you continue browsing, we consider that you have accepted the cookies.',
+    //     acceptAll: 'Accept all',
+    //     declineAll: 'Delete all',
+    //     manageCookies: 'Manage cookies',
+    //     unsaved: 'You have unsaved settings',
+    //     close: 'X',
+    //     save: 'Save',
+    //     necessary: 'Necessary cookies',
+    //     optional: 'Optional cookies',
+    //     functional: 'Functional cookies',
+    //     blockedIframe: 'To see this, please enable functional cookies',
+    //     here: 'here'
+    //   }
+    // }],
     'vue-scrollto/nuxt'
   ],
 
-  cookies: {
-    necessary: [
-      {
-        name:  'Default Cookies',
-        description:  'Used for cookie control.',
-        cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
-      }
-    ],
-    optional: [
-      {
-        name:  'Google Analitycs',
-        //if you don't set identifier, slugified name will be used
-        identifier: 'ga',
-        description:  'Google Analytics is a web analytics service offered by Google that tracks and reports website traffic.',
+  // cookies: {
+  //   necessary: [
+  //     {
+  //       name:  'Default Cookies',
+  //       description:  'Used for cookie control.',
+  //       cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
+  //     }
+  //   ],
+  //   optional: [
+  //     {
+  //       name:  'Google Analitycs',
+  //       //if you don't set identifier, slugified name will be used
+  //       identifier: 'ga',
+  //       description:  'Google Analytics is a web analytics service offered by Google that tracks and reports website traffic.',
   
-        initialState: true,
-        src:  'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
-        async:  true,
-        cookies: ['_ga', '_gat', '_gid'],
-        accepted: () =>{
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js'
-          });
-        },
-        declined: () =>{
-        }
-      }
-    ]
-  },
+  //       initialState: true,
+  //       src:  'https://www.googletagmanager.com/gtag/js?id=<API-KEY>',
+  //       async:  true,
+  //       cookies: ['_ga', '_gat', '_gid'],
+  //       accepted: () =>{
+  //         window.dataLayer = window.dataLayer || [];
+  //         window.dataLayer.push({
+  //           'gtm.start': new Date().getTime(),
+  //           event: 'gtm.js'
+  //         });
+  //       },
+  //       declined: () =>{
+  //       }
+  //     }
+  //   ]
+  // },
 
   bootstrapVue: {
     // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)

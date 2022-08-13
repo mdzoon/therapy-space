@@ -8,7 +8,7 @@
 
     <ScrollTo />
 
-    <CookiesModal />
+    <!-- <CookiesModal /> -->
 
     <TheFooter />
   </div>
