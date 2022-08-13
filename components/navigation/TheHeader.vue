@@ -12,37 +12,33 @@
 
         <b-collapse id="nav-text-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
-            <b-nav-item href="/">
-              About Me
-            </b-nav-item>
+
+            <li class="nav-item"><NuxtLink to="/" class="nav-link">About Me</NuxtLink></li>
 
             <b-nav-item-dropdown text="How I Can Help" right>
-              <b-dropdown-item href="/services/#cbt">
-                CBT
-              </b-dropdown-item>
-              <b-dropdown-item href="/services/#counselling">
-                Counselling
-              </b-dropdown-item>
-              <b-dropdown-item href="/services/#emdr">
-                EMDR
-              </b-dropdown-item>
-              <b-dropdown-item href="/services/#mediation">
-                Mediation
-              </b-dropdown-item>
-              <b-dropdown-item href="/services/#supervision">
-                Supervision
-              </b-dropdown-item>
-              <b-dropdown-item href="/services/#walk-and-talk">
-                Walk & Talk
-              </b-dropdown-item>
+              <li role="presentation">
+                <NuxtLink to="/services/#cbt" role="menuitem" target="_self" class="dropdown-item">CBT</NuxtLink>
+              </li>
+              <li role="presentation">
+                <NuxtLink to="/services/#counselling" role="menuitem" target="_self" class="dropdown-item">Counselling</NuxtLink>
+              </li>
+              <li role="presentation">
+                <NuxtLink to="/services/#emdr" role="menuitem" target="_self" class="dropdown-item">EMDR</NuxtLink>
+              </li>
+              <li role="presentation">
+                <NuxtLink to="/services/#mediation" role="menuitem" target="_self" class="dropdown-item">Mediation</NuxtLink>
+              </li>
+              <li role="presentation">
+                <NuxtLink to="/services/#supervision" role="menuitem" target="_self" class="dropdown-item">Supervision</NuxtLink>
+              </li>
+              <li role="presentation">
+                <NuxtLink to="/services/#walk-and-talk" role="menuitem" target="_self" class="dropdown-item">Walk & Talk</NuxtLink>
+              </li>
             </b-nav-item-dropdown>
 
-            <b-nav-item href="/what-to-expect">
-              What to Expect
-            </b-nav-item>
-            <b-nav-item href="/contact">
-              Contact
-            </b-nav-item>
+            <li class="nav-item"><NuxtLink to="/what-to-expect" class="nav-link">What to Expect</NuxtLink></li>
+            <li class="nav-item"><NuxtLink to="/contact" class="nav-link">Contact</NuxtLink></li>
+
           </b-navbar-nav>
 
           <div class="navbar-overlay"></div>
@@ -141,6 +137,7 @@ export default {
 .navbar .navbar-nav .dropdown-menu .dropdown-item:active {
   border-left: 4px solid var(--colour-link-hover);
   padding-left: calc( 1.5rem - 4px );
+  background-color: var(--colour-background);
 }
 @media only screen and (max-width: 991px) {
   .navbar {
