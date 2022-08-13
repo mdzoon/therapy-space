@@ -8,7 +8,7 @@
           <span>Therapy Space</span>
         </b-navbar-brand>
 
-        <b-navbar-toggle target="nav-text-collapse" />
+        <b-navbar-toggle @click="hideOverflow" target="nav-text-collapse" />
 
         <b-collapse id="nav-text-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
@@ -69,6 +69,11 @@ export default {
       } else {
         document.querySelector('.navbar').classList.remove('on-scroll')
       }
+    },
+    hideOverflow() {
+      const el = document.querySelector('body')
+      const classes = el.classList
+      classes.toggle("hideOverflow")
     }
   }
 }
@@ -93,6 +98,11 @@ export default {
 }
 .navbar .navbar-nav .nav-item a {
   color: var(--colour-link) !important;
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .navbar .navbar-nav .nav-item a {
+    font-size: smaller;
+  }  
 }
 .navbar .navbar-nav .nav-item:hover a,
 .navbar .navbar-nav .nav-item:focus a,
@@ -137,6 +147,7 @@ export default {
     display: block;
     background-color: var(--colour-background);
   }
+  
   .navbar .navbar-nav,
   ul.dropdown-menu {
     margin: 0;
@@ -147,6 +158,11 @@ export default {
   .navbar .navbar-nav {
     padding-top: 1.5rem;
   }
+
+  .navbar .navbar-nav .dropdown-menu {
+    box-shadow: none;
+  }
+
   .navbar .navbar-nav .nav-link {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -164,6 +180,14 @@ export default {
     opacity: 0;
     transition: var(--transition);
   }
+  .navbar-collapse.show {
+    height: 86vh;
+    overflow: auto;
+  }
+  .navbar-collapse.collapsing.show {
+    overflow: hidden;
+  }  
+  
   .navbar-collapse.show .navbar-overlay {
     opacity: 0.75;
   }

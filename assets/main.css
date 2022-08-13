@@ -28,6 +28,12 @@
     color: var(--colour-font);
     font-size: 1.25rem;
   }
+  @media only screen and (max-width: 991px) {
+    body.hideOverflow {
+      overflow: hidden;  
+    }
+  }
+
   body * {
     outline: none;
     outline-color: var(--colour-background) !important;  
