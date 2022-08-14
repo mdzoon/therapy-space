@@ -132,9 +132,7 @@ export default {
   padding-top: .75rem;
   padding-bottom: .75rem;
 }
-.navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
-.navbar .navbar-nav .dropdown-menu .dropdown-item:focus,
-.navbar .navbar-nav .dropdown-menu .dropdown-item:active {
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover {
   border-left: 4px solid var(--colour-link-hover);
   padding-left: calc( 1.5rem - 4px );
   background-color: var(--colour-background);

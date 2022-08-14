@@ -6,7 +6,7 @@
         <div class="image-overlay"></div>
         <h1>Privacy Policy</h1>
       </div>
-      <h3>TBC</h3>
+      <h3>To be added</h3>
     </b-container>
   </main>
 </template>

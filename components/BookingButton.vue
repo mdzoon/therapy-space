@@ -26,7 +26,7 @@ button.plain {
 button.plain:hover,
 button.plain:active,
 button.plain:focus {
-
+  box-shadow: none;
 }
 
 button.boxed {

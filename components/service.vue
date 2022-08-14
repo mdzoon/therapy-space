@@ -1,12 +1,12 @@
 <template>
   <div class="container service-wrapper" :class="['border-' + service.id]">
-    <div class="pt-5 pb-5 mt-5 mb-5 therapy-card">
+    <div class="mb-5 mt-5 therapy-card">
       <div :id="service.id" class="therapy-header w-100">
         <h3>{{ service.name }}</h3>
       </div>
-      <div class="mt-5 mb-5 therapy-body">
-        <div>
-          {{ service.content }}
+      <div class="therapy-body">
+        <div v-html="service.content">
+          <!-- {{ service.content }} -->
         </div>
       </div>
       <BookingButton link='/contact' design="boxed"/>
@@ -41,33 +41,53 @@ export default {
   margin-top: 6rem;
   margin-bottom: 6rem;
 }
+
+.service-wrapper {
+
+}
 .service-wrapper:nth-of-type(2n+1) {
   padding-left: 2rem;
   text-align: left;
   border-left: 5px solid;
   border-color: var(--colour-primary);
-  box-shadow: var(--box-shadow, var(--webkit-box-shadow));
+  /* box-shadow: var(--box-shadow, var(--webkit-box-shadow)); */
   border-radius: var(--radius-small);
-  background: -moz-linear-gradient(left,  rgba(0,198,255,0) 0%, rgba(0,198,255,0) 5%, rgba(0,198,255,0.03) 90%, rgba(0,198,255,0.08) 97%, rgba(0,198,255,0.15) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  rgba(0,198,255,0) 0%,rgba(0,198,255,0) 5%,rgba(0,198,255,0.03) 90%,rgba(0,198,255,0.08) 97%,rgba(0,198,255,0.15) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  rgba(0,198,255,0) 0%,rgba(0,198,255,0) 5%,rgba(0,198,255,0.03) 90%,rgba(0,198,255,0.08) 97%,rgba(0,198,255,0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000c6ff', endColorstr='#2600c6ff',GradientType=1 ); /* IE6-9 */
+  /* ff 3.6+ */
+  background:-moz-linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%); 
+  /* safari 5.1+,chrome 10+ */
+  background:-webkit-linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%);
+  /* opera 11.10+ */
+  background:-o-linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%);
+  /* ie 6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EE82EE', endColorstr='#FFFFFF', GradientType=0 );
+  /* ie 10+ */
+  background:-ms-linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%);
+  /* global 94%+ browsers support */
+  background:linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%);    
 }
 .service-wrapper:nth-of-type(2n) {
   padding-right: 2rem;
   text-align: right;
   border-right: 5px solid;
   border-color: var(--colour-secondary);
-  box-shadow: var(--box-shadow, var(--webkit-box-shadow));
+  /* box-shadow: var(--box-shadow, var(--webkit-box-shadow)); */
   border-radius: var(--radius-small);
-  background: -moz-linear-gradient(left,  rgba(255,113,205,0.15) 0%, rgba(255,113,205,0.08) 3%, rgba(255,113,205,0.03) 10%, rgba(255,113,205,0) 95%, rgba(255,113,205,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  rgba(255,113,205,0.15) 0%,rgba(255,113,205,0.08) 3%,rgba(255,113,205,0.03) 10%,rgba(255,113,205,0) 95%,rgba(255,113,205,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  rgba(255,113,205,0.15) 0%,rgba(255,113,205,0.08) 3%,rgba(255,113,205,0.03) 10%,rgba(255,113,205,0) 95%,rgba(255,113,205,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26ff71cd', endColorstr='#00ff71cd',GradientType=1 ); /* IE6-9 */
+  /* ff 3.6+ */
+  background:-moz-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%); 
+  /* safari 5.1+,chrome 10+ */
+  background:-webkit-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%);
+  /* opera 11.10+ */
+  background:-o-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%);
+  /* ie 6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#EE82EE', GradientType=0 );
+  /* ie 10+ */
+  background:-ms-linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%);
+  /* global 94%+ browsers support */
+  background:linear-gradient(270deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%);
 }
 .service-wrapper h3 {
   letter-spacing: 8px;
-  font-size: 1rem;
+  font-size: 1.75rem;
 }
 .service-wrapper:nth-of-type(2n+1) h3 {
   text-align: left;
@@ -75,7 +95,48 @@ export default {
 .service-wrapper:nth-of-type(2n) h3 {
   text-align: right;
 }
-.therapy-card a {
+
+.therapy-card {
+  padding-top: 5em;
+  padding-bottom: 5em;
+  /* ff 3.6+ */
+  background:-moz-radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);
+  /* safari 5.1+,chrome 10+ */
+  background:-webkit-radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);
+  /* opera 11.10+ */
+  background:-o-radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);
+  /* ie 10+ */
+  background:-ms-radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);
+  /* global 92%+ browsers support */
+  background:radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);  
+}
+
+.therapy-card .therapy-body {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+.therapy-card .therapy-body p {
+  margin-top: 3em;
+}
+.therapy-card .therapy-body a {
   margin: auto;
+}
+
+@media only screen and (max-width: 575px) {
+  .therapy-card {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  .therapy-card .therapy-header h3 {
+    letter-spacing: 6px;
+    font-size: 1.5rem;
+  }
+  .therapy-card .therapy-body {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  .therapy-card .therapy-body {
+    font-size: 1rem;
+  }  
 }
 </style>
