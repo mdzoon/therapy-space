@@ -9,7 +9,7 @@
           <!-- {{ service.content }} -->
         </div>
       </div>
-      <BookingButton link='/contact' design="boxed"/>
+      <BookingButton link='/contact' design="boxed">Ask me about <span>{{service.id.replace(/-/g, ' ')}}</span></BookingButton>
     </div>
   </div>
 </template>

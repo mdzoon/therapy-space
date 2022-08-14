@@ -48,6 +48,9 @@ button.boxed:focus {
   color: var(--colour-link-hover);
   box-shadow: var(--box-shadow);
 }
+button.boxed span {
+  text-transform: uppercase;
+}
 
 .column-info .footer .btn.plain {
   color: var(--colour-link);
