@@ -143,6 +143,10 @@
   opacity: 1;
   transition: all var(--transition);
 }
+.accordion .card .card-header button.not-collapsed {
+  border-bottom-color: var(--color-link-hover);
+  color: var(--colour-link-hover);  
+}
 .accordion .card .card-header button.not-collapsed .bi-plus {
   opacity: 0;
 }
@@ -151,5 +155,13 @@
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
+}
+
+.accordion .card .card-body p {
+ margin-top: 3em;
+}
+.accordion .card .card-body h3 {
+  margin-top: 3em;
+  margin-bottom: 1em;    
 }
 </style>

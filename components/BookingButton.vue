@@ -17,18 +17,38 @@ export default {
 </script>
 
 <style>
-button.boxed {
-  border: 1px solid;
-  border-radius: var(--radius-small);
-  padding: .75rem 1.25rem;
-  letter-spacing: 2px;
-}
 button.plain {
   padding: 0;
   margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: left;
 }
+button.plain:hover,
+button.plain:active,
+button.plain:focus {
+
+}
+
+button.boxed {
+  border: 1px solid;
+  border-color: var(--colour-font);
+  border-radius: var(--radius-small);
+  background-color: initial;
+  color: initial;
+  transition: var(--transition);
+  padding: .75rem 1.25rem;
+  letter-spacing: 2px;
+  min-width: 35%;   
+}
+button.boxed:hover,
+button.boxed:active,
+button.boxed:focus {
+  background-color: initial;
+  border-color: var(--colour-link-hover);
+  color: var(--colour-link-hover);
+  box-shadow: var(--box-shadow);
+}
+
 .column-info .footer .btn.plain {
   color: var(--colour-link);
 }
@@ -37,5 +57,9 @@ button.plain {
 }
 .column-info .footer .btn.plain svg {
   margin-left: 0.75rem;
+    transition: var(--transition);
+}
+.column-info .footer .btn.plain:hover svg {
+  margin-left: 1.25rem;
 }
 </style>

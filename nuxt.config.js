@@ -24,7 +24,7 @@ export default {
 
   // Customize the progress-bar color
   loading: {
-    color: '#00C6FF',
+    color: 'rgba(255, 113, 205, 0.5)',
     height: '3px',
     throttle: 0
   },
