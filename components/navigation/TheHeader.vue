@@ -66,11 +66,11 @@ export default {
         document.querySelector('.navbar').classList.remove('on-scroll')
       }
     },
-    hideOverflow() {
-      const el = document.querySelector('body')
-      const classes = el.classList
-      classes.toggle("hideOverflow")
-    }
+    // hideOverflow() {
+    //   const el = document.querySelector('body')
+    //   const classes = el.classList
+    //   classes.toggle("hideOverflow")
+    // }
   }
 }
 </script>
