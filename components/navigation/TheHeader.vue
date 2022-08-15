@@ -8,7 +8,10 @@
           <span>Therapy Space</span>
         </b-navbar-brand>
 
-        <b-navbar-toggle @click="hideOverflow" target="nav-text-collapse" />
+        <b-navbar-toggle @click="hideOverflow" target="nav-text-collapse">
+          <img class="listNav" src="~/assets/images/list.svg" />
+          <img class="closeNav" src="~/assets/images/close.svg" />
+        </b-navbar-toggle>
 
         <b-collapse id="nav-text-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
@@ -215,12 +218,34 @@ export default {
 .navbar-toggler {
   padding: 0.5rem 0.5rem;
   border: none;
-  /* border-radius: 50%; */
+  position: relative;
 }
-.navbar-toggler-icon {
-  width: 2.5em;
-  height: 2.5em;
+.navbar-toggler img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 2.5rem !important;
+  transition: all var(--transition);
 }
+
+.navbar-toggler.collapsed img.listNav {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+.navbar-toggler.not-collapsed img.listNav {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+.navbar-toggler.collapsed img.closeNav {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+.navbar-toggler.not-collapsed img.closeNav {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
 @media only screen and (max-width: 400px) {
   .navbar-brand img {
     height: 4rem;
