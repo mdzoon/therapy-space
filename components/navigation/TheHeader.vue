@@ -249,7 +249,7 @@ export default {
   opacity: 0;
   transform: rotate(45deg);
 }
-.navbar-toggler.collapsed img.closeNav {
+.navbar-toggler img.closeNav {
   opacity: 0;
   transform: rotate(45deg);
 }
