@@ -18,6 +18,11 @@ export default {
   //   const anchor = document.getElementById(window.location.hash)
   //   anchor.scrollIntoView(window.location.hash)
   // }
+  mounted() {
+    const el = document.querySelector('body')
+    const classes = el.classList
+    classes.remove("hideOverflow")    
+  }
 }
 </script>
 

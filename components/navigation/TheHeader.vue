@@ -13,31 +13,31 @@
         <b-collapse id="nav-text-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
 
-            <li class="nav-item"><NuxtLink to="/" class="nav-link">About Me</NuxtLink></li>
+            <li class="nav-item" @click="clearOverflow"><NuxtLink to="/" class="nav-link">About Me</NuxtLink></li>
 
             <b-nav-item-dropdown text="How I Can Help" right>
-              <li role="presentation">
+              <li role="presentation" @click="clearOverflow">
                 <NuxtLink to="/services/#cbt" role="menuitem" target="_self" class="dropdown-item">CBT</NuxtLink>
               </li>
-              <li role="presentation">
+              <li role="presentation" @click="clearOverflow">
                 <NuxtLink to="/services/#counselling" role="menuitem" target="_self" class="dropdown-item">Counselling</NuxtLink>
               </li>
-              <li role="presentation">
+              <li role="presentation" @click="clearOverflow">
                 <NuxtLink to="/services/#emdr" role="menuitem" target="_self" class="dropdown-item">EMDR</NuxtLink>
               </li>
-              <li role="presentation">
+              <li role="presentation" @click="clearOverflow">
                 <NuxtLink to="/services/#mediation" role="menuitem" target="_self" class="dropdown-item">Mediation</NuxtLink>
               </li>
-              <li role="presentation">
+              <li role="presentation" @click="clearOverflow">
                 <NuxtLink to="/services/#supervision" role="menuitem" target="_self" class="dropdown-item">Supervision</NuxtLink>
               </li>
-              <li role="presentation">
+              <li role="presentation" @click="clearOverflow">
                 <NuxtLink to="/services/#walk-and-talk" role="menuitem" target="_self" class="dropdown-item">Walk & Talk</NuxtLink>
               </li>
             </b-nav-item-dropdown>
 
-            <li class="nav-item"><NuxtLink to="/what-to-expect" class="nav-link">What to Expect</NuxtLink></li>
-            <li class="nav-item"><NuxtLink to="/contact" class="nav-link">Contact</NuxtLink></li>
+            <li class="nav-item" @click="clearOverflow"><NuxtLink to="/what-to-expect" class="nav-link">What to Expect</NuxtLink></li>
+            <li class="nav-item" @click="clearOverflow"><NuxtLink to="/contact" class="nav-link">Contact</NuxtLink></li>
 
           </b-navbar-nav>
 
@@ -66,11 +66,19 @@ export default {
         document.querySelector('.navbar').classList.remove('on-scroll')
       }
     },
-    // hideOverflow() {
-    //   const el = document.querySelector('body')
-    //   const classes = el.classList
-    //   classes.toggle("hideOverflow")
-    // }
+    hideOverflow() {
+      const elBody = document.querySelector('body')
+      const classesBody = elBody.classList
+      const elNav = document.querySelector('#nav-text-collapse')
+      const classesNav = elNav.classList
+
+      Object.values(classesNav).includes("show") ? classesBody.remove("hideOverflow") : classesBody.add("hideOverflow")
+    },
+    clearOverflow() {
+      const el = document.querySelector('body')
+      const classes = el.classList
+      classes.remove("hideOverflow")      
+    }    
   }
 }
 </script>
