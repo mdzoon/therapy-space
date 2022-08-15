@@ -19,22 +19,22 @@
             <li class="nav-item" @click="clearOverflow"><NuxtLink to="/" class="nav-link">About Me</NuxtLink></li>
 
             <b-nav-item-dropdown text="How I Can Help" right>
-              <li role="presentation" @click="clearOverflow">
+              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                 <NuxtLink to="/services/#cbt" role="menuitem" target="_self" class="dropdown-item">CBT</NuxtLink>
               </li>
-              <li role="presentation" @click="clearOverflow">
+              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                 <NuxtLink to="/services/#counselling" role="menuitem" target="_self" class="dropdown-item">Counselling</NuxtLink>
               </li>
-              <li role="presentation" @click="clearOverflow">
+              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                 <NuxtLink to="/services/#emdr" role="menuitem" target="_self" class="dropdown-item">EMDR</NuxtLink>
               </li>
-              <li role="presentation" @click="clearOverflow">
+              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                 <NuxtLink to="/services/#mediation" role="menuitem" target="_self" class="dropdown-item">Mediation</NuxtLink>
               </li>
-              <li role="presentation" @click="clearOverflow">
+              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                 <NuxtLink to="/services/#supervision" role="menuitem" target="_self" class="dropdown-item">Supervision</NuxtLink>
               </li>
-              <li role="presentation" @click="clearOverflow">
+              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                 <NuxtLink to="/services/#walk-and-talk" role="menuitem" target="_self" class="dropdown-item">Walk & Talk</NuxtLink>
               </li>
             </b-nav-item-dropdown>
@@ -81,7 +81,19 @@ export default {
       const el = document.querySelector('body')
       const classes = el.classList
       classes.remove("hideOverflow")      
-    }    
+    },
+    hideDropdown() {
+      const elNav = document.querySelector('.nav-item.b-nav-dropdown.dropdown')
+      const classesNav = elNav.classList
+      const a = document.querySelector('a.dropdown-toggle')
+      const elMenu = document.querySelector('.dropdown-menu')
+      const classesMenu = elMenu.classList
+      if ( Object.values(classesNav).includes("show") ) {
+        a.setAttribute("aria-expanded", "false")
+        classesNav.remove("show")
+        classesMenu.remove("show")
+      }
+    }   
   }
 }
 </script>
