@@ -4,7 +4,7 @@
     <b-container>
       <div class="image-holder">
         <div class="image-overlay"></div>
-        <h1>Contact Us</h1>
+        <h1>Contact Me</h1>
       </div>
       <b-row>
         <b-col lg="8" class="left">
