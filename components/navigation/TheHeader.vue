@@ -222,8 +222,8 @@ export default {
 }
 .navbar-toggler img {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -0.75rem;
+  right: -0.75rem;
   width: auto;
   height: 2.5rem !important;
   transition: all var(--transition);

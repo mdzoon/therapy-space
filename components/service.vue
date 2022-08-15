@@ -1,7 +1,8 @@
 <template>
-  <div class="container service-wrapper" :class="['border-' + service.id]">
+  <div class="container service-wrapper">
     <div class="mb-5 mt-5 therapy-card">
-      <div :id="service.id" class="therapy-header w-100">
+      <div :id="service.id" class="anchor"></div>
+      <div :class="['container-' + service.id]" class="therapy-header w-100">
         <h3>{{ service.name }}</h3>
       </div>
       <div class="therapy-body">
@@ -42,11 +43,7 @@ export default {
   margin-bottom: 6rem;
 }
 
-.service-wrapper {
-
-}
 .service-wrapper:nth-of-type(2n+1) {
-  padding-left: 2rem;
   text-align: left;
   border-left: 5px solid;
   border-color: var(--colour-primary);
@@ -66,7 +63,6 @@ export default {
   background:linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 25%, rgba(238, 130, 238, 0) 100%);    
 }
 .service-wrapper:nth-of-type(2n) {
-  padding-right: 2rem;
   text-align: right;
   border-right: 5px solid;
   border-color: var(--colour-secondary);
@@ -111,6 +107,13 @@ export default {
   background:radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);  
 }
 
+.therapy-card .anchor {
+  display: block;
+  position: relative;
+  top: -150px;
+  visibility: hidden;  
+}
+
 .therapy-card .therapy-body {
   margin-top: 5em;
   margin-bottom: 5em;
@@ -137,6 +140,15 @@ export default {
   }
   .therapy-card .therapy-body {
     font-size: 1rem;
+  }  
+}
+
+@media only screen and (min-width: 768px) {
+  .service-wrapper:nth-of-type(2n+1) {
+    padding-left: 2rem;
+  }
+  .service-wrapper:nth-of-type(2n) {
+    padding-right: 2rem;
   }  
 }
 </style>
