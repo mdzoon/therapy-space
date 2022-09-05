@@ -6,7 +6,6 @@
         <b-col md="6">
           <nav class="nav flex-column">
             <NuxtLink to="/">About Me</NuxtLink>
-            <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
             <NuxtLink to="/cookies-policy">Cookies Policy</NuxtLink>
           </nav>          
         </b-col>
