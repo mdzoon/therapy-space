@@ -30,7 +30,7 @@ export default {
         {
           id: 'walk-and-talk',
           name: 'Walk & Talk',
-          content: '<p>Walk & Talk description</p>'
+          content: '<p>Having therapy whilst walking in nature can enhance the therapeutic process since interacting with nature has well-known benefits for our mental health and well-being. Therefore, I offer therapy whilst walking in the Tonbridge area. Please contact me to find out about the details.</p>'
         }
       ]
     }
