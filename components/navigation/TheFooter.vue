@@ -2,34 +2,38 @@
   <footer class="footer-wrapper">
     <div class="page-break"></div>
     <b-container>
-      <b-row class="my-5">
-        <b-col md="6">
-          <nav class="nav flex-column">
+      <b-row class="mt-5 mb-3">
+        <b-col md="6" class="col-left">
+          <nav class="nav d-flex d-md-none justify-content-center">
             <NuxtLink to="/">About Me</NuxtLink>
             <NuxtLink to="/cookies-policy">Cookies Policy</NuxtLink>
-          </nav>          
+          </nav>
+          <div class="footer-advice text-center">
+            <p>If you are feeling unsafe, or need immediate support, you are advised to contact: Your GP surgery, Out of Hours GP: 111, in case of emergency your local A&E</p>
+            <p>Mental Health Matters  helpline: 08001070160</p>
+            <p>Samaritans helpline : 08457909090 </p>
+          </div>
+          <div class="footer-advice text-center">
+            <p>This is to inform that Grazyna has suddenly become incapacitated and is not able to respond to any queries. Should you need to find any information regarding your past or current treatment please contact Lynne Bennet via e-mail spaceforchange@protonmail.com</p>
+          </div>
         </b-col>
-        <div class="col-md-6 text-right logo-wrapper">
-          <a href="https://www.bacp.co.uk" target="_blank"><img src="~/assets/images/BACP-logo.svg" alt="British Association for Counselling and Psychotherapy Logo"></a>          
-          <a href="https://babcp.com" target="_blank"><img src="~/assets/images/BABCP-logo.svg" alt="British Association for Behavioural and Cognitive Psychotherapies Logo"></a>
-        </div>
+        <b-col md="6" class="col-right d-flex flex-column justify-content-between">
+          <nav class="nav d-none d-md-flex justify-content-center">
+            <NuxtLink to="/">About Me</NuxtLink>
+            <NuxtLink to="/cookies-policy">Cookies Policy</NuxtLink>
+          </nav>
+          <div class="logo-wrapper">
+            <a href="https://www.bacp.co.uk" target="_blank"><img src="~/assets/images/BACP-logo.svg" alt="British Association for Counselling and Psychotherapy Logo"></a>          
+            <a href="https://babcp.com" target="_blank"><img src="~/assets/images/BABCP-logo.svg" alt="British Association for Behavioural and Cognitive Psychotherapies Logo"></a>
+          </div>
+          <div class="text-center">
+            Copyright &copy; {{ currentYear }} Therapy Space
+          </div>
+          <div class="text-center">
+            Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">Michael Dyczkowski</a>
+          </div>                  
+        </b-col>        
       </b-row>
-      <b-row class="my-5">
-        <b-col cols="12" class="text-center footer-advice">
-          <p>If you are feeling unsafe, or need immediate support, you are advised to contact:</p>
-          <p>Your GP surgery, Out of Hours GP: 111, in case of emergency your local A&E</p>
-          <p>Mental Health Matters  helpline: 08001070160</p>
-          <p>Samaritans helpline : 08457909090 </p>
-        </b-col>
-      </b-row>
-      <b-row class="my-5 copyright-wrapper">
-        <b-col md="6">
-          Copyright &copy; {{ currentYear }} Therapy Space
-        </b-col>
-        <b-col md="6">
-          Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">Michael Dyczkowski</a>
-        </b-col>
-      </b-row>      
     </b-container>
   </footer>
 </template>
@@ -67,6 +71,9 @@ export default {
   color: var(--colour-link-hover);
   text-decoration: none;
 }
+.footer-wrapper > div > div.row {
+  flex-direction: row-reverse;
+}
 .page-break {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -76,40 +83,57 @@ export default {
   background-size: cover;
   opacity: 0.5;
 }
+
+.col-left,
+.col-right {
+  margin-bottom: 1rem;
+}
+
+.col-left > *,
+.col-right > * {
+  margin-bottom: 1rem;
+}
+
+nav {
+  gap: 1rem;
+}
 .logo-wrapper, .copyright-wrapper {
   display: flex;
   justify-content: space-around;
   align-content: center;
 }
 .logo-wrapper img {
+  margin-bottom: 1rem;
+}
+.logo-wrapper img {
   height: 5rem;
   opacity: 0.65;
 }
 .footer-advice {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  /* padding-top: 1rem;
+  padding-bottom: 1rem; */
 }
 .footer-advice p {
   font-size: smaller;
-  margin-bottom: 0.15rem;
+  margin: 0;
 }
 .copyright-wrapper > div {
-  text-align: center;
+  /* text-align: center; */
 }
 @media only screen and (max-width: 400px) {
-  .copyright-wrapper {
+  /* .copyright-wrapper {
     padding-bottom: 2rem;
-  }
+  } */
 }
 @media only screen and (max-width: 767px) {
-  nav.nav.flex-column {
+  /* nav.nav.flex-column {
     align-items: center;
     padding-bottom: 4rem;
-  }
+  } */
 }
 @media only screen and (min-width: 768px) {
   .footer-wrapper > div.container {
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
   }
 }
 </style>
