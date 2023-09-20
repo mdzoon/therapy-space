@@ -18,7 +18,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/therapy-space-favicon.ico' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&display=swap', async: true }
     ]
   },
 
