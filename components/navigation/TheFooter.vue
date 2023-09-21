@@ -26,12 +26,14 @@
             <a href="https://www.bacp.co.uk" target="_blank"><img src="~/assets/images/BACP-logo.svg" alt="British Association for Counselling and Psychotherapy Logo"></a>          
             <a href="https://babcp.com" target="_blank"><img src="~/assets/images/BABCP-logo.svg" alt="British Association for Behavioural and Cognitive Psychotherapies Logo"></a>
           </div>
-          <div class="text-center">
-            Copyright &copy; {{ currentYear }} Therapy Space
-          </div>
-          <div class="text-center">
-            Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">Michael Dyczkowski</a>
-          </div>                  
+          <div class="footer-credits">
+            <div class="text-center">
+              Copyright &copy; {{ currentYear }} Therapy Space
+            </div>
+            <div class="text-center">
+              Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">Michael Dyczkowski</a>
+            </div>
+          </div>                 
         </b-col>        
       </b-row>
     </b-container>
@@ -86,16 +88,16 @@ export default {
 
 .col-left,
 .col-right {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .col-left > *,
 .col-right > * {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 nav {
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .logo-wrapper, .copyright-wrapper {
   display: flex;
@@ -103,37 +105,19 @@ nav {
   align-content: center;
 }
 .logo-wrapper img {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 .logo-wrapper img {
   height: 5rem;
   opacity: 0.65;
 }
-.footer-advice {
-  /* padding-top: 1rem;
-  padding-bottom: 1rem; */
-}
-.footer-advice p {
+
+.footer-advice p,
+.footer-credits > *  {
   font-size: smaller;
   margin: 0;
 }
-.copyright-wrapper > div {
-  /* text-align: center; */
-}
-@media only screen and (max-width: 400px) {
-  /* .copyright-wrapper {
-    padding-bottom: 2rem;
-  } */
-}
-@media only screen and (max-width: 767px) {
-  /* nav.nav.flex-column {
-    align-items: center;
-    padding-bottom: 4rem;
-  } */
-}
-@media only screen and (min-width: 768px) {
-  .footer-wrapper > div.container {
-    /* padding-top: 2rem; */
-  }
+.footer-credits > div:first-child {
+  margin-bottom: .5rem;
 }
 </style>
