@@ -13,9 +13,9 @@
             <p>Mental Health Matters  helpline: 08001070160</p>
             <p>Samaritans helpline : 08457909090 </p>
           </div>
-          <div class="footer-advice text-center">
+          <!--<div class="footer-advice text-center">
             <p>This is to inform that Grazyna has suddenly become incapacitated and is not able to respond to any queries. Should you need to find any information regarding your past or current treatment please contact Lynne Bennet via e-mail spaceforchange@protonmail.com</p>
-          </div>
+          </div> -->
         </b-col>
         <b-col md="6" class="col-right d-flex flex-column justify-content-between">
           <nav class="nav d-none d-md-flex justify-content-center">
