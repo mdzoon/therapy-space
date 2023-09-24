@@ -3,7 +3,7 @@
     <div class="page-break"></div>
     <b-container>
       <b-row class="mt-5 mb-3">
-        <b-col md="6" class="col-left">
+        <b-col md="6" class="d-flex flex-column justify-content-between col-left">
           <nav class="nav d-flex d-md-none justify-content-center">
             <NuxtLink to="/">About Me</NuxtLink>
             <NuxtLink to="/cookies-policy">Cookies Policy</NuxtLink>
@@ -16,6 +16,9 @@
           <!--<div class="footer-advice text-center">
             <p>This is to inform that Grazyna has suddenly become incapacitated and is not able to respond to any queries. Should you need to find any information regarding your past or current treatment please contact Lynne Bennet via e-mail spaceforchange@protonmail.com</p>
           </div> -->
+          <div class="d-none d-md-block text-center">
+            Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">Michael Dyczkowski</a>
+          </div>          
         </b-col>
         <b-col md="6" class="col-right d-flex flex-column justify-content-between">
           <nav class="nav d-none d-md-flex justify-content-center">
@@ -30,7 +33,7 @@
             <div class="text-center">
               Copyright &copy; {{ currentYear }} Therapy Space
             </div>
-            <div class="text-center">
+            <div class="d-md-none text-center">
               Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">Michael Dyczkowski</a>
             </div>
           </div>                 
@@ -96,8 +99,9 @@ export default {
   margin-bottom: 1.5rem;
 }
 
-nav {
+nav.nav {
   gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .logo-wrapper, .copyright-wrapper {
   display: flex;
@@ -112,12 +116,20 @@ nav {
   opacity: 0.65;
 }
 
-.footer-advice p,
+.col-left > *,
 .footer-credits > *  {
   font-size: smaller;
   margin: 0;
 }
 .footer-credits > div:first-child {
   margin-bottom: .5rem;
+}
+@media only screen and (min-width: 768px) {
+  .footer-credits {
+    margin-bottom: 0;
+  }
+  .footer-credits > div:first-child {
+    margin-bottom: 0;
+  }
 }
 </style>
