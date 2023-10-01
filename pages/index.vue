@@ -28,7 +28,7 @@
     </b-row>
     <b-row>
       <b-col>
-        <h2>Few words of appreciation:</h2>
+        <h2>Sucess stories:</h2>
 
         <b-carousel
           id="testimonials-carousel"
@@ -107,13 +107,17 @@ export default {
 }
 
 h2 {
-  margin-top: 0;
+  margin-top: 2rem;
   margin-bottom: 0;
-  text-align: center;
   font-size: 1.25rem;
-  
+
+  @media only screen and (min-width: 768px) {
+    text-align: center;
+  }  
   @media only screen and (min-width: 992px) {
-    margin-top: 7rem;
+    text-align: center;
+    margin-top: 9rem;
+    font-size: 2rem;
   }
 }
 </style>

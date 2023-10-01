@@ -1,8 +1,8 @@
 <template>
     <!-- Slide with blank fluid image to maintain slide aspect ratio -->
     <b-carousel-slide img-blank>
-      <div>
-        {{ testimonial.content }}<i> {{ testimonial.author }}</i>
+      <div class="text-wrapper">
+        <div>{{ testimonial.content }}<i> {{ testimonial.author }}</i></div>
       </div>
     </b-carousel-slide>
 </template>
@@ -50,15 +50,20 @@ export default {
     background-color: var(--colour-link);
   }
 
+  .carousel .carousel-inner {
+    display: flex;
+    gap: 1rem;
+  }
+
   .carousel .carousel-inner .carousel-item {
-    min-height: 400px;
+    min-height: 430px;
 
     @media only screen and (min-width: 400px) {
-      min-height: 300px;
+      min-height: 380px;
     }
 
     @media only screen and (min-width: 500px) {
-      min-height: 250px;
+      min-height: 300px;
     }      
   }
 
@@ -69,8 +74,12 @@ export default {
     left: unset;
     transform: translateY(-50%);
     color: var(--colour-font);
-    font-size: smaller;
+    font-size: 14px;
+    height: 100%;
 
+    @media only screen and (min-width: 400px) {
+      font-size: initial;
+    }
     @media only screen and (min-width: 768px) {
       right: 15%;
       left: 15%;
@@ -80,9 +89,21 @@ export default {
     }        
   }
 
-  .carousel .carousel-inner .carousel-caption div {
-    padding: 10px;
+  .carousel .carousel-inner .carousel-caption .text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
     background-color: var(--colour-secondary-light);
+	  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), calc(100% - 80px) 100%, 0 100%);
+    height: 100%;
+    @media only screen and (min-width: 992px) {
+      background-color: transparent;
+    }    
+  }  
+
+  .carousel .carousel-inner .carousel-caption .text-wrapper i {
+    white-space: nowrap;
   }
 
 </style>
