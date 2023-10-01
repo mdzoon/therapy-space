@@ -110,11 +110,15 @@ h2 {
   margin-top: 2rem;
   margin-bottom: 0;
   font-size: 1.25rem;
+}
 
-  @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
+  h2 {
     text-align: center;
-  }  
-  @media only screen and (min-width: 992px) {
+  }
+}
+@media only screen and (min-width: 992px) {
+  h2 {
     text-align: center;
     margin-top: 9rem;
     font-size: 2rem;
