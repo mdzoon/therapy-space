@@ -28,12 +28,12 @@
     </b-row>
     <b-row>
       <b-col>
-        <h2>Testimonials</h2>
+        <h2>Few words of appreciation:</h2>
 
         <b-carousel
           id="testimonials-carousel"
           v-model="slide"
-          :interval="5000"
+          :interval="50000"
           controls
           indicators
           background="transparent"
@@ -104,5 +104,16 @@ export default {
   justify-content: center;
   align-items: flex-start;
   margin-top: 3rem;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 1.25rem;
+  
+  @media only screen and (min-width: 992px) {
+    margin-top: 7rem;
+  }
 }
 </style>
