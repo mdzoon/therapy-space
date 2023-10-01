@@ -26,11 +26,54 @@
         </div>
       </b-col>
     </b-row>
+    <b-row>
+      <b-col>
+        <h2>Testimonials</h2>
+
+        <b-carousel
+          id="carousel-1"
+          v-model="slide"
+          :interval="40000"
+          controls
+          indicators
+          background="#ababab"
+          img-width="1024"
+          img-height="480"
+          @sliding-start="onSlideStart"
+          @sliding-end="onSlideEnd"
+        >
+
+          <slider v-for="(testimonial, index) in testimonials" :key="index" :testimonial="testimonial"/>
+
+        </b-carousel>
+
+      </b-col>
+    </b-row>
   </main>
 </template>
 
 <script>
+import slider from '@/components/slider.vue'
+import dataMixin from '@/content/dataMixin.js'
 export default {
+  components: {
+    slider
+  },
+  mixins: [dataMixin],
+  data() {
+    return {
+      slide: 0,
+      sliding: null
+    }
+  },
+  methods: {
+    onSlideStart(slide) {
+      this.sliding = true
+    },
+    onSlideEnd(slide) {
+      this.sliding = false
+    }
+  }
 }
 </script>
 

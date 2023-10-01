@@ -6,18 +6,14 @@
 </template>
 
 <script>
-import treatmentsMixin from '@/content/servicesMixin.js'
+import dataMixin from '@/content/dataMixin.js'
 import service from '@/components/service.vue'
 
 export default {
   components: {
     service
   },
-  mixins: [treatmentsMixin],
-  // mounted () {
-  //   const anchor = document.getElementById(window.location.hash)
-  //   anchor.scrollIntoView(window.location.hash)
-  // }
+  mixins: [dataMixin],
   mounted() {
     const el = document.querySelector('body')
     const classes = el.classList
