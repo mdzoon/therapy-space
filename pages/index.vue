@@ -28,7 +28,7 @@
     </b-row>
     <b-row>
       <b-col>
-        <h2>Sucess stories:</h2>
+        <h2>Success stories:</h2>
 
         <b-carousel
           id="testimonials-carousel"
