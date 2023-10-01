@@ -33,7 +33,7 @@
         <b-carousel
           id="testimonials-carousel"
           v-model="slide"
-          :interval="50000"
+          :interval="5000"
           controls
           indicators
           background="transparent"
