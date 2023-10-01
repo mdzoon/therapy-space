@@ -34,12 +34,6 @@ export default {
     border-top: 4px solid var(--colour-link);
     transform: rotate(45deg);
   }
-  @media only screen and (min-width: 768px) {
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      display: block;
-    }
-  }  
 
   .carousel-indicators {
     bottom: -30px;
@@ -56,16 +50,6 @@ export default {
   .carousel .carousel-inner .carousel-item {
     min-height: 430px;      
   }
-  @media only screen and (min-width: 400px) {
-    .carousel .carousel-inner .carousel-item {
-      min-height: 380px;
-    }
-  }
-  @media only screen and (min-width: 500px) {
-    .carousel .carousel-inner .carousel-item {
-      min-height: 300px;
-    }
-  }  
 
   .carousel .carousel-inner .carousel-caption {
     top: 50%;
@@ -77,22 +61,6 @@ export default {
     font-size: 14px;
     height: 100%;   
   }
-  @media only screen and (min-width: 400px) {
-    .carousel .carousel-inner .carousel-caption {
-      font-size: initial;
-    }
-  }
-  @media only screen and (min-width: 768px) {
-    .carousel .carousel-inner .carousel-caption {
-      right: 15%;
-      left: 15%;
-    }
-  }
-  @media only screen and (min-width: 992px) {
-    .carousel .carousel-inner .carousel-caption {
-      font-size: 1.25rem;
-    }
-  }  
 
   .carousel .carousel-inner .carousel-caption .text-wrapper {
     display: flex;
@@ -111,4 +79,35 @@ export default {
     white-space: nowrap;
   }
 
+  @media only screen and (min-width: 400px) {
+    .carousel .carousel-inner .carousel-item {
+      min-height: 380px;
+    }
+    .carousel .carousel-inner .carousel-caption {
+      font-size: initial;
+    }
+  }
+
+  @media only screen and (min-width: 500px) {
+    .carousel .carousel-inner .carousel-item {
+      min-height: 300px;
+    }
+  }  
+
+  @media only screen and (min-width: 768px) {
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      display: block;
+    }
+
+    .carousel .carousel-inner .carousel-caption {
+      right: 15%;
+      left: 15%;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    .carousel .carousel-inner .carousel-caption {
+      font-size: 1.25rem;
+    }
+  }  
 </style>
