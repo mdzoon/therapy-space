@@ -31,14 +31,14 @@
         <h2>Testimonials</h2>
 
         <b-carousel
-          id="carousel-1"
+          id="testimonials-carousel"
           v-model="slide"
-          :interval="40000"
+          :interval="5000"
           controls
           indicators
-          background="#ababab"
+          background="transparent"
           img-width="1024"
-          img-height="480"
+          img-height="200"
           @sliding-start="onSlideStart"
           @sliding-end="onSlideEnd"
         >
