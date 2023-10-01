@@ -86,7 +86,7 @@ export default {
     }
     @media only screen and (min-width: 992px) {
       font-size: 1.25rem;
-    }        
+    }     
   }
 
   .carousel .carousel-inner .carousel-caption .text-wrapper {
