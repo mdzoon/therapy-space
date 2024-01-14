@@ -17,7 +17,11 @@ export default {
         {
           content: 'I have been introduced by Grazyna to a new and very effective form of therapy! I am surprised by the experience, and very grateful for the outcome!',
           author: '(L. 47 y)'
-        }
+        },
+        {
+          content: 'I came into Therapy as a last resort with little belief on the concept. With Grazyna\'s help, I was able to use her advice, knowledge and techniques to tackle my anxieties and fears head on. With this, I now have more control over the negative habits I developed through my condition and the progress I was able to achieve is unimaginable, I will be forever grateful for the patience and care Grazyna took to help me.',
+          author: '(W. 30 y)'
+        }        
       ],
       services: [
         {
