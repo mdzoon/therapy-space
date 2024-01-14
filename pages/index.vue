@@ -4,7 +4,7 @@
     <b-row>
       <b-col lg="6" class="left">
         <div class="column-box">
-          <img src="@/assets/images/grazyna-portrait.jpg" alt="default-portrait">
+          <img src="@/assets/images/grazyna-portrait.jpg" alt="Grazyna Godlewska-Vernon portrait">
         </div>
       </b-col>
       <b-col lg="6" class="right">
@@ -91,6 +91,11 @@ export default {
   .column-info {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .column-box {
+    padding-right: 5rem;
   }
 }
 .column-box img {
