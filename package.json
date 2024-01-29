@@ -27,6 +27,7 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
+    "@nuxtjs/sitemap": "^2.4.0",
     "sass": "^1.51.0"
   }
 }

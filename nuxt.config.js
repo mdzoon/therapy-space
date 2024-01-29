@@ -78,7 +78,8 @@ export default {
     //     here: 'here'
     //   }
     // }],
-    'vue-scrollto/nuxt'
+    'vue-scrollto/nuxt',
+    '@nuxtjs/sitemap'
   ],
 
   // cookies: {
