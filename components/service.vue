@@ -6,8 +6,10 @@
         <h3>{{ service.name }}</h3>
       </div>
       <div class="therapy-body">
-        <div v-html="service.content">
-          <!-- {{ service.content }} -->
+        <div v-html="service.content"></div>
+        <div class="testimonial" v-if="service.testimonial">
+          <q><i>{{ service.testimonial.content }}</i></q>
+          <i> {{ service.testimonial.author }}</i>
         </div>
       </div>
       <BookingButton link='/contact' design="boxed">Ask me about <span>{{service.id.replace(/-/g, ' ')}}</span></BookingButton>
@@ -109,6 +111,11 @@ export default {
   margin-top: 5em;
   margin-bottom: 5em;
 }
+.therapy-card .therapy-body .testimonial {
+  margin-top: 3em;
+  font-size: smaller;
+}
+
 .therapy-card .therapy-body p {
   margin-top: 3em;
 }
