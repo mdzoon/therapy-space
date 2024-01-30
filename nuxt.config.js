@@ -1,3 +1,5 @@
+const main_base_URL =  'https://www.therapy-space.uk/';
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -124,5 +126,14 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+  /*
+  ** Use the base URL for sitemap generation
+  */
+  sitemap: {
+    hostname: main_base_URL
+  },
+  env: {
+    main_base_URL
   }
 }
