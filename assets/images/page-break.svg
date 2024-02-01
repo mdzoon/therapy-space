@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 50" width="1400" height="50">
+	<title>page-break</title>
+	<style>
+		.s0 { fill: #ff70cd } 
+		.s1 { fill: #00c6ff } 
+		.s2 { fill: #444444 } 
+	</style>
+	<path id="Shape 5" class="s0" d="m1400 0v50h-134.4l-13.6-50z"/>
+	<path id="Shape 4" class="s1" d="m1252.4 0l13.3 50h-159.5l-0.1-50z"/>
+	<path id="Shape 3" class="s0" d="m1070.3 0l-0.2 50h-425.1l29-50z"/>
+	<path id="Shape 1" class="s2" d="m0 0h231l20 50h-251z"/>
+	<path id="Shape 2" class="s1" d="m638.7 50h-387.7l-20-50h437z"/>
+</svg>
