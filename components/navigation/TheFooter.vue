@@ -26,8 +26,12 @@
             <NuxtLink to="/cookies-policy">Cookies Policy</NuxtLink>
           </nav>
           <div class="logo-wrapper">
-            <a href="https://www.bacp.co.uk" target="_blank"><img src="~/assets/images/BACP-logo.svg" alt="British Association for Counselling and Psychotherapy Logo"></a>          
-            <a href="https://babcp.com" target="_blank"><img src="~/assets/images/BABCP-logo.svg" alt="British Association for Behavioural and Cognitive Psychotherapies Logo"></a>
+            <a href="https://www.bacp.co.uk" target="_blank">
+                <img src="/images/BACP-logo.svg" alt="British Association for Counselling and Psychotherapy Logo">
+            </a> 
+            <a href="https://babcp.com" target="_blank">
+                <img src="/images/BABCP-logo.svg" alt="British Association for Behavioural and Cognitive Psychotherapies Logo">
+            </a>
           </div>
           <div class="footer-credits">
             <div class="text-center">
@@ -83,7 +87,7 @@ export default {
   margin-top: 2rem;
   margin-bottom: 2rem;
   height: 0.25em;
-  background-image: url('~/assets/images/page-break.svg');
+  background-image: url('/images/page-break.svg');
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.5;

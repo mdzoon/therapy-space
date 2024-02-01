@@ -4,7 +4,7 @@
     <b-row>
       <b-col lg="6" class="left">
         <div class="column-box">
-          <img src="@/assets/images/grazyna-portrait.jpg" alt="Grazyna Godlewska-Vernon portrait">
+          <img src="/images/grazyna-portrait.jpg" alt="Grazyna Godlewska-Vernon portrait">
         </div>
       </b-col>
       <b-col lg="6" class="right">
@@ -17,9 +17,7 @@
           <div class="d-flex footer">
             <BookingButton link='/what-to-expect' design="plain">
               Learn more about my work and my qualifications
-              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15">
-                <path fill="currentColor" fill-rule="evenodd" d="M9.854 3.146L14.207 7.5l-4.353 4.354l-.708-.708L12.293 8H1V7h11.293L9.146 3.854z" clip-rule="evenodd" />
-              </svg>
+              <ArrowRight />
             </BookingButton>
             <BookingButton link='/contact' design="plain">
               Book appointment with me

@@ -3,13 +3,13 @@
     <BNavbar toggleable="lg" fixed="top" class="container-fluid container">
 
         <BNavbarBrand href="/" class="font-secondary">
-          <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo">
+          <img src="/images/therapy-space-logo.svg" alt="Therapy Space Logo">
           <span>Therapy Space</span>
         </BNavbarBrand>
 
         <BNavbarToggle @click="hideOverflow" target="nav-collapse">
-          <img class="listNav" src="~/assets/images/list.svg" />
-          <img class="closeNav" src="~/assets/images/close.svg" />
+          <img class="listNav" src="~/assets/icons/list.svg" />
+          <img class="closeNav" src="~/assets/icons/close.svg" />
         </BNavbarToggle>
 
         <BCollapse id="nav-collapse" is-nav>
@@ -217,7 +217,7 @@ export default {
   align-items: center;
   letter-spacing: 3px;
   font-size: 1.5rem;
-  background-image: url("/assets/images/logo-background.svg");
+  background-image: url("/images/logo-background.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
