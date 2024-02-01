@@ -36,8 +36,6 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@bootstrap-vue-next/nuxt',
-    // https://go.nuxtjs.dev/content
-    // '@nuxt/content',
     // 'vue-scrollto/nuxt'
   ],
   vite: {

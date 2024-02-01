@@ -32,7 +32,6 @@
     <b-row>
       <b-col>
         <h2>Success stories:</h2>
-
         <BCarousel
           id="testimonials-carousel"
           :interval="8000"
@@ -51,18 +50,12 @@
   </main>
 </template>
 
-<script>
+<script setup>
+
 import slide from '~/components/slide.vue'
-import dataMixin from '@/content/dataMixin.js'
-
 import ArrowRight from '../assets/icons/arrow-right.svg?component'
+const testimonials = useTestimonials()
 
-export default {
-  components: {
-    slide
-  },
-  mixins: [dataMixin]
-}
 </script>
 
 <style scoped>

@@ -5,23 +5,14 @@
   </main>
 </template>
 
-<script>
-import dataMixin from '@/content/dataMixin.js'
+<script setup>
+import { onMounted } from 'vue';
 import service from '@/components/service.vue'
+const services = useServices()
 
-export default {
-  components: {
-    service
-  },
-  mixins: [dataMixin],
-  mounted() {
+onMounted(() => {
     const el = document.querySelector('body')
     const classes = el.classList
-    classes.remove("hideOverflow")    
-  }
-}
+    classes.remove("hideOverflow")  
+})
 </script>
-
-<style scoped>
-
-</style>
