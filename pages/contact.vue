@@ -19,13 +19,13 @@
             <ul>
               <li>
                 <a href="tel:7970014122">
-                  <b-icon icon="telephone"></b-icon>
+                  <ArrowCounterclockwise />
                   <div>(+44) 7970014122</div>
                 </a>
               </li>
               <li>
                 <a href="mailto:grazyna@thinkcbt.com">
-                  <b-icon icon="envelope"></b-icon>           
+                  <Envelope />          
                   <div>grazyna@thinkcbt.com</div>
                 </a>
               </li>
@@ -37,15 +37,12 @@
   </main>
 </template>
 
-<script>
-import ContactForm from '@/components/utilities/ContactForm.vue'
+<script setup>
 
-export default {
-  name: "Contact",
-  components: {
-    ContactForm
-  }
-}
+import ContactForm from '@/components/utilities/ContactForm.vue'
+import Envelope from '../assets/icons/envelope.svg?component'
+import ArrowCounterclockwise from '../assets/icons/arrow-counterclockwise.svg?component'
+
 </script>
 
 <style scoped>
