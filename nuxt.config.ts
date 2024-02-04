@@ -20,12 +20,6 @@ export default defineNuxtConfig({
       ]
     },
   },
-  // Customize the progress-bar color
-  loading: {
-    color: 'rgba(255, 113, 205, 0.5)',
-    height: '3px',
-    throttle: 0
-  },
   css: [
     '~/assets/main.css',
     '~/assets/fonts.css',
