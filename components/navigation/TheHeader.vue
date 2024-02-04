@@ -1,6 +1,6 @@
 <template>
   <header class="header-wrapper">
-    <BNavbar toggleable="lg" fixed="top" class="container-fluid container">
+    <BNavbar toggleable="lg" fixed="top" class="container">
 
         <BNavbarBrand href="/" class="font-secondary">
           <img src="/images/therapy-space-logo.svg" alt="Therapy Space Logo">
@@ -8,12 +8,12 @@
         </BNavbarBrand>
 
         <BNavbarToggle @click="hideOverflow" target="nav-collapse">
-          <img class="listNav" src="~/assets/icons/list.svg" />
-          <img class="closeNav" src="~/assets/icons/close.svg" />
+          <listNav class="listNav" />
+          <closeNav class="closeNav" />
         </BNavbarToggle>
 
         <BCollapse id="nav-collapse" is-nav>
-          <BNavbarNav class="ml-auto">
+          <BNavbarNav class="nav-left">
 
             <li class="nav-item" @click="clearOverflow"><NuxtLink to="/" class="nav-link">About Me</NuxtLink></li>
 
@@ -51,49 +51,11 @@
   </header>
 </template>
 
-<script>
-export default {
-  mounted () {
-    window.addEventListener('scroll', this.onScroll)
-  },
-  beforeDestroy () {
-    window.removeEventListener('scroll', this.onScroll)
-  },
-  methods: {
-    onScroll (e) {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.querySelector('.navbar').classList.add('on-scroll')
-      } else {
-        document.querySelector('.navbar').classList.remove('on-scroll')
-      }
-    },
-    hideOverflow() {
-      const elBody = document.querySelector('body')
-      const classesBody = elBody.classList
-      const elNav = document.querySelector('#nav-text-collapse')
-      const classesNav = elNav.classList
+<script setup>
 
-      Object.values(classesNav).includes("show") ? classesBody.remove("hideOverflow") : classesBody.add("hideOverflow")
-    },
-    clearOverflow() {
-      const el = document.querySelector('body')
-      const classes = el.classList
-      classes.remove("hideOverflow")      
-    },
-    hideDropdown() {
-      const elNav = document.querySelector('.nav-item.b-nav-dropdown.dropdown')
-      const classesNav = elNav.classList
-      const a = document.querySelector('a.dropdown-toggle')
-      const elMenu = document.querySelector('.dropdown-menu')
-      const classesMenu = elMenu.classList
-      if ( Object.values(classesNav).includes("show") ) {
-        a.setAttribute("aria-expanded", "false")
-        classesNav.remove("show")
-        classesMenu.remove("show")
-      }
-    }   
-  }
-}
+import listNav from '../assets/icons/list.svg?component'
+import closeNav from '../assets/icons/close.svg?component'
+
 </script>
 
 <style>
@@ -112,6 +74,9 @@ export default {
   background:linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
   min-height: 8rem;
   font-weight: bolder;
+}
+.navbar-nav.nav-left {
+    margin-left: auto;
 }
 .navbar .navbar-nav .nav-item a {
   color: var(--colour-link) !important;
@@ -229,29 +194,31 @@ export default {
   padding: 0.5rem 0.5rem;
   border: none;
   position: relative;
+  box-shadow: none !important;
 }
-.navbar-toggler img {
+.navbar-toggler .listNav,
+.navbar-toggler .closeNav {
   position: absolute;
   top: -0.75rem;
   right: -0.75rem;
   width: auto;
-  height: 2.5rem !important;
+  height: 2.5rem;
   transition: all var(--transition);
 }
 
-.navbar-toggler.collapsed img.listNav {
+.navbar-toggler.collapsed .listNav {
   opacity: 1;
   transform: rotate(0deg);
 }
-.navbar-toggler.not-collapsed img.listNav {
+.navbar-toggler.not-collapsed .listNav {
   opacity: 0;
   transform: rotate(45deg);
 }
-.navbar-toggler img.closeNav {
+.navbar-toggler .closeNav {
   opacity: 0;
   transform: rotate(45deg);
 }
-.navbar-toggler.not-collapsed img.closeNav {
+.navbar-toggler.not-collapsed .closeNav {
   opacity: 1;
   transform: rotate(0deg);
 }
