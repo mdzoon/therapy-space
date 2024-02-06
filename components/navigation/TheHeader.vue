@@ -17,25 +17,25 @@
 
             <li class="nav-item" @click="clearOverflow"><NuxtLink to="/" class="nav-link">About Me</NuxtLink></li>
 
-            <BNavItemDropdown text="How I Can Help" right>
-              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
-                <NuxtLink to="/services/#cbt" role="menuitem" target="_self" class="dropdown-item">CBT</NuxtLink>
-              </li>
-              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
-                <NuxtLink to="/services/#counselling" role="menuitem" target="_self" class="dropdown-item">Counselling</NuxtLink>
-              </li>
-              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
-                <NuxtLink to="/services/#emdr" role="menuitem" target="_self" class="dropdown-item">EMDR</NuxtLink>
-              </li>
-              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
-                <NuxtLink to="/services/#mediation" role="menuitem" target="_self" class="dropdown-item">Mediation</NuxtLink>
-              </li>
-              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
-                <NuxtLink to="/services/#supervision" role="menuitem" target="_self" class="dropdown-item">Supervision</NuxtLink>
-              </li>
-              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
-                <NuxtLink to="/services/#walk-and-talk" role="menuitem" target="_self" class="dropdown-item">Walk & Talk</NuxtLink>
-              </li>
+            <BNavItemDropdown text="How I Can Help">
+                <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                    <NuxtLink to="/services/#cbt" role="menuitem" target="_self" class="dropdown-item">CBT</NuxtLink>
+                </li>
+                <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                    <NuxtLink to="/services/#counselling" role="menuitem" target="_self" class="dropdown-item">Counselling</NuxtLink>
+                </li>
+                <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                    <NuxtLink to="/services/#emdr" role="menuitem" target="_self" class="dropdown-item">EMDR</NuxtLink>
+                </li>
+                <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                    <NuxtLink to="/services/#mediation" role="menuitem" target="_self" class="dropdown-item">Mediation</NuxtLink>
+                </li>
+                <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                    <NuxtLink to="/services/#supervision" role="menuitem" target="_self" class="dropdown-item">Supervision</NuxtLink>
+                </li>
+                <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                    <NuxtLink to="/services/#walk-and-talk" role="menuitem" target="_self" class="dropdown-item">Walk & Talk</NuxtLink>
+                </li>
             </BNavItemDropdown>
 
             <li class="nav-item" @click="clearOverflow"><NuxtLink to="/what-to-expect" class="nav-link">What to Expect</NuxtLink></li>
@@ -55,6 +55,48 @@
 
 import listNav from '../assets/icons/list.svg?component'
 import closeNav from '../assets/icons/close.svg?component'
+
+function onScroll (e) {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.querySelector('.navbar').classList.add('on-scroll')
+    } else {
+    document.querySelector('.navbar').classList.remove('on-scroll')
+    }
+}
+
+function hideOverflow() {
+    console.log('hide ov')
+    const elBody = document.querySelector('body')
+    const classesBody = elBody.classList
+    const elNav = document.querySelector('#nav-text-collapse')
+    const classesNav = elNav.classList
+
+    Object.values(classesNav).includes("show") ? classesBody.remove("hideOverflow") : classesBody.add("hideOverflow")
+}
+
+function clearOverflow() {
+    console.log('clear')
+    const el = document.querySelector('body')
+    const classes = el.classList
+    classes.remove("hideOverflow")      
+}
+
+function hideDropdown () {
+    console.log('hide DR')
+    const elNav = document.querySelector('.nav-item.b-nav-dropdown.dropdown')
+    const classesNav = elNav.classList
+    const a = document.querySelector('a.dropdown-toggle')
+    const elMenu = document.querySelector('.dropdown-menu')
+    const classesMenu = elMenu.classList
+    if ( Object.values(classesNav).includes("show") ) {
+        a.setAttribute("aria-expanded", "false")
+        classesNav.remove("show")
+        classesMenu.remove("show")
+    }
+}
+
+// onMounted (() => window.addEventListener('scroll', this.onScroll))
+// onBeforeUnmount (() => window.removeEventListener('scroll', this.onScroll))
 
 </script>
 
@@ -78,39 +120,42 @@ import closeNav from '../assets/icons/close.svg?component'
 .navbar-nav.nav-left {
     margin-left: auto;
 }
-.navbar .navbar-nav .nav-item a {
+.navbar .navbar-nav .nav-item a,
+.navbar .navbar-nav .btn-group button {
   color: var(--colour-link) !important;
+  font-weight: normal;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .navbar .navbar-nav .nav-item a {
+  .navbar .navbar-nav .nav-item a,
+  .navbar .navbar-nav .btn-group button {
     font-size: smaller;
   }  
 }
 .navbar .navbar-nav .nav-item:hover a,
 .navbar .navbar-nav .nav-item:focus a,
 .navbar .navbar-nav .nav-item:active a {
-  color: var(--colour-link-hover) !important;
+    color: var(--colour-link-hover) !important;
 }
-.navbar .navbar-nav .nav-item.dropdown a:after {
-  transition: all var(--transition);
-  transform: rotate(0deg);
+.navbar .navbar-nav .nav-item.dropdown button:after {
+    transition: all var(--transition);
+    transform: rotate(0deg);
 }
-.navbar .navbar-nav .nav-item.dropdown.show a:after {
-  transform: rotate(180deg);
+.navbar .navbar-nav .nav-item.dropdown button.show:after {
+    transform: rotate(180deg);
 }
 .navbar .navbar-nav .dropdown-menu {
-  display: block;
-  border: none;
-  border-radius: 0;
-  transition: all var(--transition);
-  box-shadow: var(--box-shadow);
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: 0;
-  overflow: hidden;
+    display: block;
+    border: none;
+    border-radius: 0;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: height var(--transition);
+    height: 0;
 }
-.navbar .navbar-nav .dropdown-menu.show{
+.navbar .navbar-nav .dropdown-menu.show {
   height: 288px;
 }
 
@@ -120,7 +165,7 @@ import closeNav from '../assets/icons/close.svg?component'
 }
 .navbar .navbar-nav .dropdown-menu .dropdown-item:hover {
   border-left: 4px solid var(--colour-link-hover);
-  padding-left: calc( 1.5rem - 4px );
+  padding-left: calc( 1rem - 4px );
   background-color: var(--colour-background);
 }
 @media only screen and (max-width: 991px) {

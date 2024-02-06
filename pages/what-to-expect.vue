@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="background-holder-left"></div>
-        <div class="container">
+        <div class="container">         
 
             <div class="accordion" role="tablist">
                 <b-card no-body class="mb-1">

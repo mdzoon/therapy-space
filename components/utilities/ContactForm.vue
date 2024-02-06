@@ -119,10 +119,10 @@
 
         <div class="buttons-wrapper">
           <b-button variant="outline-dark" type="submit">
-            Submit <b-icon icon="envelope"></b-icon>
+            Submit <Send />
           </b-button>
           <b-button variant="outline-dark" type="reset">
-            Reset <b-icon icon="arrow-counterclockwise"></b-icon>
+            Reset <ArrowCounterclockwise />
           </b-button>
         </div>
 
@@ -137,118 +137,13 @@
   </div>
 </template>
 
-<script>
+<script setup>
+
+import ArrowCounterclockwise from '../assets/icons/arrow-counterclockwise.svg?component'
+import Send from '../assets/icons/send.svg?component'
 import { useVuelidate } from '@vuelidate/core'
 import { required, minLength, email, numeric } from '@vuelidate/validators'
 
-export default {
-  name: 'ContactForm',
-  setup () {
-    return { v$: useVuelidate() }
-  },
-  data () {
-    return {
-      form: {
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-        consent: false
-      },
-
-      address: '',
-      submitStatus: '',
-      formSubmitted: false,
-      formVisible: true
-    }
-  },
-  methods: {
-    onSubmit (evt) {
-      evt.preventDefault()
-      this.v$.form.$touch()
-      
-
-      if (this.v$.form.$invalid || !this.v$.form.consent.$model) {
-
-        this.formSubmitted = true
-
-      } else {
-
-        this.submitStatus = 'PENDING'
-
-        if (this.address) {
-          return false;
-        }
-
-        const url = 'https://formspree.io/f/mdojnvaj'
-        const that  = this
-
-        this.$axios.post(url, {
-          'Sender Name': that.form.name,
-          'Email': that.form.email,
-          'Phone': that.form.phone,
-          'Consent': that.form.consent,
-          'Message': that.form.message
-        })
-        .then(function (response) {
-          if (response) {
-
-            that.submitStatus = 'OK'
-            that.form.name = ''
-            that.form.email = ''
-            that.form.phone = ''
-            that.form.message = ''
-            that.form.consent = false
-            that.address = ''
-            that.formVisible = false
-          }
-        })
-        .catch(function (error) {
-          that.submitStatus = 'ERROR'
-          console.log(error);
-        })
-      }
-    },
-    onReset (evt) {
-      evt.preventDefault()
-      // Reset form values
-      this.form.name = ''
-      this.form.email = ''
-      this.form.phone = ''
-      this.form.message = ''
-      this.form.consent = false
-      this.address = ''
-      // Trick to reset/clear native browser form validation state
-      this.formVisible = false
-      this.$nextTick(() => {
-        this.formVisible = true
-      })      
-    }
-  },
-  validations: {
-    form: {
-      name: {
-        required,
-        minLength: minLength(3)
-      },
-      email: {
-        required,
-        email
-      },
-      phone: {
-        numeric,
-        minLength: minLength(10)
-      },
-      message: {
-        required,
-        minLength: minLength(5)
-      },
-      consent: {
-        required
-      }
-    }
-  }
-}
 </script>
 
 <style scoped>

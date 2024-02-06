@@ -19,7 +19,7 @@
             <ul>
               <li>
                 <a href="tel:7970014122">
-                  <ArrowCounterclockwise />
+                  <Phone />
                   <div>(+44) 7970014122</div>
                 </a>
               </li>
@@ -41,7 +41,7 @@
 
 import ContactForm from '@/components/utilities/ContactForm.vue'
 import Envelope from '../assets/icons/envelope.svg?component'
-import ArrowCounterclockwise from '../assets/icons/arrow-counterclockwise.svg?component'
+import Phone from '../assets/icons/phone.svg?component'
 
 </script>
 
