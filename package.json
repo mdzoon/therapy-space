@@ -4,9 +4,9 @@
     "private": true,
     "author": "Michael Dyczkowski",
     "scripts": {
-        "dev": "nuxt",
+        "dev": "nuxt dev",
         "build": "nuxt build",
-        "start": "nuxt start",
+        "preview": "nuxt preview",
         "generate": "nuxt generate"
     },
     "dependencies": {
