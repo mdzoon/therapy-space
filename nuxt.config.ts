@@ -36,7 +36,7 @@ export default defineNuxtConfig({
     css: [
         'bootstrap/dist/css/bootstrap.min.css',
         'bootstrap-icons/font/bootstrap-icons.css',
-        '~/assets/main.css'
+        '~/assets/main.scss'
     ],
 
     modules: [

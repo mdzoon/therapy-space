@@ -14,7 +14,9 @@
                     <i> {{ service.testimonial.author }}</i>
                 </div>
             </div>
-            <BookingButton link='/contact' design="boxed">Ask me about <span>{{service.id.replace(/-/g, ' ')}}</span></BookingButton>
+            <BookingButton link='/contact' design="boxed">
+                Ask me about <span>{{service.id.replace(/-/g, ' ')}}</span>
+            </BookingButton>
         </div>
     </div>
 </template>

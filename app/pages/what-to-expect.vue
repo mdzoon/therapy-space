@@ -98,7 +98,9 @@
                     </BCollapse>
                 </BCard>
 
-                <BookingButton class="d-flex justify-content-center mt-5" link='/contact' design="boxed">Book Appointment</BookingButton>
+                <BookingButton class="d-flex justify-content-center mt-5" link='/contact' design="boxed">
+                    Book Appointment
+                </BookingButton>
 
             </div>
         </div>
