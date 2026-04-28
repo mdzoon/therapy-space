@@ -48,32 +48,35 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .column-contact,
-.column-address  {
+.column-address {
     height: 100%;
-}
-.column-address ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    margin-top: 1rem;
-}
-.column-address ul li a {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-}
-.column-address ul li a i {
-    margin-right: 1rem;
-}
-@media only screen and (max-width: 991px) {
-    .column-contact,
-    .column-address {
+
+    @media only screen and (max-width: 991px) {
         padding-top: 2rem;
         padding-bottom: 2rem;
+    }
+}
+
+.column-address {
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 1rem;
+
+        li a {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+
+            i {
+                margin-right: 1rem;
+            }
+        }
     }
 }
 </style>
