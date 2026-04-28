@@ -85,7 +85,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .left,
 .right {
     display: flex;
@@ -93,46 +93,50 @@ export default {
     align-items: center;
 }
 
-@media only screen and (max-width: 991px) {
-    .column-box,
-    .column-info {
+.column-box {
+    @media only screen and (max-width: 991px) {
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
-}
-@media only screen and (min-width: 992px) {
-    .column-box {
+
+    @media only screen and (min-width: 992px) {
         padding-right: 5rem;
     }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 }
-.column-box img {
-    width: 100%;
-    height: auto;  
-}
-.column-info p {
-    font-size: 1.25rem;
-}
-.column-info .footer {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 3rem;
+
+.column-info {
+    @media only screen and (max-width: 991px) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 3rem;
+    }
 }
 
 h2 {
     margin-top: 2rem;
     margin-bottom: 0;
     font-size: 1.25rem;
-}
 
-@media only screen and (min-width: 768px) {
-    h2 {
+    @media only screen and (min-width: 768px) {
         text-align: center;
     }
-}
-@media only screen and (min-width: 992px) {
-    h2 {
-        text-align: center;
+
+    @media only screen and (min-width: 992px) {
         margin-top: 9rem;
         font-size: 2rem;
     }
