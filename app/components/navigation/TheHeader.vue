@@ -162,17 +162,18 @@ export default {
     display: block;
     border: none;
     border-radius: 0;
-    transition: all var(--transition);
     box-shadow: var(--box-shadow);
     width: 100%;
     margin: 0;
     padding: 0;
-    height: 0;
-    overflow: hidden;
     min-width: 13.25rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition);
 }
 .navbar .navbar-nav .dropdown-menu.show {
-    height: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .navbar .navbar-nav .dropdown-menu .dropdown-item {
@@ -205,6 +206,14 @@ export default {
         box-shadow: none;
         position: static !important;
         transform: none !important;
+        opacity: 1;
+        pointer-events: auto;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition);
+    }
+    .navbar .navbar-nav .dropdown-menu.show {
+        max-height: 600px;
     }
 
     .navbar .navbar-nav .nav-link {
