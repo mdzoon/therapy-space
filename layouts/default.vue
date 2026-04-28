@@ -1,17 +1,17 @@
 <template>
-  <div>
-    <TheHeader />
+    <div>
+        <TheHeader />
 
-    <div style="height:8rem;" />
+        <div style="height:8rem;" />
 
-    <nuxt />
+        <nuxt />
 
-    <ScrollTo />
+        <ScrollTo />
 
-    <!-- <CookiesModal /> -->
+        <!-- <CookiesModal /> -->
 
-    <TheFooter />
-  </div>
+        <TheFooter />
+    </div>
 </template>
 
 <script>
@@ -21,11 +21,11 @@ import CookiesModal from '@/components/utilities/CookiesModal.vue'
 import TheFooter from '@/components/navigation/TheFooter.vue'
 
 export default {
-  components: {
-    TheHeader,
-    ScrollTo,
-    CookiesModal,
-    TheFooter
-  }
+    components: {
+        TheHeader,
+        ScrollTo,
+        CookiesModal,
+        TheFooter
+    }
 }
 </script>

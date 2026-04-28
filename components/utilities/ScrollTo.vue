@@ -1,78 +1,78 @@
 <template>
-  <div>
-    <div id="top" style="display: none;" />
-    <a
-      id="return-top"
-      v-scroll-to="{
-        el: '#top',
-        x: false,
-        y: true
-      }"
-      href="#"
-      :class="{ 'return-top--hidden': hideScrollTo }"
-    >
-      <b-icon icon="chevron-double-up" font-scale="2" />
-    </a>
-  </div>
+    <div>
+        <div id="top" style="display: none;" />
+        <a
+            id="return-top"
+            v-scroll-to="{
+                el: '#top',
+                x: false,
+                y: true
+            }"
+            href="#"
+            :class="{ 'return-top--hidden': hideScrollTo }"
+        >
+            <b-icon icon="chevron-double-up" font-scale="2" />
+        </a>
+    </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      hideScrollTo: true,
-      lastScrollPosition: 0
+    data () {
+        return {
+            hideScrollTo: true,
+            lastScrollPosition: 0
+        }
+    },
+    mounted () {
+        window.addEventListener('scroll', this.checkPosition)
+    },
+    beforeDestroy () {
+        window.removeEventListener('scroll', this.checkPosition)
+    },
+    methods: {
+        checkPosition () {
+            const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+            if (currentScrollPosition < 0) {
+                return
+            }
+            // Stop executing this function if the difference between
+            // current scroll position and last scroll position is less than some offset
+            if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
+                return
+            }
+            this.hideScrollTo = currentScrollPosition < this.lastScrollPosition
+            this.lastScrollPosition = currentScrollPosition
+        }
     }
-  },
-  mounted () {
-    window.addEventListener('scroll', this.checkPosition)
-  },
-  beforeDestroy () {
-    window.removeEventListener('scroll', this.checkPosition)
-  },
-  methods: {
-    checkPosition () {
-      const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
-      if (currentScrollPosition < 0) {
-        return
-      }
-      // Stop executing this function if the difference between
-      // current scroll position and last scroll position is less than some offset
-      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
-        return
-      }
-      this.hideScrollTo = currentScrollPosition < this.lastScrollPosition
-      this.lastScrollPosition = currentScrollPosition
-    }
-  }
 }
 </script>
 
 <style scoped>
 #return-top {
-  position: fixed;
-  left: 1rem;
-  bottom: 1rem;
-  width: 45px;
-  height: 45px;
-  z-index: 1010;
-  border: 1px solid var(--colour-font);
-  border-radius: var(--radius-small);
-  color: var(--colour-font);
-  outline: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.25);
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    width: 45px;
+    height: 45px;
+    z-index: 1010;
+    border: 1px solid var(--colour-font);
+    border-radius: var(--radius-small);
+    color: var(--colour-font);
+    outline: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.25);
 }
 #return-top:hover,
 #return-top:active,
 #return-top:focus {
-  text-decoration: none;
-  border: 1px solid var(--colour-link-hover);
-  color: var(--colour-link-hover);
+    text-decoration: none;
+    border: 1px solid var(--colour-link-hover);
+    color: var(--colour-link-hover);
 }
 #return-top.return-top--hidden {
-  display: none;
+    display: none;
 }
 </style>
