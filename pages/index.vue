@@ -11,8 +11,8 @@
         <div class="column-info">
           <div class="body">
             <p>My name is Grazyna Godlewska-Vernon.</p>
-            <p>I am BACP Accredited Integrative Counsellor and BABCP Accredited Cognitive Behavioural Psychotherapist and Supervisor. I am also EMDR practitioner and UK Accredited Mediator.</p>
-            <p>I have been working for over 10 years with clients in the NHS and in private setting. My training in different therapeutic approaches combined with my clinical experience allows me to offer in-depth assessment of your issues and provide treatment which is most suitable for your particular needs.</p>
+            <p>I am BACP Accredited Integrative Counsellor and BABCP Accredited Cognitive Behavioural Psychotherapist and Supervisor. I am also EMDR therapist and UK Accredited Mediator.</p>
+            <p>I worked for over 10 years with clients in the NHS. Currently I work in a private setting and I am employed part-time by BUPA. My training in different therapeutic approaches combined with my clinical experience allows me to offer in-depth assessment of your issues and provide treatment which is most suitable for your particular needs.</p>
           </div>
           <div class="d-flex footer">
             <BookingButton link='/what-to-expect' design="plain">
