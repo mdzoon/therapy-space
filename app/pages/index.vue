@@ -37,8 +37,6 @@
                     controls
                     indicators
                     background="transparent"
-                    img-width="1024"
-                    img-height="200"
                     @slide="onSlideStart"
                     @slid="onSlideEnd"
                 >
@@ -46,8 +44,8 @@
                     <BCarouselSlide
                         v-for="(testimonial, index) in testimonials"
                         :key="index"
-                        img-blank
                     >
+                        <template #img />
                         <div class="text-wrapper">
                             <div>{{ testimonial.content }}<i> {{ testimonial.author }}</i></div>
                         </div>
