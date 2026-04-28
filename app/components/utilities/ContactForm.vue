@@ -5,7 +5,6 @@
             v-if="formVisible"
             class="gform"
             @submit="onSubmit"
-            @reset="onReset"
         >
             <div class="contact-form-elements">
                 <BFormGroup
@@ -17,7 +16,7 @@
                         id="name"
                         v-model="v$.form.name.$model"
                         name="name"
-                        placeholder="Name*"
+                        placeholder="Name *"
                         aria-describedby=""
                     />
                     <p v-if="formSubmitted && v$.form.name.required.$invalid" class="alert-danger mt-1" role="alert">
@@ -37,7 +36,7 @@
                         id="email"
                         v-model="v$.form.email.$model"
                         name="email"
-                        placeholder="Email*"
+                        placeholder="Email *"
                     />
                     <p v-if="formSubmitted && v$.form.email.required.$invalid" class="alert-danger mt-1" role="alert">
                         This field should not be empty
@@ -75,7 +74,7 @@
                         id="message"
                         v-model="v$.form.message.$model"
                         name="message"
-                        placeholder="Type your message here"
+                        placeholder="Message *"
                         rows="3"
                         max-rows="6"
                     />
@@ -117,14 +116,9 @@
                     Please confirm you want me to contact you
                 </p>
 
-                <div class="buttons-wrapper">
-                    <BButton variant="outline-dark" type="submit">
-                        Submit <i class="bi bi-envelope" />
-                    </BButton>
-                    <BButton variant="outline-dark" type="reset">
-                        Reset <i class="bi bi-arrow-counterclockwise" />
-                    </BButton>
-                </div>
+                <BButton variant="outline-dark" type="submit">
+                    Submit <i class="bi bi-envelope" />
+                </BButton>
 
             </div>
         </BForm>
@@ -230,20 +224,6 @@ export default {
                         console.log(error)
                     })
             }
-        },
-        onReset (evt) {
-            evt.preventDefault()
-            this.form.name = ''
-            this.form.email = ''
-            this.form.phone = ''
-            this.form.message = ''
-            this.form.consent = false
-            this.address = ''
-            // Trick to reset/clear native browser form validation state
-            this.formVisible = false
-            this.$nextTick(() => {
-                this.formVisible = true
-            })
         }
     }
 }
@@ -265,7 +245,7 @@ export default {
     margin: 0;
 }
 
-form .form-group {
+form .b-form-group {
     margin-bottom: 3rem;
 }
 form input,
@@ -290,12 +270,12 @@ form input:focus,
 form textarea:focus {
     border-bottom: 2px solid var(--colour-font);
 }
-form .form-group.address {
+form .b-form-group.address {
     visibility: hidden;
     height: 0;
     margin-bottom: 0;
 }
-form .form-group.consent {
+form .b-form-group.consent {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-start;
@@ -310,11 +290,20 @@ form .alert-danger {
     color: #bb1c2b;
     background-color: transparent;
 }
-.buttons-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+:deep(.form-check-input:checked) {
+    background-color: var(--colour-link);
+    border-color: var(--colour-link);
 }
+:deep(.form-check-input:focus) {
+    border-color: var(--colour-link);
+    --bs-form-switch-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23006d8b'/%3E%3C/svg%3E");
+    box-shadow: 0 0 0 .25rem rgba(0, 109, 139, .25);
+}
+:deep(.form-check-input:checked:focus) {
+    --bs-form-switch-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
+}
+
 button {
     border: 1px solid;
     border-color: var(--colour-font);
