@@ -13,11 +13,12 @@ export default {
         link: String,
         design: String
     },
+    emits: ['click'],
     methods: {
         handleClick() {
             this.$emit('click')
         }
-    }   
+    }
 }
 </script>
 
