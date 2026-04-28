@@ -31,6 +31,7 @@
 
                 <BCarousel
                     id="testimonials-carousel"
+                    class="d-flex justify-content-center"
                     v-model="slide"
                     :interval="8000"
                     ride="carousel"
@@ -96,17 +97,13 @@ export default {
 
 .column-box {
     @media only screen and (max-width: 991px) {
-        padding-top: 2rem;
         padding-bottom: 2rem;
-    }
-
-    @media only screen and (min-width: 992px) {
-        padding-right: 5rem;
     }
 
     img {
         width: 100%;
         height: auto;
+        max-width: 360px;
     }
 }
 
@@ -170,6 +167,8 @@ h2 {
 }
 
 .carousel .carousel-inner {
+    display: flex;
+    gap: 10px;
 
     > * {
         height: 620px;
@@ -185,9 +184,9 @@ h2 {
 
     .carousel-caption {
         top: 50%;
-        bottom: 0.5rem;
-        right: 0.5rem;
-        left: 0.5rem;
+        bottom: unset;
+        right: unset;
+        left: unset;
         transform: translateY(-50%);
         color: var(--colour-font);
         font-size: 14px;
