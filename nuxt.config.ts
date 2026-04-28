@@ -3,8 +3,6 @@ const mainBaseURL = 'https://www.therapy-space.uk/'
 export default defineNuxtConfig({
     compatibilityDate: '2026-04-27',
 
-    srcDir: '.',
-
     nitro: {
         preset: 'static'
     },
