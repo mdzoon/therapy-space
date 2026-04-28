@@ -56,7 +56,7 @@
 <script>
 import { mapStores } from 'pinia'
 import slider from '@/components/slider.vue'
-import dataMixin from '@/content/dataMixin.js'
+import dataMixin from '@/mixins/dataMixin.js'
 export default {
     components: {
         slider

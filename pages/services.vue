@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import dataMixin from '@/content/dataMixin.js'
+import dataMixin from '@/mixins/dataMixin.js'
 import service from '@/components/service.vue'
 
 export default {
