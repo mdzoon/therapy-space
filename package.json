@@ -7,7 +7,9 @@
         "dev": "nuxt dev",
         "build": "nuxt build",
         "preview": "nuxt preview",
-        "generate": "nuxt generate"
+        "generate": "nuxt generate",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
     },
     "dependencies": {
         "@bootstrap-vue-next/nuxt": "~0.44.7",
