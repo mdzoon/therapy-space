@@ -1,9 +1,9 @@
 <template>
     <main>
-        <div class="d-none d-lg-block background-holder-right"></div>
+        <div class="d-none d-lg-block background-holder-right"/>
         <b-container>
             <div class="image-holder">
-                <div class="image-overlay"></div>
+                <div class="image-overlay"/>
                 <h1>Contact Me</h1>
             </div>
             <b-row>

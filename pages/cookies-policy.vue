@@ -1,9 +1,9 @@
 <template>
     <main>
-        <div class="background-holder-left"></div>
+        <div class="background-holder-left"/>
         <b-container>
             <div class="image-holder">
-                <div class="image-overlay"></div>
+                <div class="image-overlay"/>
                 <h1>Cookies Policy</h1>
             </div>
             <h3>Good news! This website does not use any cookies.</h3> 

@@ -5,7 +5,7 @@
             <h3 class="modal-title">
                 Set your preferences
             </h3>
-            <p></p>
+            <p/>
         </template>
     </CookieControl>
 </template>

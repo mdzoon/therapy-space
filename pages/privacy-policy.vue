@@ -1,9 +1,9 @@
 <template>
     <main>
-        <div class="background-holder-left"></div>
+        <div class="background-holder-left"/>
         <b-container>
             <div class="image-holder">
-                <div class="image-overlay"></div>
+                <div class="image-overlay"/>
                 <h1>Privacy Policy</h1>
             </div>
             <p>

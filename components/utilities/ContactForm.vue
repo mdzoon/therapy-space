@@ -2,10 +2,10 @@
     <div class="form-container">
 
         <b-form
+            v-if="formVisible"
             class="gform"
             @submit="onSubmit"
             @reset="onReset"
-            v-if="formVisible"
         >
             <div class="contact-form-elements">
                 <b-form-group
@@ -19,11 +19,11 @@
                         name="name"
                         placeholder="Name*"
                         aria-describedby=""
-                    ></b-form-input>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.name.required.$invalid">
+                    />
+                    <p v-if="formSubmitted && v$.form.name.required.$invalid" class="alert-danger mt-1" role="alert">
                         This field should not be empty
                     </p>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.name.minLength.$invalid">
+                    <p v-if="formSubmitted && v$.form.name.minLength.$invalid" class="alert-danger mt-1" role="alert">
                         Your name must contain at least {{v$.form.name.minLength.$params.min}} letters.
                     </p>
                 </b-form-group>
@@ -38,11 +38,11 @@
                         v-model="v$.form.email.$model"
                         name="email"
                         placeholder="Email*"
-                    ></b-form-input>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.email.required.$invalid">
+                    />
+                    <p v-if="formSubmitted && v$.form.email.required.$invalid" class="alert-danger mt-1" role="alert">
                         This field should not be empty
                     </p>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.email.email.$invalid">
+                    <p v-if="formSubmitted && v$.form.email.email.$invalid" class="alert-danger mt-1" role="alert">
                         Please provide valid email
                     </p>
                 </b-form-group>
@@ -57,11 +57,11 @@
                         v-model="v$.form.phone.$model"
                         name="phone"
                         placeholder="Phone"
-                    ></b-form-input>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.phone.numeric.$invalid">
+                    />
+                    <p v-if="formSubmitted && v$.form.phone.numeric.$invalid" class="alert-danger mt-1" role="alert">
                         Please enter only numbers
                     </p>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.phone.minLength.$invalid">
+                    <p v-if="formSubmitted && v$.form.phone.minLength.$invalid" class="alert-danger mt-1" role="alert">
                         The phone number must be at least 10 digit long.
                     </p>
                 </b-form-group>
@@ -78,11 +78,11 @@
                         placeholder="Type your message here"
                         rows="3"
                         max-rows="6"
-                    ></b-form-textarea>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.message.required.$invalid">
+                    />
+                    <p v-if="formSubmitted && v$.form.message.required.$invalid" class="alert-danger mt-1" role="alert">
                         This field should not be empty
                     </p>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.message.minLength.$invalid">
+                    <p v-if="formSubmitted && v$.form.message.minLength.$invalid" class="alert-danger mt-1" role="alert">
                         This message must have at least {{v$.form.message.minLength.$params.min}} characters.
                     </p>
                 </b-form-group>
@@ -97,7 +97,7 @@
                         v-model="address"
                         name="address"
                         placeholder="Your address"
-                    ></b-form-input>
+                    />
                 </b-form-group>
 
                 <b-form-group
@@ -113,7 +113,7 @@
                     <label class="consent" for="consent">* I take your privacy seriously. To find out more please visit <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink> page.</label>
                     </b-form-checkbox>
                 </b-form-group>
-                <p class="alert-danger mt-1 consent" role="alert" v-if="formSubmitted && !v$.form.consent.$model">
+                <p v-if="formSubmitted && !v$.form.consent.$model" class="alert-danger mt-1 consent" role="alert">
                     Please confirm you want me to contact you
                 </p>
 
@@ -131,8 +131,8 @@
 
         <div class="response-container mt-3">
             <h3 v-if="submitStatus === 'OK'">Thank you for contacting me. I will get back to you soon.</h3>
-            <p class="alert-danger" role="alert" v-if="submitStatus === 'ERROR'">Something gone wrong. Please contact website administrator</p>
-            <p class="alert-info" role="alert" v-if="submitStatus === 'PENDING'">Sending...</p>
+            <p v-if="submitStatus === 'ERROR'" class="alert-danger" role="alert">Something gone wrong. Please contact website administrator</p>
+            <p v-if="submitStatus === 'PENDING'" class="alert-info" role="alert">Sending...</p>
         </div>
     </div>
 </template>

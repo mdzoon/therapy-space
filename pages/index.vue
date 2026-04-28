@@ -1,6 +1,6 @@
 <template>
     <main class="container">
-        <div class="d-none d-lg-block background-holder-right"></div>
+        <div class="d-none d-lg-block background-holder-right"/>
         <b-row>
             <b-col lg="6" class="left">
                 <div class="column-box">
@@ -15,7 +15,7 @@
                         <p>I worked for over 10 years with clients in the NHS. Currently I work in a private setting and I am employed part-time by BUPA. My training in different therapeutic approaches combined with my clinical experience allows me to offer in-depth assessment of your issues and provide treatment which is most suitable for your particular needs.</p>
                     </div>
                     <div class="d-flex footer">
-                        <BookingButton @click="onButtonClick" link='/what-to-expect' design="plain">
+                        <BookingButton link='/what-to-expect' design="plain" @click="onButtonClick">
                             Learn more about my work and my qualifications
                             <i class="bi bi-arrow-right" />
                         </BookingButton>
@@ -44,7 +44,7 @@
                     @sliding-end="onSlideEnd"
                 >
 
-                    <slider v-for="(testimonial, index) in testimonials" :key="index" :testimonial="testimonial"/>
+                    <TestimonialSlide v-for="(testimonial, index) in testimonials" :key="index" :testimonial="testimonial"/>
 
                 </b-carousel>
 
@@ -55,27 +55,27 @@
 
 <script>
 import { mapStores } from 'pinia'
-import slider from '@/components/slider.vue'
+import TestimonialSlide from '@/components/TestimonialSlide.vue'
 import dataMixin from '@/mixins/dataMixin.js'
 export default {
     components: {
-        slider
+        TestimonialSlide
     },
     mixins: [dataMixin],
-    computed: {
-        ...mapStores(useQualificationsStore)
-    },
     data() {
         return {
             slide: 0,
             sliding: null
         }
     },
+    computed: {
+        ...mapStores(useQualificationsStore)
+    },
     methods: {
-        onSlideStart(slide) {
+        onSlideStart() {
             this.sliding = true
         },
-        onSlideEnd(slide) {
+        onSlideEnd() {
             this.sliding = false
         },
         onButtonClick() {

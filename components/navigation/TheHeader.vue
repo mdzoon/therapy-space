@@ -8,9 +8,9 @@
                     <span>Therapy Space</span>
                 </b-navbar-brand>
 
-                <b-navbar-toggle @click="hideOverflow" target="nav-text-collapse">
-                    <img class="listNav" src="~/assets/images/list.svg" />
-                    <img class="closeNav" src="~/assets/images/close.svg" />
+                <b-navbar-toggle target="nav-text-collapse" @click="hideOverflow">
+                    <img class="listNav" src="~/assets/images/list.svg" >
+                    <img class="closeNav" src="~/assets/images/close.svg" >
                 </b-navbar-toggle>
 
                 <b-collapse id="nav-text-collapse" is-nav>
@@ -47,7 +47,7 @@
 
                     </b-navbar-nav>
 
-                    <div class="navbar-overlay"></div>
+                    <div class="navbar-overlay"/>
 
                 </b-collapse>
 
@@ -65,7 +65,7 @@ export default {
         window.removeEventListener('scroll', this.onScroll)
     },
     methods: {
-        onScroll (e) {
+        onScroll () {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                 document.querySelector('.navbar').classList.add('on-scroll')
             } else {
@@ -78,7 +78,11 @@ export default {
             const elNav = document.querySelector('#nav-text-collapse')
             const classesNav = elNav.classList
 
-            Object.values(classesNav).includes("show") ? classesBody.remove("hideOverflow") : classesBody.add("hideOverflow")
+            if (classesNav.contains("show")) {
+                classesBody.remove("hideOverflow")
+            } else {
+                classesBody.add("hideOverflow")                   
+            }
         },
         clearOverflow() {
             const el = document.querySelector('body')

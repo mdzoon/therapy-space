@@ -1,13 +1,14 @@
 <template>
     <div class="container service-wrapper">
         <div class="mb-5 mt-5 therapy-card">
-            <div :id="service.id" class="anchor"></div>
+            <div :id="service.id" class="anchor"/>
             <div :class="['container-' + service.id]" class="therapy-header w-100">
                 <h3>{{ service.name }}</h3>
             </div>
             <div class="therapy-body">
-                <div v-html="service.content"></div>
-                <div class="testimonial" v-if="service.testimonial">
+                <!-- eslint-disable-next-line vue/no-v-html -->
+                <div v-html="service.content"/>
+                <div v-if="service.testimonial" class="testimonial">
                     <b>Success story: </b>
                     <q><i>{{ service.testimonial.content }}</i></q>
                     <i> {{ service.testimonial.author }}</i>

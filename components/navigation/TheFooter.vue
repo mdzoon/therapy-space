@@ -1,6 +1,6 @@
 <template>
     <footer class="footer-wrapper">
-        <div class="page-break"></div>
+        <div class="page-break"/>
         <b-container>
             <b-row class="mt-5 mb-3">
                 <b-col md="6" class="d-flex flex-column justify-content-between col-left">

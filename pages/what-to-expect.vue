@@ -1,11 +1,11 @@
 <template>
     <main>
-        <div class="background-holder-left"></div>
+        <div class="background-holder-left"/>
         <div class="container">
             <div class="accordion" role="tablist">
                 <b-card no-body class="mb-1">
                     <b-card-header header-tag="div" role="tab">
-                        <b-button class="w-100" v-b-toggle.vision variant="info">
+                        <b-button v-b-toggle.vision class="w-100" variant="info">
                             How I Work
                             <i class="bi bi-plus" />
                             <i class="bi bi-dash" />
@@ -25,7 +25,7 @@
 
                 <b-card no-body class="mb-1">
                     <b-card-header header-tag="div" role="tab">
-                        <b-button class="w-100" v-b-toggle.my-qualifications variant="info" id="qualifications-tab">
+                        <b-button id="qualifications-tab" v-b-toggle.my-qualifications class="w-100" variant="info">
                             My Qualifications
                             <i class="bi bi-plus" />
                             <i class="bi bi-dash" />
@@ -64,7 +64,7 @@
 
                 <b-card no-body class="mb-1">
                     <b-card-header header-tag="div" role="tab">
-                        <b-button class="w-100" v-b-toggle.how-do-i-work variant="info">
+                        <b-button v-b-toggle.how-do-i-work class="w-100" variant="info">
                             Initial Contact
                             <i class="bi bi-plus" />
                             <i class="bi bi-dash" />
@@ -82,7 +82,7 @@
 
                 <b-card no-body class="mb-1">
                     <b-card-header header-tag="div" role="tab">
-                        <b-button class="w-100" v-b-toggle.fees variant="info">
+                        <b-button v-b-toggle.fees class="w-100" variant="info">
                             My Fees
                             <i class="bi bi-plus" />
                             <i class="bi bi-dash" />
