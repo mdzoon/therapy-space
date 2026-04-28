@@ -184,13 +184,10 @@ export default {
                 @media only screen and (min-width: 992px) and (max-width: 1199px) {
                     font-size: smaller;
                 }
-            }
 
-            &:hover,
-            &:focus,
-            &:active {
-                a,
-                button {
+                &:hover,
+                &:focus,
+                &:active {
                     color: var(--colour-link-hover) !important;
                 }
             }
