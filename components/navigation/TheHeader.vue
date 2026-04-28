@@ -3,7 +3,7 @@
         <b-navbar toggleable="lg" fixed="top" class="container-fluid">
             <div class="container">
 
-                <b-navbar-brand href="/" class="font-secondary">
+                <b-navbar-brand to="/" class="font-secondary">
                     <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo">
                     <span>Therapy Space</span>
                 </b-navbar-brand>
@@ -14,11 +14,11 @@
                 </b-navbar-toggle>
 
                 <b-collapse id="nav-text-collapse" is-nav>
-                    <b-navbar-nav class="ml-auto">
+                    <b-navbar-nav class="ms-auto">
 
                         <li class="nav-item" @click="clearOverflow"><NuxtLink to="/" class="nav-link">About Me</NuxtLink></li>
 
-                        <b-nav-item-dropdown text="How I Can Help" right>
+                        <b-nav-item-dropdown text="How I Can Help" end>
                             <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                                 <NuxtLink to="/services/#cbt" role="menuitem" target="_self" class="dropdown-item">CBT</NuxtLink>
                             </li>
@@ -61,7 +61,7 @@ export default {
     mounted () {
         window.addEventListener('scroll', this.onScroll)
     },
-    beforeDestroy () {
+    beforeUnmount () {
         window.removeEventListener('scroll', this.onScroll)
     },
     methods: {
@@ -86,7 +86,7 @@ export default {
             classes.remove("hideOverflow")      
         },
         hideDropdown() {
-            const elNav = document.querySelector('.nav-item.b-nav-dropdown.dropdown')
+            const elNav = document.querySelector('.nav-item.dropdown')
             const classesNav = elNav.classList
             const a = document.querySelector('a.dropdown-toggle')
             const elMenu = document.querySelector('.dropdown-menu')
