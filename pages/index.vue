@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import { mapStores } from 'pinia'
 import slider from '@/components/slider.vue'
 import dataMixin from '@/content/dataMixin.js'
 export default {
@@ -61,6 +62,9 @@ export default {
         slider
     },
     mixins: [dataMixin],
+    computed: {
+        ...mapStores(useQualificationsStore)
+    },
     data() {
         return {
             slide: 0,
@@ -75,8 +79,8 @@ export default {
             this.sliding = false
         },
         onButtonClick() {
-            this.$store.commit('triggerQualifications')
-        }    
+            this.qualificationsStore.toggle()
+        }
     },
 }
 </script>

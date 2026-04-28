@@ -106,11 +106,15 @@
 </template>
 
 <script>
+import { mapStores } from 'pinia'
 export default {
+    computed: {
+        ...mapStores(useQualificationsStore)
+    },
     mounted() {
-        if (this.$store.state.isQualificationsOpen) {
+        if (this.qualificationsStore.isOpen) {
             this.$root.$emit('bv::toggle::collapse', 'my-qualifications')
-            this.$store.commit('triggerQualifications')
+            this.qualificationsStore.toggle()
         }
     }
 }
