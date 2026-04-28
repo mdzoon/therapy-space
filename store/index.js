@@ -1,6 +1,8 @@
 export default {
-    state: {
-        isQualificationsOpen: false
+    state() {
+        return {
+            isQualificationsOpen: false
+        }
     },
     mutations: {
         triggerQualifications(state) {
@@ -8,5 +10,6 @@ export default {
         }
     }
 }
+
   
   
