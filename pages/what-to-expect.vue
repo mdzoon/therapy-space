@@ -25,7 +25,7 @@
 
         <b-card no-body class="mb-1">
           <b-card-header header-tag="div" role="tab">
-            <b-button block v-b-toggle.my-qualifications variant="info">
+            <b-button block v-b-toggle.my-qualifications variant="info" id="qualifications-tab">
               My Qualifications
               <b-icon icon="plus"></b-icon>
               <b-icon icon="dash"></b-icon>
@@ -104,6 +104,17 @@
     </div>
   </main>
 </template>
+
+<script>
+export default {
+  mounted() {
+    if (this.$store.state.isQualificationsOpen) {
+      this.$root.$emit('bv::toggle::collapse', 'my-qualifications')
+      this.$store.commit('triggerQualifications')
+    }
+  }
+}
+</script>
 
 <style scoped>
 .accordion .card,

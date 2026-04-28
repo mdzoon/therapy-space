@@ -1,6 +1,6 @@
 <template>
   <NuxtLink :to="link">
-    <button class="btn" :class="design" type="button">
+    <button class="btn" @click="handleClick" :class="design" type="button">
       <slot>Contact Me</slot>
     </button>
   </NuxtLink>
@@ -12,7 +12,12 @@ export default {
   props: {
     link: String,
     design: String
-  }  
+  },
+  methods: {
+    handleClick() {
+      this.$emit('click')
+    }
+  }   
 }
 </script>
 

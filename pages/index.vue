@@ -15,7 +15,7 @@
             <p>I worked for over 10 years with clients in the NHS. Currently I work in a private setting and I am employed part-time by BUPA. My training in different therapeutic approaches combined with my clinical experience allows me to offer in-depth assessment of your issues and provide treatment which is most suitable for your particular needs.</p>
           </div>
           <div class="d-flex footer">
-            <BookingButton link='/what-to-expect' design="plain">
+            <BookingButton @click="onButtonClick" link='/what-to-expect' design="plain">
               Learn more about my work and my qualifications
               <b-icon icon="arrow-right"></b-icon>
             </BookingButton>
@@ -73,8 +73,11 @@ export default {
     },
     onSlideEnd(slide) {
       this.sliding = false
-    }
-  }
+    },
+    onButtonClick() {
+      this.$store.commit('triggerQualifications')
+    }    
+  },
 }
 </script>
 
