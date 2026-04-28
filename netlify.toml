@@ -1,3 +1,7 @@
+[build]
+    command = "npm run generate"
+    publish = ".output/public"
+
 [[redirects]]
     from = "/*"
     to = "/404.html"
