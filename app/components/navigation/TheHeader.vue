@@ -227,7 +227,7 @@ export default {
     align-items: center;
     letter-spacing: 3px;
     font-size: 1.5rem;
-    background-image: url("~assets/images/logo-background.svg");
+    background-image: url("~/assets/images/logo-background.svg");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

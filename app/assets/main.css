@@ -58,7 +58,7 @@ main {
     }
 }
 main .container .image-holder {
-    background-image: url("~assets/images/magnolia-horizontal-bar.svg");
+    background-image: url("images/magnolia-horizontal-bar.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -119,7 +119,7 @@ main a:hover {
     font-family: var(--font-secondary);
 }
 .background-holder-left {
-    background-image: url('~/assets/images/magnolia-close-up.svg');
+    background-image: url('images/magnolia-close-up.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -141,7 +141,7 @@ main a:hover {
     }
 }  
 .background-holder-right {
-    background-image: url('~/assets/images/magnolia-close-up-sq.svg');
+    background-image: url('images/magnolia-close-up-sq.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
