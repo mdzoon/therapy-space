@@ -179,7 +179,7 @@ export default {
         .nav-item {
             a,
             button {
-                color: var(--colour-link) !important;
+                color: var(--colour-link);
 
                 @media only screen and (min-width: 992px) and (max-width: 1199px) {
                     font-size: smaller;
@@ -188,8 +188,11 @@ export default {
                 &:hover,
                 &:focus,
                 &:active {
-                    color: var(--colour-link-hover) !important;
+                    color: var(--colour-link-hover);
                 }
+                &:active {
+                    background-color: var(--colour-background);
+                }                
             }
 
             .dropdown-toggle::after {
