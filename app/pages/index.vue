@@ -33,16 +33,25 @@
                     id="testimonials-carousel"
                     v-model="slide"
                     :interval="8000"
+                    ride="carousel"
                     controls
                     indicators
                     background="transparent"
                     img-width="1024"
                     img-height="200"
-                    @sliding-start="onSlideStart"
-                    @sliding-end="onSlideEnd"
+                    @slide="onSlideStart"
+                    @slid="onSlideEnd"
                 >
 
-                    <TestimonialSlide v-for="(testimonial, index) in testimonials" :key="index" :testimonial="testimonial"/>
+                    <BCarouselSlide
+                        v-for="(testimonial, index) in testimonials"
+                        :key="index"
+                        img-blank
+                    >
+                        <div class="text-wrapper">
+                            <div>{{ testimonial.content }}<i> {{ testimonial.author }}</i></div>
+                        </div>
+                    </BCarouselSlide>
 
                 </BCarousel>
 
@@ -53,12 +62,8 @@
 
 <script>
 import { mapStores } from 'pinia'
-import TestimonialSlide from '@/components/TestimonialSlide.vue'
 import dataMixin from '@/mixins/dataMixin.js'
 export default {
-    components: {
-        TestimonialSlide
-    },
     mixins: [dataMixin],
     data() {
         return {
@@ -137,6 +142,96 @@ h2 {
     @media only screen and (min-width: 992px) {
         margin-top: 9rem;
         font-size: 2rem;
+    }
+}
+</style>
+
+<style lang="scss">
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: none;
+    transform: rotate(45deg);
+}
+
+.carousel-control-prev-icon {
+    border-left: 4px solid var(--colour-link);
+    border-bottom: 4px solid var(--colour-link);
+}
+
+.carousel-control-next-icon {
+    border-right: 4px solid var(--colour-link);
+    border-top: 4px solid var(--colour-link);
+}
+
+.carousel {
+    --bs-carousel-indicator-active-bg: var(--colour-link);
+}
+
+.carousel-indicators {
+    bottom: -30px;
+}
+
+.carousel .carousel-inner {
+
+    > * {
+        height: 620px;
+
+        @media only screen and (min-width: 400px) {
+            height: 560px;
+        }
+
+        @media only screen and (min-width: 500px) {
+            height: 480px;
+        }
+    }
+
+    .carousel-caption {
+        top: 50%;
+        bottom: 0.5rem;
+        right: 0.5rem;
+        left: 0.5rem;
+        transform: translateY(-50%);
+        color: var(--colour-font);
+        font-size: 14px;
+        height: 100%;
+
+        .text-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background-color: var(--colour-secondary-light);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), calc(100% - 80px) 100%, 0 100%);
+            height: 100%;
+
+            i {
+                white-space: nowrap;
+            }
+        }
+
+        @media only screen and (min-width: 400px) {
+            font-size: initial;
+        }
+
+        @media only screen and (min-width: 768px) {
+            right: 15%;
+            left: 15%;
+        }
+
+        @media only screen and (min-width: 992px) {
+            font-size: 1.25rem;
+
+            .text-wrapper {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        display: block;
     }
 }
 </style>
