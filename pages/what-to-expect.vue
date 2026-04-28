@@ -5,10 +5,10 @@
             <div class="accordion" role="tablist">
                 <b-card no-body class="mb-1">
                     <b-card-header header-tag="div" role="tab">
-                        <b-button block v-b-toggle.vision variant="info">
+                        <b-button class="w-100" v-b-toggle.vision variant="info">
                             How I Work
-                            <b-icon icon="plus"></b-icon>
-                            <b-icon icon="dash"></b-icon>
+                            <i class="bi bi-plus" />
+                            <i class="bi bi-dash" />
                         </b-button>
                     </b-card-header>
                     <b-collapse id="vision" visible accordion="accordion" role="tabpanel">
@@ -25,10 +25,10 @@
 
                 <b-card no-body class="mb-1">
                     <b-card-header header-tag="div" role="tab">
-                        <b-button block v-b-toggle.my-qualifications variant="info" id="qualifications-tab">
+                        <b-button class="w-100" v-b-toggle.my-qualifications variant="info" id="qualifications-tab">
                             My Qualifications
-                            <b-icon icon="plus"></b-icon>
-                            <b-icon icon="dash"></b-icon>
+                            <i class="bi bi-plus" />
+                            <i class="bi bi-dash" />
                         </b-button>
                     </b-card-header>
                     <b-collapse id="my-qualifications" accordion="accordion" role="tabpanel">
@@ -64,10 +64,10 @@
 
                 <b-card no-body class="mb-1">
                     <b-card-header header-tag="div" role="tab">
-                        <b-button block v-b-toggle.how-do-i-work variant="info">
+                        <b-button class="w-100" v-b-toggle.how-do-i-work variant="info">
                             Initial Contact
-                            <b-icon icon="plus"></b-icon>
-                            <b-icon icon="dash"></b-icon>
+                            <i class="bi bi-plus" />
+                            <i class="bi bi-dash" />
                         </b-button>
                     </b-card-header>
                     <b-collapse id="how-do-i-work" accordion="accordion" role="tabpanel">
@@ -82,10 +82,10 @@
 
                 <b-card no-body class="mb-1">
                     <b-card-header header-tag="div" role="tab">
-                        <b-button block v-b-toggle.fees variant="info">
+                        <b-button class="w-100" v-b-toggle.fees variant="info">
                             My Fees
-                            <b-icon icon="plus"></b-icon>
-                            <b-icon icon="dash"></b-icon>
+                            <i class="bi bi-plus" />
+                            <i class="bi bi-dash" />
                         </b-button>
                     </b-card-header>
                     <b-collapse id="fees" accordion="accordion" role="tabpanel">
@@ -113,7 +113,7 @@ export default {
     },
     mounted() {
         if (this.qualificationsStore.isOpen) {
-            this.$root.$emit('bv::toggle::collapse', 'my-qualifications')
+            document.getElementById('qualifications-tab')?.click()
             this.qualificationsStore.toggle()
         }
     }
@@ -183,7 +183,7 @@ export default {
 .accordion .card .card-header button.not-collapsed .bi-plus {
     opacity: 0;
 }
-.accordion .card-header svg {
+.accordion .card-header .bi {
     position: absolute;
     top: 50%;
     right: 10px;

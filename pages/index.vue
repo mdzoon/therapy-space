@@ -17,11 +17,11 @@
                     <div class="d-flex footer">
                         <BookingButton @click="onButtonClick" link='/what-to-expect' design="plain">
                             Learn more about my work and my qualifications
-                            <b-icon icon="arrow-right"></b-icon>
+                            <i class="bi bi-arrow-right" />
                         </BookingButton>
                         <BookingButton link='/contact' design="plain">
                             Book appointment with me
-                            <b-icon icon="arrow-right"></b-icon>
+                            <i class="bi bi-arrow-right" />
                         </BookingButton>
                     </div>
                 </div>

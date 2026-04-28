@@ -19,13 +19,13 @@
                         <ul>
                             <li>
                                 <a href="tel:7970014122">
-                                    <b-icon icon="telephone"></b-icon>
+                                    <i class="bi bi-telephone" />
                                     <div>(+44) 7970014122</div>
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:grazyna@thinkcbt.com">
-                                    <b-icon icon="envelope"></b-icon>           
+                                    <i class="bi bi-envelope" />
                                     <div>grazyna@thinkcbt.com</div>
                                 </a>
                             </li>
@@ -66,7 +66,7 @@ export default {
     padding-top: .5rem;
     padding-bottom: .5rem;
 }
-.column-address ul li a svg {
+.column-address ul li a i {
     margin-right: 1rem;
 }
 @media only screen and (max-width: 991px) {
