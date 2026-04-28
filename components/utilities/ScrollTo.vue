@@ -1,17 +1,12 @@
 <template>
     <div>
-        <div id="top" style="display: none;" />
         <a
             id="return-top"
-            v-scroll-to="{
-                el: '#top',
-                x: false,
-                y: true
-            }"
             href="#"
             :class="{ 'return-top--hidden': hideScrollTo }"
+            @click.prevent="scrollToTop"
         >
-            <b-icon icon="chevron-double-up" font-scale="2" />
+            <i class="bi bi-chevron-double-up" />
         </a>
     </div>
 </template>
@@ -27,17 +22,18 @@ export default {
     mounted () {
         window.addEventListener('scroll', this.checkPosition)
     },
-    beforeDestroy () {
+    beforeUnmount () {
         window.removeEventListener('scroll', this.checkPosition)
     },
     methods: {
+        scrollToTop () {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        },
         checkPosition () {
-            const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+            const currentScrollPosition = window.scrollY
             if (currentScrollPosition < 0) {
                 return
             }
-            // Stop executing this function if the difference between
-            // current scroll position and last scroll position is less than some offset
             if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
                 return
             }
@@ -64,6 +60,7 @@ export default {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.25);
+    font-size: 1.5rem;
 }
 #return-top:hover,
 #return-top:active,
