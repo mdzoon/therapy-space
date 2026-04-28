@@ -6,6 +6,7 @@
         <b-col md="6" class="d-flex flex-column justify-content-between col-left">
           <nav class="nav d-flex d-md-none justify-content-center">
             <NuxtLink to="/">About Me</NuxtLink>
+            <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
             <NuxtLink to="/cookies-policy">Cookies Policy</NuxtLink>
           </nav>
           <div class="footer-advice text-center">
@@ -23,6 +24,7 @@
         <b-col md="6" class="col-right d-flex flex-column justify-content-between">
           <nav class="nav d-none d-md-flex justify-content-center">
             <NuxtLink to="/">About Me</NuxtLink>
+            <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
             <NuxtLink to="/cookies-policy">Cookies Policy</NuxtLink>
           </nav>
           <div class="logo-wrapper">
