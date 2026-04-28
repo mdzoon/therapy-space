@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="background-holder-left"/>
-        <b-container>
+        <BContainer>
             <div class="image-holder">
                 <div class="image-overlay"/>
                 <h1>Privacy Policy</h1>
@@ -30,6 +30,6 @@
             <p>
                 By receiving therapy services, you acknowledge and consent to the collection and processing of your data as described above.
             </p>
-        </b-container>
+        </BContainer>
     </main>
 </template>

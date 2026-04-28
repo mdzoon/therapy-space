@@ -1,10 +1,10 @@
 <template>
     <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-    <b-carousel-slide img-blank>
+    <BCarouselSlide img-blank>
         <div class="text-wrapper">
             <div>{{ testimonial.content }}<i> {{ testimonial.author }}</i></div>
         </div>
-    </b-carousel-slide>
+    </BCarouselSlide>
 </template>
 
 <script>

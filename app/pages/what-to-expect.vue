@@ -3,37 +3,37 @@
         <div class="background-holder-left"/>
         <div class="container">
             <div class="accordion" role="tablist">
-                <b-card no-body class="mb-1">
-                    <b-card-header header-tag="div" role="tab">
-                        <b-button v-b-toggle.vision class="w-100" variant="info">
+                <BCard no-body class="mb-1">
+                    <BCardHeader header-tag="div" role="tab">
+                        <BButton v-b-toggle.vision class="w-100" variant="info">
                             How I Work
                             <i class="bi bi-plus" />
                             <i class="bi bi-dash" />
-                        </b-button>
-                    </b-card-header>
-                    <b-collapse id="vision" visible accordion="accordion" role="tabpanel">
-                        <b-card-body>
-                            <b-card-text>
+                        </BButton>
+                    </BCardHeader>
+                    <BCollapse id="vision" visible accordion="accordion" role="tabpanel">
+                        <BCardBody>
+                            <BCardText>
                                 <p>I see my role as helping you to understand yourself and your interactions with others clearer. This will help you to make better-informed and more beneficial choices in your life. I work in an open, empathic and transparent manner providing a safe and non-judgemental space to explore your issues. I believe that therapeutic relationship is crucial and plays a key role in positive therapy outcomes.</p>
                                 <p>I have worked effectively with people who present with a range of issues including depression, social anxiety, low self-esteem, general anxiety, panic attacks, OCD, PTSD and childhood trauma. I provide support for those who have experienced loss or bereavement in their lives. If you have any family problems that impact on your life you might want to address this in therapy. I also offer help with anger management.</p>
                                 <p>I have a clinic for face-to-face therapy on the High Street in Tunbridge Wells and I also offer therapy remotely via Zoom. An email address is required for Zoom, as well as access to a webcam on your device. Payment can be made via bank transfer.</p>
                                 <p>I offer sessions in English and in Polish.</p>                    
-                            </b-card-text>
-                        </b-card-body>
-                    </b-collapse>
-                </b-card>
+                            </BCardText>
+                        </BCardBody>
+                    </BCollapse>
+                </BCard>
 
-                <b-card no-body class="mb-1">
-                    <b-card-header header-tag="div" role="tab">
-                        <b-button id="qualifications-tab" v-b-toggle.my-qualifications class="w-100" variant="info">
+                <BCard no-body class="mb-1">
+                    <BCardHeader header-tag="div" role="tab">
+                        <BButton id="qualifications-tab" v-b-toggle.my-qualifications class="w-100" variant="info">
                             My Qualifications
                             <i class="bi bi-plus" />
                             <i class="bi bi-dash" />
-                        </b-button>
-                    </b-card-header>
-                    <b-collapse id="my-qualifications" accordion="accordion" role="tabpanel">
-                        <b-card-body>
-                            <b-card-text>
+                        </BButton>
+                    </BCardHeader>
+                    <BCollapse id="my-qualifications" accordion="accordion" role="tabpanel">
+                        <BCardBody>
+                            <BCardText>
                                 <h3>Memberships:</h3>
                                 <ul>
                                     <li>2021 - UK Mediation Accredited Mediator</li>
@@ -57,46 +57,46 @@
                                     <li>2006 - Certificate in Counselling Studies at University of Kent</li>
                                     <li>2002 - Masters in Psychology at Uniwersytet im. Kard. St. Wyszynskiego in Warsaw, Poland </li>
                                 </ul>
-                            </b-card-text>
-                        </b-card-body>
-                    </b-collapse>
-                </b-card>
+                            </BCardText>
+                        </BCardBody>
+                    </BCollapse>
+                </BCard>
 
-                <b-card no-body class="mb-1">
-                    <b-card-header header-tag="div" role="tab">
-                        <b-button v-b-toggle.how-do-i-work class="w-100" variant="info">
+                <BCard no-body class="mb-1">
+                    <BCardHeader header-tag="div" role="tab">
+                        <BButton v-b-toggle.how-do-i-work class="w-100" variant="info">
                             Initial Contact
                             <i class="bi bi-plus" />
                             <i class="bi bi-dash" />
-                        </b-button>
-                    </b-card-header>
-                    <b-collapse id="how-do-i-work" accordion="accordion" role="tabpanel">
-                        <b-card-body>
-                            <b-card-text>
+                        </BButton>
+                    </BCardHeader>
+                    <BCollapse id="how-do-i-work" accordion="accordion" role="tabpanel">
+                        <BCardBody>
+                            <BCardText>
                                 <p>I respond to your query by e-mail or telephone according to your stated preference. If you wish I am happy to have a 10-15 min discussion over the phone which is free of charge.</p>
                                 <p>I offer an initial assessment of your psychological needs which takes up to 60 minutes and the fee is £70. The assessment gives us an opportunity to meet and discuss how we can work together. I aim to gather some information about yourself, your current problems that you wish to address in therapy and any relevant past information that has contributed to your current issues. I aim to answer any questions you have and clarify your therapy expectations. The assessment helps us both decide how we can continue working together.</p>
-                            </b-card-text>
-                        </b-card-body>
-                    </b-collapse>
-                </b-card>          
+                            </BCardText>
+                        </BCardBody>
+                    </BCollapse>
+                </BCard>          
 
-                <b-card no-body class="mb-1">
-                    <b-card-header header-tag="div" role="tab">
-                        <b-button v-b-toggle.fees class="w-100" variant="info">
+                <BCard no-body class="mb-1">
+                    <BCardHeader header-tag="div" role="tab">
+                        <BButton v-b-toggle.fees class="w-100" variant="info">
                             My Fees
                             <i class="bi bi-plus" />
                             <i class="bi bi-dash" />
-                        </b-button>
-                    </b-card-header>
-                    <b-collapse id="fees" accordion="accordion" role="tabpanel">
-                        <b-card-body>
-                            <b-card-text>
+                        </BButton>
+                    </BCardHeader>
+                    <BCollapse id="fees" accordion="accordion" role="tabpanel">
+                        <BCardBody>
+                            <BCardText>
                                 <p>My fee is £70 for 50 minutes of therapy session.</p>
                                 <p>In case you cancel the appointment with less than 24h notice it would be charged at 100% rate.</p>                
-                            </b-card-text>
-                        </b-card-body>
-                    </b-collapse>
-                </b-card>
+                            </BCardText>
+                        </BCardBody>
+                    </BCollapse>
+                </BCard>
 
                 <BookingButton class="d-flex justify-content-center mt-5" link='/contact' design="boxed">Book Appointment</BookingButton>
 

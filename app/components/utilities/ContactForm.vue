@@ -1,19 +1,19 @@
 <template>
     <div class="form-container">
 
-        <b-form
+        <BForm
             v-if="formVisible"
             class="gform"
             @submit="onSubmit"
             @reset="onReset"
         >
             <div class="contact-form-elements">
-                <b-form-group
+                <BFormGroup
                     id="input-group-name"
                     label-for="name"
                     :class="{invalid: formSubmitted && v$.form.name.$invalid}"
                 >
-                    <b-form-input
+                    <BFormInput
                         id="name"
                         v-model="v$.form.name.$model"
                         name="name"
@@ -26,14 +26,14 @@
                     <p v-if="formSubmitted && v$.form.name.minLength.$invalid" class="alert-danger mt-1" role="alert">
                         Your name must contain at least {{v$.form.name.minLength.$params.min}} letters.
                     </p>
-                </b-form-group>
+                </BFormGroup>
 
-                <b-form-group
+                <BFormGroup
                     id="input-group-email"
                     label-for="email"
                     :class="{invalid: formSubmitted && v$.form.email.$invalid}"
                 >
-                    <b-form-input
+                    <BFormInput
                         id="email"
                         v-model="v$.form.email.$model"
                         name="email"
@@ -45,14 +45,14 @@
                     <p v-if="formSubmitted && v$.form.email.email.$invalid" class="alert-danger mt-1" role="alert">
                         Please provide valid email
                     </p>
-                </b-form-group>
+                </BFormGroup>
 
-                <b-form-group
+                <BFormGroup
                     id="input-group-phone"
                     label-for="phone"
                     :class="{invalid: formSubmitted && v$.form.phone.$invalid}"
                 >
-                    <b-form-input
+                    <BFormInput
                         id="phone"
                         v-model="v$.form.phone.$model"
                         name="phone"
@@ -64,14 +64,14 @@
                     <p v-if="formSubmitted && v$.form.phone.minLength.$invalid" class="alert-danger mt-1" role="alert">
                         The phone number must be at least 10 digit long.
                     </p>
-                </b-form-group>
+                </BFormGroup>
 
-                <b-form-group
+                <BFormGroup
                     id="input-group-message"
                     label-for="message"
                     :class="{invalid: formSubmitted && v$.form.message.$invalid}"
                 >
-                    <b-form-textarea
+                    <BFormTextarea
                         id="message"
                         v-model="v$.form.message.$model"
                         name="message"
@@ -85,25 +85,25 @@
                     <p v-if="formSubmitted && v$.form.message.minLength.$invalid" class="alert-danger mt-1" role="alert">
                         This message must have at least {{v$.form.message.minLength.$params.min}} characters.
                     </p>
-                </b-form-group>
+                </BFormGroup>
 
-                <b-form-group
+                <BFormGroup
                     id="input-group-address"
                     label-for="address"
                     class="address"
                 >
-                    <b-form-input
+                    <BFormInput
                         id="address"
                         v-model="address"
                         name="address"
                         placeholder="Your address"
                     />
-                </b-form-group>
+                </BFormGroup>
 
-                <b-form-group
+                <BFormGroup
                     id="input-group-consent"
                 >
-                    <b-form-checkbox
+                    <BFormCheckbox
                         id="consent"
                         v-model="v$.form.consent.$model"
                         name="consent"
@@ -111,23 +111,23 @@
                         switch
                     >
                     <label class="consent" for="consent">* I take your privacy seriously. To find out more please visit <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink> page.</label>
-                    </b-form-checkbox>
-                </b-form-group>
+                    </BFormCheckbox>
+                </BFormGroup>
                 <p v-if="formSubmitted && !v$.form.consent.$model" class="alert-danger mt-1 consent" role="alert">
                     Please confirm you want me to contact you
                 </p>
 
                 <div class="buttons-wrapper">
-                    <b-button variant="outline-dark" type="submit">
+                    <BButton variant="outline-dark" type="submit">
                         Submit <i class="bi bi-envelope" />
-                    </b-button>
-                    <b-button variant="outline-dark" type="reset">
+                    </BButton>
+                    <BButton variant="outline-dark" type="reset">
                         Reset <i class="bi bi-arrow-counterclockwise" />
-                    </b-button>
+                    </BButton>
                 </div>
 
             </div>
-        </b-form>
+        </BForm>
 
         <div class="response-container mt-3">
             <h3 v-if="submitStatus === 'OK'">Thank you for contacting me. I will get back to you soon.</h3>

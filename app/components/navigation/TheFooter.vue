@@ -1,9 +1,9 @@
 <template>
     <footer class="footer-wrapper">
         <div class="page-break"/>
-        <b-container>
-            <b-row class="mt-5 mb-3">
-                <b-col md="6" class="d-flex flex-column justify-content-between col-left">
+        <BContainer>
+            <BRow class="mt-5 mb-3">
+                <BCol md="6" class="d-flex flex-column justify-content-between col-left">
                     <nav class="nav d-flex d-md-none justify-content-center">
                         <NuxtLink to="/">About Me</NuxtLink>
                         <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
@@ -20,8 +20,8 @@
                     <div class="d-none d-md-block text-center">
                       <small>Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">Michael Dyczkowski</a></small>
                     </div>          
-                </b-col>
-                <b-col md="6" class="col-right d-flex flex-column justify-content-between">
+                </BCol>
+                <BCol md="6" class="col-right d-flex flex-column justify-content-between">
                     <nav class="nav d-none d-md-flex justify-content-center">
                         <NuxtLink to="/">About Me</NuxtLink>
                         <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
@@ -41,9 +41,9 @@
                             </small>
                         </div>
                     </div>                 
-                </b-col>        
-            </b-row>
-        </b-container>
+                </BCol>        
+            </BRow>
+        </BContainer>
     </footer>
 </template>
 

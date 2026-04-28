@@ -1,26 +1,26 @@
 <template>
     <header class="header-wrapper">
-        <b-navbar toggleable="lg" fixed="top">
+        <BNavbar toggleable="lg" fixed="top">
             <div class="container d-flex align-items-center justify-content-between">
 
-                <b-navbar-brand to="/" class="font-secondary">
+                <BNavbarBrand to="/" class="font-secondary">
                     <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo">
                     <span>Therapy Space</span>
-                </b-navbar-brand>
+                </BNavbarBrand>
 
-                <b-navbar-toggle target="nav-text-collapse" :class="{ 'not-collapsed': navOpen }" @click="hideOverflow">
+                <BNavbarToggle target="nav-text-collapse" :class="{ 'not-collapsed': navOpen }" @click="hideOverflow">
                     <img class="listNav" src="~/assets/images/list.svg" >
                     <img class="closeNav" src="~/assets/images/close.svg" >
-                </b-navbar-toggle>
+                </BNavbarToggle>
 
-                <b-collapse id="nav-text-collapse" v-model="navOpen" is-nav>
-                    <b-navbar-nav class="ms-auto">
+                <BCollapse id="nav-text-collapse" v-model="navOpen" is-nav>
+                    <BNavbarNav class="ms-auto">
 
                         <li class="nav-item" @click="clearOverflow">
                             <NuxtLink to="/" class="nav-link">About Me</NuxtLink>
                         </li>
 
-                        <b-nav-item-dropdown text="How I Can Help" end>
+                        <BNavItemDropdown text="How I Can Help" end>
                             <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                                 <NuxtLink to="/services/#cbt" role="menuitem" target="_self" class="dropdown-item">CBT</NuxtLink>
                             </li>
@@ -42,7 +42,7 @@
                             <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                                 <NuxtLink to="/services/#supervision" role="menuitem" target="_self" class="dropdown-item">Supervision</NuxtLink>
                             </li>
-                        </b-nav-item-dropdown>
+                        </BNavItemDropdown>
 
                         <li class="nav-item" @click="clearOverflow">
                             <NuxtLink to="/what-to-expect" class="nav-link">What to Expect</NuxtLink>
@@ -51,14 +51,14 @@
                             <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
                         </li>
 
-                    </b-navbar-nav>
+                    </BNavbarNav>
 
                     <div class="navbar-overlay"/>
 
-                </b-collapse>
+                </BCollapse>
 
             </div>
-        </b-navbar>
+        </BNavbar>
     </header>
 </template>
 

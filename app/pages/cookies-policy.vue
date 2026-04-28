@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="background-holder-left"/>
-        <b-container>
+        <BContainer>
             <div class="image-holder">
                 <div class="image-overlay"/>
                 <h1>Cookies Policy</h1>
@@ -22,6 +22,6 @@
             <h3>How can I control the cookie preferences ?</h3>
             <p>Should you decide to change your preferences later through your browsing session, you can click on the "Privacy &amp; Cookie Policy" tab on your screen (in a shape of a small cookie). This will display the consent notice again enabling you to change your preferences or withdraw your consent entirely.</p>
             <p>In addition to this, different browsers provide different methods to block and delete cookies used by websites. You can change the settings of your browser to block/delete the cookies. To find out more about how to manage and delete cookies, visit <a href="https://en.wikipedia.org/wiki/HTTP_cookie" rel="nofollow" target="_blank">wikipedia.org</a> or <a href="http://www.allaboutcookies.org/" rel="nofollow" target="_blank">www.allaboutcookies.org.</a> </p> -->
-        </b-container>
+        </BContainer>
     </main>
 </template>

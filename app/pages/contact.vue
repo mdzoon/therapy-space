@@ -1,18 +1,18 @@
 <template>
     <main>
         <div class="d-none d-lg-block background-holder-right"/>
-        <b-container>
+        <BContainer>
             <div class="image-holder">
                 <div class="image-overlay"/>
                 <h1>Contact Me</h1>
             </div>
-            <b-row>
-                <b-col lg="8" class="left">
+            <BRow>
+                <BCol lg="8" class="left">
                     <div class="column-contact">
                         <ContactForm />
                     </div>
-                </b-col>
-                <b-col lg="4" class="right">
+                </BCol>
+                <BCol lg="4" class="right">
                     <div class="column-address">
                         <h2>Address Details</h2>
                         <div>Get in touch by filling out our contact form, or by using the details provided below.</div>
@@ -31,9 +31,9 @@
                             </li>
                         </ul>
                     </div>
-                </b-col>
-            </b-row>
-        </b-container>
+                </BCol>
+            </BRow>
+        </BContainer>
     </main>
 </template>
 

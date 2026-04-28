@@ -1,13 +1,13 @@
 <template>
     <main class="container">
         <div class="d-none d-lg-block background-holder-right"/>
-        <b-row>
-            <b-col lg="6" class="left">
+        <BRow>
+            <BCol lg="6" class="left">
                 <div class="column-box">
                     <img src="@/assets/images/grazyna-portrait.jpg" alt="Grazyna Godlewska-Vernon portrait">
                 </div>
-            </b-col>
-            <b-col lg="6" class="right">
+            </BCol>
+            <BCol lg="6" class="right">
                 <div class="column-info">
                     <div class="body">
                         <p>My name is Grazyna Godlewska-Vernon.</p>
@@ -25,13 +25,13 @@
                         </BookingButton>
                     </div>
                 </div>
-            </b-col>
-        </b-row>
-        <b-row>
-            <b-col>
+            </BCol>
+        </BRow>
+        <BRow>
+            <BCol>
                 <h2>Success stories:</h2>
 
-                <b-carousel
+                <BCarousel
                     id="testimonials-carousel"
                     v-model="slide"
                     :interval="8000"
@@ -46,10 +46,10 @@
 
                     <TestimonialSlide v-for="(testimonial, index) in testimonials" :key="index" :testimonial="testimonial"/>
 
-                </b-carousel>
+                </BCarousel>
 
-            </b-col>
-        </b-row>
+            </BCol>
+        </BRow>
     </main>
 </template>
 
