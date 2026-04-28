@@ -229,7 +229,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .form-container {
     height: 100%;
     display: flex;
@@ -237,58 +237,65 @@ export default {
     justify-content: center;
     align-items: center;
 }
-.response-container .alert-danger,
-.response-container .alert-info,
-.response-container h3 {
-    text-align: center;
-    background-color: transparent;
-    margin: 0;
+
+.response-container {
+    .alert-danger,
+    .alert-info,
+    h3 {
+        text-align: center;
+        background-color: transparent;
+        margin: 0;
+    }
 }
 
-form .b-form-group {
-    margin-bottom: 3rem;
-}
-form input,
-form textarea {
-    border: none;
-    border-bottom: 1px solid var(--colour-font);
-    border-radius: var(--radius-small);
-    transition: var(--transition);
-}
-form input:focus,
-form input:hover,
-form input:active,
-form textarea:focus,
-form textarea:active,
-form textarea:hover {
-    outline: none !important;
-    border-color: inherit;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-form input:focus,
-form textarea:focus {
-    border-bottom: 2px solid var(--colour-font);
-}
-form .b-form-group.address {
-    visibility: hidden;
-    height: 0;
-    margin-bottom: 0;
-}
-form .b-form-group.consent {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-form .alert-danger.consent {
-    margin-top: -3rem !important;
-    margin-bottom: 3rem !important;
-}
-form .alert-danger {
-    font-size: small;
-    color: #bb1c2b;
-    background-color: transparent;
+form {
+    .b-form-group {
+        margin-bottom: 3rem;
+
+        &.address {
+            visibility: hidden;
+            height: 0;
+            margin-bottom: 0;
+        }
+
+        &.consent {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    input,
+    textarea {
+        border: none;
+        border-bottom: 1px solid var(--colour-font);
+        border-radius: var(--radius-small);
+        transition: var(--transition);
+
+        &:focus,
+        &:hover,
+        &:active {
+            outline: none !important;
+            border-color: inherit;
+            box-shadow: none;
+        }
+
+        &:focus {
+            border-bottom: 2px solid var(--colour-font);
+        }
+    }
+
+    .alert-danger {
+        font-size: small;
+        color: #bb1c2b;
+        background-color: transparent;
+
+        &.consent {
+            margin-top: -3rem !important;
+            margin-bottom: 3rem !important;
+        }
+    }
 }
 
 :deep(.form-check-input:checked) {
@@ -305,8 +312,7 @@ form .alert-danger {
 }
 
 button {
-    border: 1px solid;
-    border-color: var(--colour-font);
+    border: 1px solid var(--colour-font);
     border-radius: var(--radius-small);
     background-color: initial;
     color: initial;
@@ -314,13 +320,14 @@ button {
     padding: .75rem 1.25rem;
     letter-spacing: 2px;
     min-width: 35%;
-}
-button:hover,
-button:active,
-button:focus {
-    background-color: initial;
-    border-color: var(--colour-link-hover);
-    color: var(--colour-link-hover);
-    box-shadow: var(--box-shadow);
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: initial;
+        border-color: var(--colour-link-hover);
+        color: var(--colour-link-hover);
+        box-shadow: var(--box-shadow);
+    }
 }
 </style>
