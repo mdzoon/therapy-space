@@ -17,7 +17,7 @@
             <p>This is to inform that Grazyna has suddenly become incapacitated and is not able to respond to any queries. Should you need to find any information regarding your past or current treatment please contact Lynne Bennet via e-mail spaceforchange@protonmail.com</p>
           </div> -->
           <div class="d-none d-md-block text-center">
-            Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">Michael Dyczkowski</a>
+           <small>Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">Michael Dyczkowski</a></small>
           </div>          
         </b-col>
         <b-col md="6" class="col-right d-flex flex-column justify-content-between">
@@ -31,10 +31,12 @@
           </div>
           <div class="footer-credits">
             <div class="text-center">
-              Copyright &copy; {{ currentYear }} Therapy Space
+              <small>Copyright &copy; {{ currentYear }} Therapy Space</small>
             </div>
             <div class="d-md-none text-center">
-              Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">Michael Dyczkowski</a>
+              <small>Created by <a href="https://www.michaeldyczkowski.co.uk" target="_blank">
+                Michael Dyczkowski</a>
+              </small>
             </div>
           </div>                 
         </b-col>        
