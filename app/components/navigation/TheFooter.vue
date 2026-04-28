@@ -57,83 +57,78 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .footer-wrapper {
-    /* ff 3.6+ */
-    background:-moz-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%); 
-    /* safari 5.1+,chrome 10+ */
-    background:-webkit-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    /* opera 11.10+ */
-    background:-o-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    /* ie 6-9 */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF', GradientType=1 );
-    /* ie 10+ */
-    background:-ms-linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    /* global 94%+ browsers support */
-    background:linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
     padding-bottom: 1px;
-}
-.footer-wrapper a {
-    color: var(--colour-font);
-}
-.footer-wrapper a:hover {
-    color: var(--colour-link-hover);
-    text-decoration: none;
-}
-.footer-wrapper > div > div.row {
-    flex-direction: row-reverse;
-}
-.page-break {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    height: 0.25em;
-    background-image: url('~/assets/images/page-break.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.5;
-}
 
-.col-left,
-.col-right {
-    margin-bottom: 1.5rem;
-}
+    a {
+        color: var(--colour-link);
+        text-decoration: none;
 
-.col-left > *,
-.col-right > * {
-    margin-bottom: 1.5rem;
-}
-
-nav.nav {
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-.logo-wrapper, .copyright-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-}
-.logo-wrapper img {
-    margin-bottom: 1.5rem;
-}
-.logo-wrapper img {
-    height: 5rem;
-    opacity: 0.65;
-}
-
-.col-left > *,
-.footer-credits > *  {
-    font-size: smaller;
-    margin: 0;
-}
-.footer-credits > div:first-child {
-    margin-bottom: .5rem;
-}
-@media only screen and (min-width: 768px) {
-    .footer-credits {
-        margin-bottom: 0;
+        &:hover {
+            color: var(--colour-link-hover);
+        }
     }
-    .footer-credits > div:first-child {
-        margin-bottom: 0;
+
+    > div > div.row {
+        flex-direction: row-reverse;
+    }
+
+    .page-break {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        height: 0.25em;
+        background-image: url('~/assets/images/page-break.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0.5;
+    }
+
+    .col-left,
+    .col-right {
+        margin-bottom: 1.5rem;
+    }
+
+    .col-right > * {
+        margin-bottom: 1.5rem;
+    }
+
+    .col-left > *,
+    .footer-credits > * {
+        font-size: smaller;
+        margin: 0;
+    }
+
+    nav.nav {
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .logo-wrapper {
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+    }
+
+    .logo-wrapper img {
+        height: 5rem;
+        opacity: 0.65;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-credits {
+        > div:first-child {
+            margin-bottom: .5rem;
+        }
+
+        @media only screen and (min-width: 768px) {
+            margin-bottom: 0;
+
+            > div:first-child {
+                margin-bottom: 0;
+            }
+        }
     }
 }
 </style>
