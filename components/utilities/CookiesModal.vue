@@ -1,6 +1,7 @@
-<template v-slot:modal>
+<!-- TODO: when re-enabling cookie control, verify slot name and `cookieControl__*` class hooks against @dargmuesli/nuxt-cookie-control v9 docs -->
+<template>
     <CookieControl>
-        <template v-slot:modal>
+        <template #modal>
             <h3 class="modal-title">
                 Set your preferences
             </h3>
@@ -76,6 +77,4 @@ button.cookieControl__ControlButton:hover {
     color: var(--colour-font);
     border-color: var(--colour-font);
 }
-
-
 </style>
