@@ -120,93 +120,102 @@ export default {
 }
 </script>
 
-<style scoped>
-.accordion .card,
-.accordion .card .card-header {
-    border: none;
-    padding: .25rem;
-    margin: 0;
-    border-radius: 0;
-    background-color: transparent;
-}
-.accordion .card .card-header button {
-    border-radius: 0;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-color: var(--colour-backgound);
-    font-size: 1.75rem;
-    letter-spacing: 5px;
-    color: var(--colour-link);
-    border: none;
-    box-shadow: none;
-    transition: var(--transition) ease-in-out;
-    border-bottom: 2px solid transparent;
-    position: relative;
-}
-@media only screen and (max-width: 600px) {
-    .accordion .card .card-header button {
-        font-size: 1.5rem;
+<style scoped lang="scss">
+.accordion {
+    .card,
+    .card .card-header {
+        border: none;
+        padding: .25rem;
+        margin: 0;
+        border-radius: 0;
+        background-color: transparent;
     }
-    .accordion .card .card-text h3 {
-        font-size: 1.5rem;
-    }
-    .accordion .card .card-text > * {
-        font-size: 0.9rem;
-    } 
-}
-@media only screen and (max-width: 400px) {
-    .accordion .card .card-header button {
-        font-size: 1rem;
-    }
-    .accordion .card .card-text h3 {
-        font-size: 1rem;
-    }
-    .accordion .card .card-text > * {
-        font-size: 0.8rem;
-    } 
-}
-/* .accordion .card .card-header button:active, */
-.accordion .card .card-header button:hover {
-/* .accordion .card .card-header button:focus { */
-    /* box-shadow: var(--box-shadow); */
-    border-bottom-color: var(--color-link-hover);
-    color: var(--colour-link-hover);
-}
-.accordion .card .card-header button .bi-plus {
-    opacity: 1;
-    transition: all var(--transition);
-}
-.accordion .card .card-header button.not-collapsed {
-    border-bottom-color: var(--color-link-hover);
-    color: var(--colour-link-hover);  
-}
-.accordion .card .card-header button.not-collapsed .bi-plus {
-    opacity: 0;
-}
-.accordion .card-header .bi {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-}
 
-.card-body {
-    /* ff 3.6+ */
-    background:-moz-radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);
-    /* safari 5.1+,chrome 10+ */
-    background:-webkit-radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);
-    /* opera 11.10+ */
-    background:-o-radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);
-    /* ie 10+ */
-    background:-ms-radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);
-    /* global 92%+ browsers support */
-    background:radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.07) 69%, rgba(238, 130, 238, 0) 100%);
-}
-.accordion .card .card-body p {
-  margin-top: 3em;
-}
-.accordion .card .card-body h3 {
-    margin-top: 3em;
-    margin-bottom: 1em;    
+    .card-header .bi {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+    }
+
+    .card {
+        .card-header button {
+            border-radius: 0;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            background-color: var(--colour-backgound);
+            font-size: 1.75rem;
+            letter-spacing: 5px;
+            color: var(--colour-link);
+            border: none;
+            border-bottom: 2px solid transparent;
+            box-shadow: none;
+            transition: var(--transition) ease-in-out;
+            position: relative;
+
+            &:hover,
+            &.not-collapsed {
+                border-bottom-color: var(--color-link-hover);
+                color: var(--colour-link-hover);
+            }
+
+            .bi-plus {
+                opacity: 1;
+                transition: all var(--transition);
+            }
+
+            &.not-collapsed .bi-plus {
+                opacity: 0;
+            }
+
+            @media only screen and (max-width: 600px) {
+                font-size: 1.5rem;
+            }
+
+            @media only screen and (max-width: 400px) {
+                font-size: 1rem;
+            }
+        }
+
+        .card-body {
+            background: radial-gradient(
+                ellipse at 50% 50%,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.07) 69%,
+                rgba(238, 130, 238, 0) 100%
+            );
+
+            p {
+                margin-top: 3em;
+            }
+
+            h3 {
+                margin-top: 3em;
+                margin-bottom: 1em;
+            }
+        }
+
+        .card-text {
+            @media only screen and (max-width: 600px) {
+                h3 {
+                    font-size: 1.5rem;
+                }
+
+                > * {
+                    font-size: 0.9rem;
+                }
+            }
+
+            @media only screen and (max-width: 400px) {
+                h3 {
+                    font-size: 1rem;
+                }
+
+                > * {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
 }
 </style>

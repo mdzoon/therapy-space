@@ -16,7 +16,3 @@ export default {
     mixins: [dataMixin]
 }
 </script>
-
-<style scoped>
-
-</style>
