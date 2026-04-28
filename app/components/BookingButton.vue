@@ -2,6 +2,7 @@
     <NuxtLink :to="link">
         <button class="btn" :class="design" type="button" @click="handleClick">
             <slot>Contact Me</slot>
+            <i v-if="design === 'plain'" class="bi bi-arrow-right" />
         </button>
     </NuxtLink>
 </template>
@@ -28,53 +29,53 @@ export default {
 }
 </script>
 
-<style>
-button.plain {
-    padding: 0;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    text-align: left;
-}
-button.plain:hover,
-button.plain:active,
-button.plain:focus {
-    box-shadow: none;
-}
+<style scoped lang="scss">
+button {
+    &.plain {
+        padding: 0;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: left;
+        color: var(--colour-link);
 
-button.boxed {
-    border: 1px solid;
-    border-color: var(--colour-font);
-    border-radius: var(--radius-small);
-    background-color: initial;
-    color: initial;
-    transition: var(--transition);
-    padding: .75rem 1.25rem;
-    letter-spacing: 2px;
-    min-width: 35%;   
-}
-button.boxed:hover,
-button.boxed:active,
-button.boxed:focus {
-    background-color: initial;
-    border-color: var(--colour-link-hover);
-    color: var(--colour-link-hover);
-    box-shadow: var(--box-shadow);
-}
-button.boxed span {
-    text-transform: uppercase;
-}
+        &:hover,
+        &:active,
+        &:focus {
+            box-shadow: none;
+        }
 
-.column-info .footer .btn.plain {
-    color: var(--colour-link);
-}
-.column-info .footer .btn.plain:hover {
-    color: var(--colour-link-light);
-}
-.column-info .footer .btn.plain svg {
-    margin-left: 0.75rem;
+        i {
+            margin-left: 0.75rem;
+            transition: var(--transition);
+        }
+
+        &:hover {
+            color: var(--colour-link-light);
+
+            i {
+                margin-left: 1.25rem;
+            }
+        }
+    }
+
+    &.boxed {
+        border: 1px solid var(--colour-font);
+        border-radius: var(--radius-small);
+        background-color: initial;
+        color: initial;
         transition: var(--transition);
-}
-.column-info .footer .btn.plain:hover svg {
-    margin-left: 1.25rem;
+        padding: .75rem 1.25rem;
+        letter-spacing: 2px;
+        min-width: 35%;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: initial;
+            border-color: var(--colour-link-hover);
+            color: var(--colour-link-hover);
+            box-shadow: var(--box-shadow);
+        }
+    }
 }
 </style>
