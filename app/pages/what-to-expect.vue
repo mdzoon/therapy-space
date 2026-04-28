@@ -11,7 +11,12 @@
                             <i class="bi bi-dash" />
                         </BButton>
                     </BCardHeader>
-                    <BCollapse id="vision" visible accordion="accordion" role="tabpanel">
+                    <BCollapse
+                        id="vision"
+                        :model-value="activePanel === 'vision'"
+                        role="tabpanel"
+                        @update:model-value="(v) => setPanel('vision', v)"
+                    >
                         <BCardBody>
                             <BCardText>
                                 <p>I see my role as helping you to understand yourself and your interactions with others clearer. This will help you to make better-informed and more beneficial choices in your life. I work in an open, empathic and transparent manner providing a safe and non-judgemental space to explore your issues. I believe that therapeutic relationship is crucial and plays a key role in positive therapy outcomes.</p>
@@ -25,13 +30,18 @@
 
                 <BCard no-body class="mb-1">
                     <BCardHeader header-tag="div" role="tab">
-                        <BButton id="qualifications-tab" v-b-toggle.my-qualifications class="w-100" variant="info">
+                        <BButton v-b-toggle.my-qualifications class="w-100" variant="info">
                             My Qualifications
                             <i class="bi bi-plus" />
                             <i class="bi bi-dash" />
                         </BButton>
                     </BCardHeader>
-                    <BCollapse id="my-qualifications" accordion="accordion" role="tabpanel">
+                    <BCollapse
+                        id="my-qualifications"
+                        :model-value="activePanel === 'my-qualifications'"
+                        role="tabpanel"
+                        @update:model-value="(v) => setPanel('my-qualifications', v)"
+                    >
                         <BCardBody>
                             <BCardText>
                                 <h3>Memberships:</h3>
@@ -70,7 +80,12 @@
                             <i class="bi bi-dash" />
                         </BButton>
                     </BCardHeader>
-                    <BCollapse id="how-do-i-work" accordion="accordion" role="tabpanel">
+                    <BCollapse
+                        id="how-do-i-work"
+                        :model-value="activePanel === 'how-do-i-work'"
+                        role="tabpanel"
+                        @update:model-value="(v) => setPanel('how-do-i-work', v)"
+                    >
                         <BCardBody>
                             <BCardText>
                                 <p>I respond to your query by e-mail or telephone according to your stated preference. If you wish I am happy to have a 10-15 min discussion over the phone which is free of charge.</p>
@@ -88,7 +103,12 @@
                             <i class="bi bi-dash" />
                         </BButton>
                     </BCardHeader>
-                    <BCollapse id="fees" accordion="accordion" role="tabpanel">
+                    <BCollapse
+                        id="fees"
+                        :model-value="activePanel === 'fees'"
+                        role="tabpanel"
+                        @update:model-value="(v) => setPanel('fees', v)"
+                    >
                         <BCardBody>
                             <BCardText>
                                 <p>My fee is £70 for 50 minutes of therapy session.</p>
@@ -110,13 +130,27 @@
 <script>
 import { mapStores } from 'pinia'
 export default {
+    data () {
+        return {
+            activePanel: 'vision'
+        }
+    },
     computed: {
         ...mapStores(useQualificationsStore)
     },
-    mounted() {
+    mounted () {
         if (this.qualificationsStore.isOpen) {
-            document.getElementById('qualifications-tab')?.click()
+            this.activePanel = 'my-qualifications'
             this.qualificationsStore.toggle()
+        }
+    },
+    methods: {
+        setPanel (name, open) {
+            if (open) {
+                this.activePanel = name
+            } else if (this.activePanel === name) {
+                this.activePanel = null
+            }
         }
     }
 }
