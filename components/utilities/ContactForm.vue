@@ -1,7 +1,7 @@
 <template>
     <div class="form-container">
 
-        <b-form 
+        <b-form
             class="gform"
             @submit="onSubmit"
             @reset="onReset"
@@ -11,38 +11,38 @@
                 <b-form-group
                     id="input-group-name"
                     label-for="name"
-                    :class="{invalid: formSubmitted && $v.form.name.$invalid}"
+                    :class="{invalid: formSubmitted && v$.form.name.$invalid}"
                 >
                     <b-form-input
                         id="name"
-                        v-model="$v.form.name.$model"
+                        v-model="v$.form.name.$model"
                         name="name"
                         placeholder="Name*"
                         aria-describedby=""
                     ></b-form-input>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.name.required">
+                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.name.required.$invalid">
                         This field should not be empty
                     </p>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.name.minLength">
-                        Your name must contain at least {{$v.form.name.$params.minLength.min}} letters.
+                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.name.minLength.$invalid">
+                        Your name must contain at least {{v$.form.name.minLength.$params.min}} letters.
                     </p>
                 </b-form-group>
 
                 <b-form-group
                     id="input-group-email"
                     label-for="email"
-                    :class="{invalid: formSubmitted && $v.form.email.$invalid}"
+                    :class="{invalid: formSubmitted && v$.form.email.$invalid}"
                 >
                     <b-form-input
                         id="email"
-                        v-model="$v.form.email.$model"
+                        v-model="v$.form.email.$model"
                         name="email"
                         placeholder="Email*"
                     ></b-form-input>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.email.required">
+                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.email.required.$invalid">
                         This field should not be empty
                     </p>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.email.email">
+                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.email.email.$invalid">
                         Please provide valid email
                     </p>
                 </b-form-group>
@@ -50,18 +50,18 @@
                 <b-form-group
                     id="input-group-phone"
                     label-for="phone"
-                    :class="{invalid: formSubmitted && $v.form.phone.$invalid}"
+                    :class="{invalid: formSubmitted && v$.form.phone.$invalid}"
                 >
                     <b-form-input
                         id="phone"
-                        v-model="$v.form.phone.$model"
+                        v-model="v$.form.phone.$model"
                         name="phone"
                         placeholder="Phone"
                     ></b-form-input>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.phone.numeric">
+                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.phone.numeric.$invalid">
                         Please enter only numbers
                     </p>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.phone.minLength">
+                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.phone.minLength.$invalid">
                         The phone number must be at least 10 digit long.
                     </p>
                 </b-form-group>
@@ -69,21 +69,21 @@
                 <b-form-group
                     id="input-group-message"
                     label-for="message"
-                    :class="{invalid: formSubmitted && $v.form.message.$invalid}"
+                    :class="{invalid: formSubmitted && v$.form.message.$invalid}"
                 >
                     <b-form-textarea
                         id="message"
-                        v-model="$v.form.message.$model"
+                        v-model="v$.form.message.$model"
                         name="message"
                         placeholder="Type your message here"
                         rows="3"
                         max-rows="6"
                     ></b-form-textarea>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.message.required">
+                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.message.required.$invalid">
                         This field should not be empty
                     </p>
-                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && !$v.form.message.minLength">
-                        This message must have at least {{$v.form.message.$params.minLength.min}} characters.
+                    <p class="alert-danger mt-1" role="alert" v-if="formSubmitted && v$.form.message.minLength.$invalid">
+                        This message must have at least {{v$.form.message.minLength.$params.min}} characters.
                     </p>
                 </b-form-group>
 
@@ -105,24 +105,24 @@
                 >
                     <b-form-checkbox
                         id="consent"
-                        v-model="$v.form.consent.$model"
+                        v-model="v$.form.consent.$model"
                         name="consent"
-                        :class="{invalid: formSubmitted && $v.form.consent.$invalid}"
+                        :class="{invalid: formSubmitted && v$.form.consent.$invalid}"
                         switch
                     >
                     <label class="consent" for="consent">* I take your privacy seriously. To find out more please visit <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink> page.</label>
                     </b-form-checkbox>
                 </b-form-group>
-                <p class="alert-danger mt-1 consent" role="alert" v-if="formSubmitted && !$v.form.consent.$model">
+                <p class="alert-danger mt-1 consent" role="alert" v-if="formSubmitted && !v$.form.consent.$model">
                     Please confirm you want me to contact you
                 </p>
 
                 <div class="buttons-wrapper">
                     <b-button variant="outline-dark" type="submit">
-                        Submit <b-icon icon="envelope"></b-icon>
+                        Submit <i class="bi bi-envelope" />
                     </b-button>
                     <b-button variant="outline-dark" type="reset">
-                        Reset <b-icon icon="arrow-counterclockwise"></b-icon>
+                        Reset <i class="bi bi-arrow-counterclockwise" />
                     </b-button>
                 </div>
 
@@ -138,10 +138,14 @@
 </template>
 
 <script>
-import { required, minLength, email, numeric } from 'vuelidate/lib/validators'
+import { useVuelidate } from '@vuelidate/core'
+import { required, minLength, email, numeric } from '@vuelidate/validators'
 
 export default {
     name: 'ContactForm',
+    setup () {
+        return { v$: useVuelidate() }
+    },
     data () {
         return {
             form: {
@@ -158,56 +162,77 @@ export default {
             formVisible: true
         }
     },
+    validations () {
+        return {
+            form: {
+                name: {
+                    required,
+                    minLength: minLength(3)
+                },
+                email: {
+                    required,
+                    email
+                },
+                phone: {
+                    numeric,
+                    minLength: minLength(10)
+                },
+                message: {
+                    required,
+                    minLength: minLength(5)
+                },
+                consent: {
+                    required
+                }
+            }
+        }
+    },
     methods: {
         onSubmit (evt) {
             evt.preventDefault()
-            this.$v.form.$touch()
-            
+            this.v$.form.$touch()
 
-            if (this.$v.form.$invalid || !this.$v.form.consent.$model) {
-
+            if (this.v$.form.$invalid || !this.form.consent) {
                 this.formSubmitted = true
-
             } else {
-
                 this.submitStatus = 'PENDING'
 
                 if (this.address) {
-                    return false;
+                    return false
                 }
 
                 const url = 'https://formspree.io/f/mdojnvaj'
-                const that  = this
 
-                this.$axios.post(url, {
-                    'Sender Name': that.form.name,
-                    'Email': that.form.email,
-                    'Phone': that.form.phone,
-                    'Consent': that.form.consent,
-                    'Message': that.form.message
-                })
-                .then(function (response) {
-                    if (response) {
-
-                        that.submitStatus = 'OK'
-                        that.form.name = ''
-                        that.form.email = ''
-                        that.form.phone = ''
-                        that.form.message = ''
-                        that.form.consent = false
-                        that.address = ''
-                        that.formVisible = false
+                $fetch(url, {
+                    method: 'POST',
+                    body: {
+                        'Sender Name': this.form.name,
+                        'Email': this.form.email,
+                        'Phone': this.form.phone,
+                        'Consent': this.form.consent,
+                        'Message': this.form.message
                     }
                 })
-                .catch(function (error) {
-                    that.submitStatus = 'ERROR'
-                    console.log(error);
-                })
+                    .then((response) => {
+                        if (response) {
+                            this.submitStatus = 'OK'
+                            this.form.name = ''
+                            this.form.email = ''
+                            this.form.phone = ''
+                            this.form.message = ''
+                            this.form.consent = false
+                            this.address = ''
+                            this.formVisible = false
+                        }
+                    })
+                    .catch((error) => {
+                        this.submitStatus = 'ERROR'
+                        console.log(error)
+                    })
             }
         },
         onReset (evt) {
             evt.preventDefault()
-            // Reset form values
             this.form.name = ''
             this.form.email = ''
             this.form.phone = ''
@@ -218,30 +243,7 @@ export default {
             this.formVisible = false
             this.$nextTick(() => {
                 this.formVisible = true
-            })      
-        }
-    },
-    validations: {
-        form: {
-            name: {
-                required,
-                minLength: minLength(3)
-            },
-            email: {
-                required,
-                email
-            },
-            phone: {
-                numeric,
-                minLength: minLength(10)
-            },
-            message: {
-                required,
-                minLength: minLength(5)
-            },
-            consent: {
-                required
-            }
+            })
         }
     }
 }
@@ -322,7 +324,7 @@ button {
     transition: var(--transition);
     padding: .75rem 1.25rem;
     letter-spacing: 2px;
-    min-width: 35%;   
+    min-width: 35%;
 }
 button:hover,
 button:active,
