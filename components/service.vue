@@ -86,6 +86,12 @@ export default {
   text-align: right;
 }
 
+@media only screen and (max-width: 499px) {
+  .therapy-card :deep(button) {
+    width: 100%;
+  }
+}
+
 .therapy-card {
   padding-top: 5em;
   padding-bottom: 5em;
@@ -124,9 +130,15 @@ export default {
   margin: auto;
 }
 .therapy-card .therapy-body :deep(ul) {
-  width: 60%;
-  margin-left: auto;
   list-style-type: none;
+  text-align: justify;
+  padding: 0 10% 0;
+}
+@media only screen and (min-width: 992px) {
+  .therapy-card .therapy-body :deep(ul) {
+    text-align: inherit;
+    padding: 0;
+  } 
 }
 
 @media only screen and (max-width: 575px) {
