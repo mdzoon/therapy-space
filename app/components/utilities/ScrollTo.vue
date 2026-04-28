@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 #return-top {
     position: fixed;
     left: 1rem;
@@ -61,15 +61,15 @@ export default {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.25);
     font-size: 1.5rem;
-}
-#return-top:hover,
-#return-top:active,
-#return-top:focus {
-    text-decoration: none;
-    border: 1px solid var(--colour-link-hover);
-    color: var(--colour-link-hover);
-}
-#return-top.return-top--hidden {
-    display: none;
+
+    &:hover {
+        text-decoration: none;
+        border: 1px solid var(--colour-link-hover);
+        color: var(--colour-link-hover);
+    }
+
+    .return-top--hidden {
+        display: none;
+    }
 }
 </style>
