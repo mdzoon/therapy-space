@@ -203,6 +203,8 @@ export default {
 
     .navbar .navbar-nav .dropdown-menu {
         box-shadow: none;
+        position: static !important;
+        transform: none !important;
     }
 
     .navbar .navbar-nav .nav-link {
