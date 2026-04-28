@@ -38,7 +38,7 @@ export default {
 .carousel-indicators {
     bottom: -30px;
 }  
-.carousel-indicators li {
+.carousel-indicators > * {
     background-color: var(--colour-link);
 }
 
