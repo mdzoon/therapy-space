@@ -100,7 +100,7 @@ export default {
 
 <style lang="scss">
 .navbar {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 40%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0) 100%);
     min-height: 8rem;
     font-weight: bolder;
 
@@ -176,6 +176,11 @@ export default {
     }
 
     .navbar-nav {
+
+        @media only screen and (max-width: 991px) {
+            background-color: var(--colour-background);
+        }
+
         .nav-item {
             a,
             button {
@@ -242,7 +247,6 @@ export default {
 
     @media only screen and (max-width: 991px) {
         display: block;
-        background-color: var(--colour-background);
 
         .navbar-nav {
             margin: 0;

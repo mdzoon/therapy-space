@@ -121,15 +121,15 @@ main {
     width: 50vw;
     opacity: 0.08;
     z-index: -1;
-    top: 8rem;
+    top: 0;
 
     @media screen and (max-width: 600px) {
         width: 100vw;
     }
 
-    @media screen and (min-width: 991px) {
-        top: 6rem;
-    }
+    // @media screen and (min-width: 991px) {
+    //     top: 0rem;
+    // }
 }
 
 .background-holder-right {
