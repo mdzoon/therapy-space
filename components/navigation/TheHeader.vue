@@ -29,13 +29,16 @@
                 <NuxtLink to="/services/#emdr" role="menuitem" target="_self" class="dropdown-item">EMDR</NuxtLink>
               </li>
               <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                <NuxtLink to="/services/#couples-counselling" role="menuitem" target="_self" class="dropdown-item">Couples Counselling</NuxtLink>
+              </li>              
+              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                 <NuxtLink to="/services/#mediation" role="menuitem" target="_self" class="dropdown-item">Mediation</NuxtLink>
               </li>
               <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
-                <NuxtLink to="/services/#supervision" role="menuitem" target="_self" class="dropdown-item">Supervision</NuxtLink>
-              </li>
-              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
                 <NuxtLink to="/services/#walk-and-talk" role="menuitem" target="_self" class="dropdown-item">Walk & Talk</NuxtLink>
+              </li>              
+              <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                <NuxtLink to="/services/#supervision" role="menuitem" target="_self" class="dropdown-item">Supervision</NuxtLink>
               </li>
             </b-nav-item-dropdown>
 
@@ -146,9 +149,10 @@ export default {
   padding: 0;
   height: 0;
   overflow: hidden;
+  min-width: 13.25rem;
 }
 .navbar .navbar-nav .dropdown-menu.show{
-  height: 288px;
+  height: auto;
 }
 
 .navbar .navbar-nav .dropdown-menu .dropdown-item {

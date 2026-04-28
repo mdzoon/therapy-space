@@ -8,6 +8,7 @@
       <div class="therapy-body">
         <div v-html="service.content"></div>
         <div class="testimonial" v-if="service.testimonial">
+          <b>Success story: </b>
           <q><i>{{ service.testimonial.content }}</i></q>
           <i> {{ service.testimonial.author }}</i>
         </div>
@@ -116,11 +117,16 @@ export default {
   font-size: smaller;
 }
 
-.therapy-card .therapy-body p {
+.therapy-card .therapy-body :deep(p) {
   margin-top: 3em;
 }
-.therapy-card .therapy-body a {
+.therapy-card .therapy-body :deep(a) {
   margin: auto;
+}
+.therapy-card .therapy-body :deep(ul) {
+  width: 60%;
+  margin-left: auto;
+  list-style-type: none;
 }
 
 @media only screen and (max-width: 575px) {
