@@ -1,7 +1,7 @@
 <template>
     <header class="header-wrapper">
         <BNavbar toggleable="lg" fixed="top">
-            <div class="container d-flex align-items-center justify-content-between">
+            <div class="container d-flex flex-wrap align-items-center justify-content-between">
 
                 <BNavbarBrand to="/" class="font-secondary">
                     <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo">
