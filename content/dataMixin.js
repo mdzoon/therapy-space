@@ -21,7 +21,11 @@ export default {
         {
           content: 'I came into Therapy as a last resort with little belief on the concept. With Grazyna\'s help, I was able to use her advice, knowledge and techniques to tackle my anxieties and fears head on. With this, I now have more control over the negative habits I developed through my condition and the progress I was able to achieve is unimaginable, I will be forever grateful for the patience and care Grazyna took to help me.',
           author: '(W. 30 y)'
-        }        
+        },
+        {
+          content: 'I am so grateful to have met Grazyna. She listened so intently on my initial phone call. Just meeting Grazyna made me feel that someone understood, and her natural manner and sense of calm made me feel there could be hope and that the life I knew could return. I could not believe that the EMDR would work but I trusted her experience and her measured, non-sales approach. The sessions were straightforward and helpful. I saw results and started to feel improvement from the outset. I now have my sense of control and balance back and I am driving as I was previously. I would highly recommend G and encourage you to receive from her skills and experience in your challenging time through life’s journey.',
+          author: '(C. 58 y)'
+        },
       ],
       services: [
         {

@@ -48,7 +48,7 @@ export default {
 }
 
 .carousel .carousel-inner .carousel-item {
-  min-height: 430px;      
+  min-height: 620px;      
 }
 
 .carousel .carousel-inner .carousel-caption {
@@ -78,7 +78,7 @@ export default {
 
 @media only screen and (min-width: 400px) {
   .carousel .carousel-inner .carousel-item {
-    min-height: 380px;
+    min-height: 560px;
   }
   .carousel .carousel-inner .carousel-caption {
     font-size: initial;
@@ -87,7 +87,7 @@ export default {
 
 @media only screen and (min-width: 500px) {
   .carousel .carousel-inner .carousel-item {
-    min-height: 300px;
+    min-height: 480px;
   }
 }  
 
