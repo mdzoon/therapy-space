@@ -13,12 +13,7 @@ export default {
     components: {
         ServiceCard
     },
-    mixins: [dataMixin],
-    mounted() {
-        const el = document.querySelector('body')
-        const classes = el.classList
-        classes.remove("hideOverflow")    
-    }
+    mixins: [dataMixin]
 }
 </script>
 

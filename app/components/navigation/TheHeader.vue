@@ -8,7 +8,7 @@
                     <span>Therapy Space</span>
                 </BNavbarBrand>
 
-                <BNavbarToggle target="nav-text-collapse" :class="{ 'not-collapsed': navOpen }" @click="hideOverflow">
+                <BNavbarToggle target="nav-text-collapse" :class="{ 'not-collapsed': navOpen }">
                     <img class="listNav" src="~/assets/images/list.svg" >
                     <img class="closeNav" src="~/assets/images/close.svg" >
                 </BNavbarToggle>
@@ -16,38 +16,38 @@
                 <BCollapse id="nav-text-collapse" v-model="navOpen" is-nav>
                     <BNavbarNav class="ms-auto">
 
-                        <li class="nav-item" @click="clearOverflow">
+                        <li class="nav-item" @click="closeMenu">
                             <NuxtLink to="/" class="nav-link">About Me</NuxtLink>
                         </li>
 
-                        <BNavItemDropdown text="How I Can Help" end>
-                            <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                        <BNavItemDropdown v-model="dropdownOpen" text="How I Can Help" end>
+                            <li role="presentation" @click="closeDropdown">
                                 <NuxtLink to="/services/#cbt" role="menuitem" target="_self" class="dropdown-item">CBT</NuxtLink>
                             </li>
-                            <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                            <li role="presentation" @click="closeDropdown">
                                 <NuxtLink to="/services/#counselling" role="menuitem" target="_self" class="dropdown-item">Counselling</NuxtLink>
                             </li>
-                            <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                            <li role="presentation" @click="closeDropdown">
                                 <NuxtLink to="/services/#emdr" role="menuitem" target="_self" class="dropdown-item">EMDR</NuxtLink>
                             </li>
-                            <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                            <li role="presentation" @click="closeDropdown">
                                 <NuxtLink to="/services/#couples-counselling" role="menuitem" target="_self" class="dropdown-item">Couples Counselling</NuxtLink>
                             </li>              
-                            <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                            <li role="presentation" @click="closeDropdown">
                                 <NuxtLink to="/services/#mediation" role="menuitem" target="_self" class="dropdown-item">Mediation</NuxtLink>
                             </li>
-                            <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                            <li role="presentation" @click="closeDropdown">
                                 <NuxtLink to="/services/#walk-and-talk" role="menuitem" target="_self" class="dropdown-item">Walk & Talk</NuxtLink>
                             </li>              
-                            <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
+                            <li role="presentation" @click="closeDropdown">
                                 <NuxtLink to="/services/#supervision" role="menuitem" target="_self" class="dropdown-item">Supervision</NuxtLink>
                             </li>
                         </BNavItemDropdown>
 
-                        <li class="nav-item" @click="clearOverflow">
+                        <li class="nav-item" @click="closeMenu">
                             <NuxtLink to="/what-to-expect" class="nav-link">What to Expect</NuxtLink>
                         </li>
-                        <li class="nav-item" @click="clearOverflow">
+                        <li class="nav-item" @click="closeMenu">
                             <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
                         </li>
 
@@ -66,10 +66,17 @@
 export default {
     data () {
         return {
-            navOpen: false
+            navOpen: false,
+            dropdownOpen: false
+        }
+    },
+    watch: {
+        navOpen (open) {
+            document.body.classList.toggle('hideOverflow', open)
         }
     },
     mounted () {
+        document.body.classList.remove('hideOverflow')
         window.addEventListener('scroll', this.onScroll)
     },
     beforeUnmount () {
@@ -77,59 +84,23 @@ export default {
     },
     methods: {
         onScroll () {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.querySelector('.navbar').classList.add('on-scroll')
-            } else {
-                document.querySelector('.navbar').classList.remove('on-scroll')
-            }
+            const scrolled = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
+            document.querySelector('.navbar').classList.toggle('on-scroll', scrolled)
         },
-        hideOverflow() {
-            const elBody = document.querySelector('body')
-            const classesBody = elBody.classList
-            const elNav = document.querySelector('#nav-text-collapse')
-            const classesNav = elNav.classList
-
-            if (classesNav.contains("show")) {
-                classesBody.remove("hideOverflow")
-            } else {
-                classesBody.add("hideOverflow")                   
-            }
+        closeMenu () {
+            this.navOpen = false
         },
-        clearOverflow() {
-            const el = document.querySelector('body')
-            const classes = el.classList
-            classes.remove("hideOverflow")      
-        },
-        hideDropdown() {
-            const elNav = document.querySelector('.nav-item.dropdown')
-            const classesNav = elNav.classList
-            const a = document.querySelector('a.dropdown-toggle')
-            const elMenu = document.querySelector('.dropdown-menu')
-            const classesMenu = elMenu.classList
-            if ( Object.values(classesNav).includes("show") ) {
-                a.setAttribute("aria-expanded", "false")
-                classesNav.remove("show")
-                classesMenu.remove("show")
-            }
-        }   
+        closeDropdown () {
+            this.navOpen = false
+            this.dropdownOpen = false
+        }
     }
 }
 </script>
 
 <style>
 .navbar {
-    /* ff 3.6+ */
-    background:-moz-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%); 
-    /* safari 5.1+,chrome 10+ */
-    background:-webkit-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
-    /* opera 11.10+ */
-    background:-o-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
-    /* ie 6-9 */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF', GradientType=1 );
-    /* ie 10+ */
-    background:-ms-linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
-    /* global 94%+ browsers support */
-    background:linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
     min-height: 8rem;
     font-weight: bolder;
 }
