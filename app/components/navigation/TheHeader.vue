@@ -1,22 +1,24 @@
 <template>
     <header class="header-wrapper">
-        <b-navbar toggleable="lg" fixed="top" class="container-fluid">
-            <div class="container">
+        <b-navbar toggleable="lg" fixed="top">
+            <div class="container d-flex align-items-center justify-content-between">
 
                 <b-navbar-brand to="/" class="font-secondary">
                     <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo">
                     <span>Therapy Space</span>
                 </b-navbar-brand>
 
-                <b-navbar-toggle target="nav-text-collapse" @click="hideOverflow">
+                <b-navbar-toggle target="nav-text-collapse" :class="{ 'not-collapsed': navOpen }" @click="hideOverflow">
                     <img class="listNav" src="~/assets/images/list.svg" >
                     <img class="closeNav" src="~/assets/images/close.svg" >
                 </b-navbar-toggle>
 
-                <b-collapse id="nav-text-collapse" is-nav>
+                <b-collapse id="nav-text-collapse" v-model="navOpen" is-nav>
                     <b-navbar-nav class="ms-auto">
 
-                        <li class="nav-item" @click="clearOverflow"><NuxtLink to="/" class="nav-link">About Me</NuxtLink></li>
+                        <li class="nav-item" @click="clearOverflow">
+                            <NuxtLink to="/" class="nav-link">About Me</NuxtLink>
+                        </li>
 
                         <b-nav-item-dropdown text="How I Can Help" end>
                             <li role="presentation" @click="[clearOverflow($event), hideDropdown($event)]">
@@ -42,8 +44,12 @@
                             </li>
                         </b-nav-item-dropdown>
 
-                        <li class="nav-item" @click="clearOverflow"><NuxtLink to="/what-to-expect" class="nav-link">What to Expect</NuxtLink></li>
-                        <li class="nav-item" @click="clearOverflow"><NuxtLink to="/contact" class="nav-link">Contact</NuxtLink></li>
+                        <li class="nav-item" @click="clearOverflow">
+                            <NuxtLink to="/what-to-expect" class="nav-link">What to Expect</NuxtLink>
+                        </li>
+                        <li class="nav-item" @click="clearOverflow">
+                            <NuxtLink to="/contact" class="nav-link">Contact</NuxtLink>
+                        </li>
 
                     </b-navbar-nav>
 
@@ -58,6 +64,11 @@
 
 <script>
 export default {
+    data () {
+        return {
+            navOpen: false
+        }
+    },
     mounted () {
         window.addEventListener('scroll', this.onScroll)
     },
@@ -122,24 +133,29 @@ export default {
     min-height: 8rem;
     font-weight: bolder;
 }
-.navbar .navbar-nav .nav-item a {
+.navbar .navbar-nav .nav-item a,
+.navbar .navbar-nav .nav-item button {
     color: var(--colour-link) !important;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .navbar .navbar-nav .nav-item a {
+    .navbar .navbar-nav .nav-item a,
+    .navbar .navbar-nav .nav-item button {
         font-size: smaller;
     }  
 }
 .navbar .navbar-nav .nav-item:hover a,
 .navbar .navbar-nav .nav-item:focus a,
-.navbar .navbar-nav .nav-item:active a {
+.navbar .navbar-nav .nav-item:active a,
+.navbar .navbar-nav .nav-item:hover button,
+.navbar .navbar-nav .nav-item:focus button,
+.navbar .navbar-nav .nav-item:active button {
     color: var(--colour-link-hover) !important;
 }
-.navbar .navbar-nav .nav-item.dropdown a:after {
+.navbar .navbar-nav .nav-item .dropdown-toggle:after {
     transition: all var(--transition);
     transform: rotate(0deg);
 }
-.navbar .navbar-nav .nav-item.dropdown.show a:after {
+.navbar .navbar-nav .nav-item .dropdown-toggle.show:after {
     transform: rotate(180deg);
 }
 .navbar .navbar-nav .dropdown-menu {
@@ -155,7 +171,7 @@ export default {
     overflow: hidden;
     min-width: 13.25rem;
 }
-.navbar .navbar-nav .dropdown-menu.show{
+.navbar .navbar-nav .dropdown-menu.show {
     height: auto;
 }
 
@@ -165,7 +181,7 @@ export default {
 }
 .navbar .navbar-nav .dropdown-menu .dropdown-item:hover {
     border-left: 4px solid var(--colour-link-hover);
-    padding-left: calc( 1.5rem - 4px );
+    padding-left: calc( var(--bs-dropdown-item-padding-x) - 4px );
     background-color: var(--colour-background);
 }
 @media only screen and (max-width: 991px) {
@@ -240,6 +256,9 @@ export default {
     border: none;
     position: relative;
 }
+.navbar-toggler:focus {
+    box-shadow: none;
+}
 .navbar-toggler img {
     position: absolute;
     top: -0.75rem;
@@ -249,7 +268,7 @@ export default {
     transition: all var(--transition);
 }
 
-.navbar-toggler.collapsed img.listNav {
+.navbar-toggler img.listNav {
     opacity: 1;
     transform: rotate(0deg);
 }
