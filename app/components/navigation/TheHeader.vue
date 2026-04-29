@@ -9,8 +9,8 @@
                 </BNavbarBrand>
 
                 <BNavbarToggle target="nav-text-collapse" :class="{ 'not-collapsed': navOpen }">
-                    <img class="listNav" src="~/assets/images/list.svg" >
-                    <img class="closeNav" src="~/assets/images/close.svg" >
+                    <img class="listNav" src="~/assets/images/list.svg" alt="" aria-hidden="true">
+                    <img class="closeNav" src="~/assets/images/close.svg" alt="" aria-hidden="true">
                 </BNavbarToggle>
 
                 <BCollapse id="nav-text-collapse" v-model="navOpen" is-nav>
