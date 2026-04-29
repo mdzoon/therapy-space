@@ -29,10 +29,10 @@
                     </nav>
                     <div class="logo-wrapper">
                         <a href="https://www.bacp.co.uk" target="_blank">
-                            <img src="~/assets/images/BACP-logo.svg" alt="British Association for Counselling and Psychotherapy Logo">
+                            <img src="~/assets/images/BACP-logo.svg" alt="British Association for Counselling and Psychotherapy Logo" width="2072" height="925">
                         </a>          
                         <a href="https://babcp.com" target="_blank">
-                            <img src="~/assets/images/BABCP-logo.svg" alt="British Association for Behavioural and Cognitive Psychotherapies Logo">
+                            <img src="~/assets/images/BABCP-logo.svg" alt="British Association for Behavioural and Cognitive Psychotherapies Logo" width="603" height="603">
                         </a>
                     </div>
                     <div class="footer-credits">

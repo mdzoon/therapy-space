@@ -30,9 +30,7 @@ function handleClick () {
 <style scoped lang="scss">
 button {
     &.plain {
-        padding: 0;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
+        padding: 1rem 0;
         text-align: left;
         color: var(--colour-link);
 

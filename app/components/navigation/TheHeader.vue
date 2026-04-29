@@ -4,13 +4,13 @@
             <div class="container d-flex flex-wrap align-items-center justify-content-between">
 
                 <BNavbarBrand to="/" class="font-secondary">
-                    <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo">
+                    <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo" width="512" height="512">
                     <span>Therapy Space</span>
                 </BNavbarBrand>
 
                 <BNavbarToggle target="nav-text-collapse" :class="{ 'not-collapsed': navOpen }">
-                    <img class="listNav" src="~/assets/images/list.svg" alt="" aria-hidden="true">
-                    <img class="closeNav" src="~/assets/images/close.svg" alt="" aria-hidden="true">
+                    <img class="listNav" src="~/assets/images/list.svg" alt="" aria-hidden="true" width="16" height="16">
+                    <img class="closeNav" src="~/assets/images/close.svg" alt="" aria-hidden="true" width="16" height="16">
                 </BNavbarToggle>
 
                 <BCollapse id="nav-text-collapse" v-model="navOpen" is-nav>
