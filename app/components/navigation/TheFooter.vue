@@ -29,10 +29,10 @@
                     </nav>
                     <div class="logo-wrapper">
                         <a href="https://www.bacp.co.uk" target="_blank">
-                            <img src="~/assets/images/BACP-logo.svg" alt="British Association for Counselling and Psychotherapy Logo" width="2072" height="925">
+                            <img src="~/assets/images/BACP-logo.svg" alt="British Association for Counselling and Psychotherapy Logo" width="600" height="268">
                         </a>          
                         <a href="https://babcp.com" target="_blank">
-                            <img src="~/assets/images/BABCP-logo.svg" alt="British Association for Behavioural and Cognitive Psychotherapies Logo" width="603" height="603">
+                            <img src="~/assets/images/BABCP-logo.svg" alt="British Association for Behavioural and Cognitive Psychotherapies Logo" width="600" height="600">
                         </a>
                     </div>
                     <div class="footer-credits">
@@ -111,6 +111,7 @@ const currentYear = new Date().getFullYear()
 
     .logo-wrapper img {
         height: 5rem;
+        width: auto;
         opacity: 0.65;
         margin-bottom: 1.5rem;
     }

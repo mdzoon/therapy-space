@@ -3,10 +3,11 @@
         <a
             id="return-top"
             href="#"
+            aria-label="Scroll to top"
             :class="{ 'return-top--hidden': hideScrollTo }"
             @click.prevent="scrollToTop"
         >
-            <i class="bi bi-chevron-double-up" />
+            <i class="bi bi-chevron-double-up" aria-hidden="true" />
         </a>
     </div>
 </template>

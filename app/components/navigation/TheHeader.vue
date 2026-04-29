@@ -4,7 +4,7 @@
             <div class="container d-flex flex-wrap align-items-center justify-content-between">
 
                 <BNavbarBrand to="/" class="font-secondary">
-                    <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo" width="512" height="512">
+                    <img src="~/assets/images/therapy-space-logo.svg" alt="Therapy Space Logo" width="72" height="72">
                     <span>Therapy Space</span>
                 </BNavbarBrand>
 
@@ -115,6 +115,7 @@ onBeforeUnmount(() => {
 
         img {
             height: 4.5rem;
+            width: auto;
 
             @media only screen and (max-width: 400px) {
                 height: 4rem;
