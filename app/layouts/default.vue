@@ -20,16 +20,8 @@
     </div>
 </template>
 
-<script>
+<script setup>
 import TheHeader from '@/components/navigation/TheHeader.vue'
 import ScrollTo from '@/components/utilities/ScrollTo.vue'
 import TheFooter from '@/components/navigation/TheFooter.vue'
-
-export default {
-    components: {
-        TheHeader,
-        ScrollTo,
-        TheFooter
-    }
-}
 </script>

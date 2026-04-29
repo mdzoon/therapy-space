@@ -21,17 +21,13 @@
     </div>
 </template>
 
-<script>
-export default {
-    props: {
-        service: {
-            type: Object,
-            default () {
-                return { id: 'Service', name: 'Therapy Name', content: 'Therapy Description' }
-            }
-        }
+<script setup>
+defineProps({
+    service: {
+        type: Object,
+        default: () => ({ id: 'Service', name: 'Therapy Name', content: 'Therapy Description' })
     }
-}
+})
 </script>
 
 <style scoped lang="scss">

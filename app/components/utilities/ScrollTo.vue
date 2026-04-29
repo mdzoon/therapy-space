@@ -11,37 +11,36 @@
     </div>
 </template>
 
-<script>
-export default {
-    data () {
-        return {
-            hideScrollTo: true,
-            lastScrollPosition: 0
-        }
-    },
-    mounted () {
-        window.addEventListener('scroll', this.checkPosition)
-    },
-    beforeUnmount () {
-        window.removeEventListener('scroll', this.checkPosition)
-    },
-    methods: {
-        scrollToTop () {
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-        },
-        checkPosition () {
-            const currentScrollPosition = window.scrollY
-            if (currentScrollPosition < 0) {
-                return
-            }
-            if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
-                return
-            }
-            this.hideScrollTo = currentScrollPosition < this.lastScrollPosition
-            this.lastScrollPosition = currentScrollPosition
-        }
-    }
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const hideScrollTo = ref(true)
+let lastScrollPosition = 0
+
+function scrollToTop () {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
 }
+
+function checkPosition () {
+    const currentScrollPosition = window.scrollY
+    if (currentScrollPosition < 0) {
+        return
+    }
+    if (Math.abs(currentScrollPosition - lastScrollPosition) < 60) {
+        return
+    }
+    hideScrollTo.value = currentScrollPosition < lastScrollPosition
+    lastScrollPosition = currentScrollPosition
+}
+
+onMounted(() => {
+    window.addEventListener('scroll', checkPosition)
+})
+
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', checkPosition)
+})
+
 </script>
 
 <style scoped lang="scss">

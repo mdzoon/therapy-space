@@ -47,14 +47,8 @@
     </footer>
 </template>
 
-<script>
-export default {
-    data () {
-        return {
-            currentYear: new Date().getFullYear()
-        }
-    }
-}
+<script setup>
+const currentYear = new Date().getFullYear()
 </script>
 
 <style scoped lang="scss">

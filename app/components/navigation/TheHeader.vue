@@ -62,40 +62,38 @@
     </header>
 </template>
 
-<script>
-export default {
-    data () {
-        return {
-            navOpen: false,
-            dropdownOpen: false
-        }
-    },
-    watch: {
-        navOpen (open) {
-            document.body.classList.toggle('hideOverflow', open)
-        }
-    },
-    mounted () {
-        document.body.classList.remove('hideOverflow')
-        window.addEventListener('scroll', this.onScroll)
-    },
-    beforeUnmount () {
-        window.removeEventListener('scroll', this.onScroll)
-    },
-    methods: {
-        onScroll () {
-            const scrolled = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
-            document.querySelector('.navbar').classList.toggle('on-scroll', scrolled)
-        },
-        closeMenu () {
-            this.navOpen = false
-        },
-        closeDropdown () {
-            this.navOpen = false
-            this.dropdownOpen = false
-        }
-    }
+<script setup>
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
+
+const navOpen = ref(false)
+const dropdownOpen = ref(false)
+
+watch(navOpen, (open) => {
+    document.body.classList.toggle('hideOverflow', open)
+})
+
+function onScroll () {
+    const scrolled = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
+    document.querySelector('.navbar').classList.toggle('on-scroll', scrolled)
 }
+
+function closeMenu () {
+    navOpen.value = false
+}
+
+function closeDropdown () {
+    navOpen.value = false
+    dropdownOpen.value = false
+}
+
+onMounted(() => {
+    document.body.classList.remove('hideOverflow')
+    window.addEventListener('scroll', onScroll)
+})
+
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', onScroll)
+})
 </script>
 
 <style lang="scss">
