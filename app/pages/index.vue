@@ -51,7 +51,7 @@
                             <span hidden />
                         </template>
                         <div class="text-wrapper">
-                            <div>{{ testimonial.content }}<i> {{ testimonial.author }}</i></div>
+                            <div>{{ testimonial.content }}<br><i>{{ testimonial.author }}</i></div>
                         </div>
                     </BCarouselSlide>
 

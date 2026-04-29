@@ -19,13 +19,13 @@
                         <ul>
                             <li>
                                 <a href="tel:7970014122">
-                                    <i class="bi bi-telephone" />
+                                    <BIcon name="telephone" />
                                     <div>(+44) 7970014122</div>
                                 </a>
                             </li>
                             <li>
                                 <a href="mailto:grazyna@thinkcbt.com">
-                                    <i class="bi bi-envelope" />
+                                    <BIcon name="envelope" />
                                     <div>grazyna@thinkcbt.com</div>
                                 </a>
                             </li>
@@ -66,7 +66,7 @@ import ContactForm from '@/components/utilities/ContactForm.vue'
             padding-top: .5rem;
             padding-bottom: .5rem;
 
-            i {
+            svg {
                 margin-right: 1rem;
             }
         }

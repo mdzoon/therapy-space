@@ -7,7 +7,7 @@
             :class="{ 'return-top--hidden': hideScrollTo }"
             @click.prevent="scrollToTop"
         >
-            <i class="bi bi-chevron-double-up" aria-hidden="true" />
+            <BIcon name="chevron-double-up" />
         </a>
     </div>
 </template>

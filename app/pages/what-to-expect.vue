@@ -7,8 +7,8 @@
                     <BCardHeader header-tag="div" role="tab">
                         <BButton v-b-toggle.vision class="w-100" variant="info">
                             How I Work
-                            <i class="bi bi-plus" />
-                            <i class="bi bi-dash" />
+                            <BIcon name="plus" />
+                            <BIcon name="dash" />
                         </BButton>
                     </BCardHeader>
                     <BCollapse
@@ -32,8 +32,8 @@
                     <BCardHeader header-tag="div" role="tab">
                         <BButton v-b-toggle.my-qualifications class="w-100" variant="info">
                             My Qualifications
-                            <i class="bi bi-plus" />
-                            <i class="bi bi-dash" />
+                            <BIcon name="plus" />
+                            <BIcon name="dash" />
                         </BButton>
                     </BCardHeader>
                     <BCollapse
@@ -76,8 +76,8 @@
                     <BCardHeader header-tag="div" role="tab">
                         <BButton v-b-toggle.how-do-i-work class="w-100" variant="info">
                             Initial Contact
-                            <i class="bi bi-plus" />
-                            <i class="bi bi-dash" />
+                            <BIcon name="plus" />
+                            <BIcon name="dash" />
                         </BButton>
                     </BCardHeader>
                     <BCollapse
@@ -99,8 +99,8 @@
                     <BCardHeader header-tag="div" role="tab">
                         <BButton v-b-toggle.fees class="w-100" variant="info">
                             My Fees
-                            <i class="bi bi-plus" />
-                            <i class="bi bi-dash" />
+                            <BIcon name="plus" />
+                            <BIcon name="dash" />
                         </BButton>
                     </BCardHeader>
                     <BCollapse

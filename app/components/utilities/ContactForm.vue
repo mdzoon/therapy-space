@@ -117,7 +117,7 @@
                 </p>
 
                 <BButton variant="outline-dark" type="submit">
-                    Submit <i class="bi bi-envelope" />
+                    Submit <BIcon name="envelope" />
                 </BButton>
 
             </div>

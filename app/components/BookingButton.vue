@@ -2,7 +2,7 @@
     <NuxtLink :to="link">
         <button class="btn" :class="design" type="button" @click="handleClick">
             <slot>Contact Me</slot>
-            <i v-if="design === 'plain'" class="bi bi-arrow-right" />
+            <BIcon v-if="design === 'plain'" name="arrow-right" />
         </button>
     </NuxtLink>
 </template>
@@ -42,12 +42,12 @@ button {
             border-color: transparent;
         }
 
-        i {
+        svg {
             margin-left: 0.75rem;
             transition: var(--transition);
         }
 
-        &:hover i {
+        &:hover svg {
             margin-left: 1.25rem;
         }
     }
