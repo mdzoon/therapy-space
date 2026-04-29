@@ -298,7 +298,7 @@ button {
     transition: var(--transition);
     padding: .75rem 1.25rem;
     letter-spacing: 2px;
-    min-width: 35%;
+    min-width: 100%;
 
     &:hover,
     &:active,
@@ -308,5 +308,13 @@ button {
         color: var(--colour-link-hover);
         box-shadow: var(--box-shadow);
     }
+
+    @media only screen and (min-width: 576px) {
+        min-width: 50%;
+    }
+
+    @media only screen and (min-width: 992px) {
+        min-width: 35%;
+    }    
 }
 </style>

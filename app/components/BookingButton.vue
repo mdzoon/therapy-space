@@ -40,6 +40,8 @@ button {
         &:active,
         &:focus {
             box-shadow: none;
+            color: var(--colour-link-light);
+            border-color: transparent;
         }
 
         i {
@@ -47,12 +49,8 @@ button {
             transition: var(--transition);
         }
 
-        &:hover {
-            color: var(--colour-link-light);
-
-            i {
-                margin-left: 1.25rem;
-            }
+        &:hover i {
+            margin-left: 1.25rem;
         }
     }
 

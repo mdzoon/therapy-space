@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
         color: var(--colour-link-hover);
     }
 
-    .return-top--hidden {
+    &.return-top--hidden {
         display: none;
     }
 }
