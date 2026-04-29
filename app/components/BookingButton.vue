@@ -8,24 +8,22 @@
 </template>
 
 
-<script>
-export default {
-    props: {
-        link: {
-            type: String,
-            default: ''
-        },
-        design: {
-            type: String,
-            default: 'boxed'
-        },
+<script setup>
+defineProps({
+    link: {
+        type: String,
+        default: ''
     },
-    emits: ['click'],
-    methods: {
-        handleClick() {
-            this.$emit('click')
-        }
+    design: {
+        type: String,
+        default: 'boxed'
     }
+})
+
+const emit = defineEmits(['click'])
+
+function handleClick () {
+    emit('click')
 }
 </script>
 
