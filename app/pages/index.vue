@@ -4,7 +4,11 @@
         <BRow>
             <BCol lg="6" class="left">
                 <div class="column-box">
-                    <img src="@/assets/images/grazyna-portrait.jpg" alt="Grazyna Godlewska-Vernon portrait" width="585" height="800">
+                    <picture>
+                        <source srcset="@/assets/images/grazyna-portrait.avif" type="image/avif">
+                        <source srcset="@/assets/images/grazyna-portrait.webp" type="image/webp">
+                        <img src="@/assets/images/grazyna-portrait.jpg" alt="Grazyna Godlewska-Vernon portrait" width="585" height="800">
+                    </picture>
                 </div>
             </BCol>
             <BCol lg="6" class="right">
