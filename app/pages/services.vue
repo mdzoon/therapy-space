@@ -6,13 +6,17 @@
 </template>
 
 <script>
-import dataMixin from '@/mixins/dataMixin.js'
+import { services } from '@/data/services.js'
 import ServiceCard from '@/components/ServiceCard.vue'
 
 export default {
     components: {
         ServiceCard
     },
-    mixins: [dataMixin]
+    data () {
+        return {
+            services
+        }
+    }
 }
 </script>

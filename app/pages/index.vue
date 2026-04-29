@@ -42,10 +42,7 @@
                     @slid="onSlideEnd"
                 >
 
-                    <BCarouselSlide
-                        v-for="(testimonial, index) in testimonials"
-                        :key="index"
-                    >
+                    <BCarouselSlide v-for="testimonial in testimonials" :key="testimonial.id">
                         <template #img />
                         <div class="text-wrapper">
                             <div>{{ testimonial.content }}<i> {{ testimonial.author }}</i></div>
@@ -61,11 +58,11 @@
 
 <script>
 import { mapStores } from 'pinia'
-import dataMixin from '@/mixins/dataMixin.js'
+import { testimonials } from '@/data/testimonials.js'
 export default {
-    mixins: [dataMixin],
     data() {
         return {
+            testimonials,
             slide: 0,
             sliding: null
         }
