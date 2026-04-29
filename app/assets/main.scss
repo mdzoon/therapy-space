@@ -1,3 +1,43 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/montserrat-v31-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/montserrat-v31-latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./fonts/quicksand-v37-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./fonts/quicksand-v37-latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('./fonts/quicksand-v37-latin-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --colour-font: #444444;
     --colour-primary: #00C6FF;
@@ -94,14 +134,14 @@ main {
             margin: auto;
             color: var(--colour-background);
             text-align: center;
-            font-weight: 900;
+            font-weight: 700;
             letter-spacing: 1rem;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
         }
 
         h3 {
             color: var(--colour-link);
-            font-weight: bold;
+            font-weight: 500;
         }
 
         > h3 {

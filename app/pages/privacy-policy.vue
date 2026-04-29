@@ -12,19 +12,19 @@
             <p>Key aspects of the GDPR privacy policy include:</p>
             <ol>
                 <li class="mb-3">
-                    <b>Data Collection:</b> We collect only necessary information to provide you with the best care, such as personal contact details, medical history, and therapy-related notes.
+                    <span style="font-weight:500;">Data Collection:</span> We collect only necessary information to provide you with the best care, such as personal contact details, medical history, and therapy-related notes.
                 </li>
                 <li class="mb-3">
-                    <b>Data Processing:</b> Your data will be used solely for providing therapy services, communicating with you, and complying with legal requirements.
+                    <span style="font-weight:500;">Data Processing:</span> Your data will be used solely for providing therapy services, communicating with you, and complying with legal requirements.
                 </li>
                 <li class="mb-3">
-                    <b>Data Storage:</b> All data is securely stored and protected against unauthorized access. Your information is retained for the legally required period and is never shared without your consent.
+                    <span style="font-weight:500;">Data Storage:</span> All data is securely stored and protected against unauthorized access. Your information is retained for the legally required period and is never shared without your consent.
                 </li>
                 <li class="mb-3">
-                    <b>Your Rights:</b> You have the right to access, correct, or delete your personal data. You can also request a copy of your data or withdraw consent at any time.
+                    <span style="font-weight:500;">Your Rights:</span> You have the right to access, correct, or delete your personal data. You can also request a copy of your data or withdraw consent at any time.
                 </li>
                 <li>
-                    <b>Confidentiality:</b> Your privacy is important to us. Your data will not be shared with third parties, except as required by law or with your explicit consent.
+                    <span style="font-weight:500;">Confidentiality:</span> Your privacy is important to us. Your data will not be shared with third parties, except as required by law or with your explicit consent.
                 </li>
             </ol>
             <p>

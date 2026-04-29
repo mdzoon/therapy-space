@@ -9,7 +9,7 @@
                 <!-- eslint-disable-next-line vue/no-v-html -->
                 <div v-html="service.content"/>
                 <div v-if="service.testimonial" class="testimonial">
-                    <b>Success story: </b>
+                    <span style="font-weight:500;">Success story: </span>
                     <q><i>{{ service.testimonial.content }}</i></q>
                     <i> {{ service.testimonial.author }}</i>
                 </div>

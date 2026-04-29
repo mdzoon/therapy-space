@@ -100,7 +100,6 @@ onBeforeUnmount(() => {
 .navbar {
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 40%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0) 100%);
     min-height: 8rem;
-    font-weight: bolder;
 
     .navbar-brand {
         display: flex;
@@ -112,6 +111,7 @@ onBeforeUnmount(() => {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
+        font-weight: bolder;
 
         img {
             height: 4.5rem;
@@ -175,6 +175,7 @@ onBeforeUnmount(() => {
     }
 
     .navbar-nav {
+        font-weight: 500;
 
         @media only screen and (max-width: 991px) {
             background-color: var(--colour-background);
