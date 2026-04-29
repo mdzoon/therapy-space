@@ -9,9 +9,7 @@
             <BRow>
                 <BCol lg="8" class="left">
                     <div class="column-contact">
-                        <ClientOnly>
-                            <ContactForm />
-                        </ClientOnly>
+                        <ContactForm />
                     </div>
                 </BCol>
                 <BCol lg="4" class="right">
