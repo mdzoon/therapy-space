@@ -131,100 +131,79 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { reactive, ref } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, minLength, email, numeric } from '@vuelidate/validators'
 
-export default {
-    name: 'ContactForm',
-    setup () {
-        return { v$: useVuelidate() }
-    },
-    data () {
-        return {
-            form: {
-                name: '',
-                email: '',
-                phone: '',
-                message: '',
-                consent: false
-            },
+const state = reactive({
+    form: {
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        consent: false
+    }
+})
 
-            address: '',
-            submitStatus: '',
-            formSubmitted: false,
-            formVisible: true
+const rules = {
+    form: {
+        name: { required, minLength: minLength(3) },
+        email: { required, email },
+        phone: { numeric, minLength: minLength(10) },
+        message: { required, minLength: minLength(5) },
+        consent: { required }
+    }
+}
+
+const v$ = useVuelidate(rules, state)
+
+const address = ref('')
+const submitStatus = ref('')
+const formSubmitted = ref(false)
+const formVisible = ref(true)
+
+function onSubmit (evt) {
+    evt.preventDefault()
+    v$.value.form.$touch()
+
+    if (v$.value.form.$invalid || !state.form.consent) {
+        formSubmitted.value = true
+    } else {
+        submitStatus.value = 'PENDING'
+
+        if (address.value) {
+            return false
         }
-    },
-    validations () {
-        return {
-            form: {
-                name: {
-                    required,
-                    minLength: minLength(3)
-                },
-                email: {
-                    required,
-                    email
-                },
-                phone: {
-                    numeric,
-                    minLength: minLength(10)
-                },
-                message: {
-                    required,
-                    minLength: minLength(5)
-                },
-                consent: {
-                    required
-                }
+
+        const url = 'https://formspree.io/f/mdojnvaj'
+
+        $fetch(url, {
+            method: 'POST',
+            body: {
+                'Sender Name': state.form.name,
+                'Email': state.form.email,
+                'Phone': state.form.phone,
+                'Consent': state.form.consent,
+                'Message': state.form.message
             }
-        }
-    },
-    methods: {
-        onSubmit (evt) {
-            evt.preventDefault()
-            this.v$.form.$touch()
-
-            if (this.v$.form.$invalid || !this.form.consent) {
-                this.formSubmitted = true
-            } else {
-                this.submitStatus = 'PENDING'
-
-                if (this.address) {
-                    return false
+        })
+            .then((response) => {
+                if (response) {
+                    submitStatus.value = 'OK'
+                    state.form.name = ''
+                    state.form.email = ''
+                    state.form.phone = ''
+                    state.form.message = ''
+                    state.form.consent = false
+                    address.value = ''
+                    formVisible.value = false
                 }
-
-                const url = 'https://formspree.io/f/mdojnvaj'
-
-                $fetch(url, {
-                    method: 'POST',
-                    body: {
-                        'Sender Name': this.form.name,
-                        'Email': this.form.email,
-                        'Phone': this.form.phone,
-                        'Consent': this.form.consent,
-                        'Message': this.form.message
-                    }
-                })
-                    .then((response) => {
-                        if (response) {
-                            this.submitStatus = 'OK'
-                            this.form.name = ''
-                            this.form.email = ''
-                            this.form.phone = ''
-                            this.form.message = ''
-                            this.form.consent = false
-                            this.address = ''
-                            this.formVisible = false
-                        }
-                    })
-                    .catch((error) => {
-                        this.submitStatus = 'ERROR'
-                        console.log(error)
-                    })
-            }
-        }
+            })
+            .catch((error) => {
+                submitStatus.value = 'ERROR'
+                console.log(error)
+            })
     }
 }
 </script>

@@ -39,15 +39,8 @@
     </main>
 </template>
 
-<script>
+<script setup>
 import ContactForm from '@/components/utilities/ContactForm.vue'
-
-export default {
-    name: "Contact",
-    components: {
-        ContactForm
-    }
-}
 </script>
 
 <style scoped lang="scss">

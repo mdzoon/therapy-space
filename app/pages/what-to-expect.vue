@@ -127,31 +127,21 @@
     </main>
 </template>
 
-<script>
-import { mapStores } from 'pinia'
-export default {
-    data () {
-        return {
-            activePanel: 'vision'
-        }
-    },
-    computed: {
-        ...mapStores(useQualificationsStore)
-    },
-    mounted () {
-        if (this.qualificationsStore.isOpen) {
-            this.activePanel = 'my-qualifications'
-            this.qualificationsStore.toggle()
-        }
-    },
-    methods: {
-        setPanel (name, open) {
-            if (open) {
-                this.activePanel = name
-            } else if (this.activePanel === name) {
-                this.activePanel = null
-            }
-        }
+<script setup>
+import { ref } from 'vue'
+
+const qualificationsStore = useQualificationsStore()
+
+const activePanel = ref(qualificationsStore.isOpen ? 'my-qualifications' : 'vision')
+if (qualificationsStore.isOpen) {
+    qualificationsStore.toggle()
+}
+
+function setPanel (name, open) {
+    if (open) {
+        activePanel.value = name
+    } else if (activePanel.value === name) {
+        activePanel.value = null
     }
 }
 </script>

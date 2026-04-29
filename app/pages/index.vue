@@ -56,31 +56,24 @@
     </main>
 </template>
 
-<script>
-import { mapStores } from 'pinia'
+<script setup>
+import { ref } from 'vue'
 import { testimonials } from '@/data/testimonials.js'
-export default {
-    data() {
-        return {
-            testimonials,
-            slide: 0,
-            sliding: null
-        }
-    },
-    computed: {
-        ...mapStores(useQualificationsStore)
-    },
-    methods: {
-        onSlideStart() {
-            this.sliding = true
-        },
-        onSlideEnd() {
-            this.sliding = false
-        },
-        onButtonClick() {
-            this.qualificationsStore.toggle()
-        }
-    },
+
+const slide = ref(0)
+const sliding = ref(null)
+const qualificationsStore = useQualificationsStore()
+
+function onSlideStart() {
+    sliding.value = true
+}
+
+function onSlideEnd() {
+    sliding.value = false
+}
+
+function onButtonClick() {
+    qualificationsStore.toggle()
 }
 </script>
 

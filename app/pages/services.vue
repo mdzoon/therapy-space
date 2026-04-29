@@ -5,18 +5,7 @@
     </main>
 </template>
 
-<script>
+<script setup>
 import { services } from '@/data/services.js'
 import ServiceCard from '@/components/ServiceCard.vue'
-
-export default {
-    components: {
-        ServiceCard
-    },
-    data () {
-        return {
-            services
-        }
-    }
-}
 </script>
