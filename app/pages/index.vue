@@ -43,7 +43,9 @@
                 >
 
                     <BCarouselSlide v-for="testimonial in testimonials" :key="testimonial.id">
-                        <template #img />
+                        <template #img>
+                            <span hidden />
+                        </template>
                         <div class="text-wrapper">
                             <div>{{ testimonial.content }}<i> {{ testimonial.author }}</i></div>
                         </div>
@@ -57,12 +59,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import { testimonials } from '@/data/testimonials.js'
 
 const slide = ref(0)
 const sliding = ref(null)
 const qualificationsStore = useQualificationsStore()
+
+onMounted(async () => {
+    await nextTick()
+    const indicators = document.querySelector('#testimonials-carousel .carousel-indicators')
+    if (!indicators) return
+    indicators.removeAttribute('aria-owns')
+    indicators.querySelectorAll('button').forEach((btn) => {
+        btn.removeAttribute('aria-controls')
+        if (!btn.getAttribute('aria-describedby')) {
+            btn.removeAttribute('aria-describedby')
+        }
+    })
+})
 
 function onSlideStart() {
     sliding.value = true
