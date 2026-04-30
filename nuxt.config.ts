@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     },
 
     css: [
-        'bootstrap/dist/css/bootstrap.min.css',
+        '~/assets/bootstrap-custom.scss',
         '~/assets/main.scss'
     ],
 
@@ -43,5 +43,19 @@ export default defineNuxtConfig({
         '@nuxtjs/sitemap',
         '@nuxt/eslint'
         // '@dargmuesli/nuxt-cookie-control'
-    ]
+    ],
+
+    features: {
+        inlineStyles: true
+    },
+
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    silenceDeprecations: ['color-functions', 'global-builtin', 'import', 'if-function', 'legacy-js-api']
+                }
+            }
+        }
+    }
 })

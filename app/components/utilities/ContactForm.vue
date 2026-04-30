@@ -116,9 +116,9 @@
                     Please confirm you want me to contact you
                 </p>
 
-                <BookingButton class="d-flex justify-content-start mt-5" link='/contact' design="boxed" type="submit">
+                <BButton type="submit">
                     Submit <BIcon name="envelope" />
-                </BookingButton>                
+                </BButton>
 
             </div>
         </BForm>
@@ -265,6 +265,34 @@ form {
         }
     }
 
+    button.btn {
+        border: 1px solid var(--colour-font);
+        border-radius: var(--radius-small);
+        background-color: initial;
+        color: initial;
+        transition: var(--transition);
+        padding: .75rem 1.25rem;
+        letter-spacing: 2px;
+        min-width: 100%;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: var(--background-color);
+            border-color: var(--colour-link-hover);
+            color: var(--colour-link-hover);
+            box-shadow: var(--box-shadow);
+        }
+
+        @media only screen and (min-width: 576px) {
+            min-width: 50%;
+        }
+
+        @media only screen and (min-width: 992px) {
+            min-width: 35%;
+        }    
+    }
+
     .alert-danger {
         font-size: small;
         color: #bb1c2b;
@@ -288,33 +316,5 @@ form {
 }
 :deep(.form-check-input:checked:focus) {
     --bs-form-switch-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
-}
-
-button {
-    border: 1px solid var(--colour-font);
-    border-radius: var(--radius-small);
-    background-color: initial;
-    color: initial;
-    transition: var(--transition);
-    padding: .75rem 1.25rem;
-    letter-spacing: 2px;
-    min-width: 100%;
-
-    &:hover,
-    &:active,
-    &:focus {
-        background-color: initial;
-        border-color: var(--colour-link-hover);
-        color: var(--colour-link-hover);
-        box-shadow: var(--box-shadow);
-    }
-
-    @media only screen and (min-width: 576px) {
-        min-width: 50%;
-    }
-
-    @media only screen and (min-width: 992px) {
-        min-width: 35%;
-    }    
 }
 </style>
