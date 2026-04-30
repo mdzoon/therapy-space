@@ -49,6 +49,11 @@ export default defineNuxtConfig({
         inlineStyles: true
     },
 
+    experimental: {
+        appManifest: false, //  switches off client-side route awareness, turn on if useRouteRules
+        payloadExtraction: false // removes the _payload.json files for each route, turn on if useAsyncData 
+    },
+
     vite: {
         css: {
             preprocessorOptions: {
@@ -56,6 +61,26 @@ export default defineNuxtConfig({
                     silenceDeprecations: ['color-functions', 'global-builtin', 'import', 'if-function', 'legacy-js-api']
                 }
             }
+        },
+        optimizeDeps: {
+            include: [
+                'bootstrap-vue-next',
+                'bootstrap-vue-next/components/BButton',
+                'bootstrap-vue-next/components/BCard',
+                'bootstrap-vue-next/components/BCarousel',
+                'bootstrap-vue-next/components/BCollapse',                
+                'bootstrap-vue-next/components/BContainer',                                
+                'bootstrap-vue-next/components/BForm',
+                'bootstrap-vue-next/components/BFormCheckbox',
+                'bootstrap-vue-next/components/BFormGroup',
+                'bootstrap-vue-next/components/BFormInput',
+                'bootstrap-vue-next/components/BFormTextarea',
+                'bootstrap-vue-next/components/BNavbar',
+                'bootstrap-vue-next/components/BNav',   
+                '@vuelidate/core',
+                '@vuelidate/validators',
+                '@vue/devtools-kit',
+            ]
         }
     }
 })

@@ -7,7 +7,7 @@
                     <picture>
                         <source srcset="@/assets/images/grazyna-portrait.avif" type="image/avif">
                         <source srcset="@/assets/images/grazyna-portrait.webp" type="image/webp">
-                        <img src="@/assets/images/grazyna-portrait.jpg" alt="Grazyna Godlewska-Vernon portrait" width="585" height="800">
+                        <img src="@/assets/images/grazyna-portrait.jpg" alt="Grazyna Godlewska-Vernon portrait" width="585" height="800" fetchpriority="high">
                     </picture>
                 </div>
             </BCol>
