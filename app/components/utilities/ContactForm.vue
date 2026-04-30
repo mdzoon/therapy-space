@@ -116,9 +116,9 @@
                     Please confirm you want me to contact you
                 </p>
 
-                <BButton variant="outline-dark" type="submit">
+                <BookingButton class="d-flex justify-content-start mt-5" link='/contact' design="boxed" type="submit">
                     Submit <BIcon name="envelope" />
-                </BButton>
+                </BookingButton>                
 
             </div>
         </BForm>
