@@ -41,9 +41,14 @@ export default defineNuxtConfig({
         '@bootstrap-vue-next/nuxt',
         '@pinia/nuxt',
         '@nuxtjs/sitemap',
-        '@nuxt/eslint'
+        '@nuxt/eslint',
+        '@nuxtjs/fontaine'
         // '@dargmuesli/nuxt-cookie-control'
     ],
+
+    fontMetrics: {
+        fonts: ['Montserrat', 'Quicksand']
+    },
 
     features: {
         inlineStyles: true

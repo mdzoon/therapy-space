@@ -48,7 +48,7 @@
 
     --colour-link: #004e65;
     --colour-link-hover: #006d8b;
-    --font-secondary: 'Quicksand', sans-serif;
+    --font-secondary: 'Quicksand', 'Quicksand fallback', sans-serif;
 
     --radius: 6px;
     --radius-small: 2px;
@@ -62,7 +62,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', 'Montserrat fallback', sans-serif;
     color: var(--colour-font);
     font-size: 1.25rem;
 
