@@ -27,7 +27,10 @@ export default defineNuxtConfig({
                 { hid: 'author', name: 'author', content: 'Michael Dyczkowski' }
             ],
             link: [
-                { rel: 'icon', type: 'image/x-icon', href: '/therapy-space-favicon.ico' }
+                { rel: 'icon', type: 'image/x-icon', href: '/therapy-space-favicon.ico' },
+                { rel: 'preload', as: 'font', type: 'font/woff2', crossorigin: '', href: '/fonts/montserrat-v31-latin-regular.woff2' },
+                { rel: 'preload', as: 'font', type: 'font/woff2', crossorigin: '', href: '/fonts/quicksand-v37-latin-regular.woff2' },
+                { rel: 'preload', as: 'font', type: 'font/woff2', crossorigin: '', href: '/fonts/quicksand-v37-latin-700.woff2' }
             ]
         }
     },
