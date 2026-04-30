@@ -1,6 +1,6 @@
 <template>
     <header class="header-wrapper">
-        <BNavbar toggleable="lg" fixed="top">
+        <BNavbar toggleable="lg" fixed="top" :class="{ 'nav-open': navOpen }">
             <div class="container d-flex flex-wrap align-items-center justify-content-between">
 
                 <BNavbarBrand to="/" class="font-secondary">
@@ -100,6 +100,10 @@ onBeforeUnmount(() => {
 .navbar {
     background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 40%, rgba(255, 255, 255, 0.9) 60%, rgba(255, 255, 255, 0) 100%);
     min-height: 8rem;
+
+    &.nav-open {
+        background-color: var(--colour-background);
+    }
 
     .navbar-brand {
         display: flex;
