@@ -5,9 +5,9 @@
             <BCol lg="6" class="left">
                 <div class="column-box">
                     <picture>
-                        <source srcset="@/assets/images/grazyna-portrait.avif" type="image/avif">
-                        <source srcset="@/assets/images/grazyna-portrait.webp" type="image/webp">
-                        <img src="@/assets/images/grazyna-portrait.jpg" alt="Grazyna Godlewska-Vernon portrait" width="585" height="800" fetchpriority="high">
+                        <source srcset="/images/grazyna-portrait.avif" type="image/avif">
+                        <source srcset="/images/grazyna-portrait.webp" type="image/webp">
+                        <img src="/images/grazyna-portrait.jpg" alt="Grazyna Godlewska-Vernon portrait" width="585" height="800" fetchpriority="high">
                     </picture>
                 </div>
             </BCol>
@@ -69,6 +69,12 @@ import { testimonials } from '@/data/testimonials.js'
 const slide = ref(0)
 const sliding = ref(null)
 const qualificationsStore = useQualificationsStore()
+
+useHead({
+    link: [
+        { rel: 'preload', as: 'image', href: '/images/grazyna-portrait.avif', type: 'image/avif', fetchpriority: 'high' }
+    ]
+})
 
 onMounted(async () => {
     await nextTick()
