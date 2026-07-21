@@ -40,14 +40,7 @@ export default defineNuxtConfig({
         '~/assets/main.scss'
     ],
 
-    modules: [
-        '@bootstrap-vue-next/nuxt',
-        '@pinia/nuxt',
-        '@nuxtjs/sitemap',
-        '@nuxt/eslint',
-        '@nuxtjs/fontaine'
-        // '@dargmuesli/nuxt-cookie-control'
-    ],
+    modules: ['@bootstrap-vue-next/nuxt', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxt/eslint', '@nuxtjs/fontaine', '@dargmuesli/nuxt-cookie-control'],
 
     fontMetrics: {
         fonts: ['Montserrat', 'Quicksand']
@@ -59,7 +52,7 @@ export default defineNuxtConfig({
 
     experimental: {
         appManifest: false, //  switches off client-side route awareness, turn on if useRouteRules
-        payloadExtraction: false // removes the _payload.json files for each route, turn on if useAsyncData 
+        payloadExtraction: false // removes the _payload.json files for each route, turn on if useAsyncData
     },
 
     vite: {
@@ -76,19 +69,39 @@ export default defineNuxtConfig({
                 'bootstrap-vue-next/components/BButton',
                 'bootstrap-vue-next/components/BCard',
                 'bootstrap-vue-next/components/BCarousel',
-                'bootstrap-vue-next/components/BCollapse',                
-                'bootstrap-vue-next/components/BContainer',                                
+                'bootstrap-vue-next/components/BCollapse',
+                'bootstrap-vue-next/components/BContainer',
                 'bootstrap-vue-next/components/BForm',
                 'bootstrap-vue-next/components/BFormCheckbox',
                 'bootstrap-vue-next/components/BFormGroup',
                 'bootstrap-vue-next/components/BFormInput',
                 'bootstrap-vue-next/components/BFormTextarea',
                 'bootstrap-vue-next/components/BNavbar',
-                'bootstrap-vue-next/components/BNav',   
+                'bootstrap-vue-next/components/BNav',
                 '@vuelidate/core',
                 '@vuelidate/validators',
                 '@vue/devtools-kit',
             ]
         }
+    },
+
+    cookieControl: {
+        locales: ['en'],
+
+        colors: {
+            controlButtonIconColor: '#444',
+            controlButtonHoverBackground: '#FFF',
+            controlButtonIconHoverColor: '#006d8b',
+            modalButtonBackground: '#FFF',
+            modalButtonColor: '#004e65',
+            modalButtonHoverBackground: '#FFF',
+            modalButtonHoverColor: '#006d8b',
+            modalOverlayOpacity: 0.3,
+        },
+
+        cookies: {
+            necessary: [],
+            optional: [],
+        },
     }
 })

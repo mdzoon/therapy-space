@@ -14,14 +14,15 @@
 
         <ScrollTo />
 
-        <!-- <CookiesModal /> -->
+        <CookiesModal />
 
         <TheFooter />
     </div>
 </template>
 
 <script setup>
-import TheHeader from '@/components/navigation/TheHeader.vue'
+import CookiesModal from '@/components/utilities/CookiesModal.vue'
 import ScrollTo from '@/components/utilities/ScrollTo.vue'
+import TheHeader from '@/components/navigation/TheHeader.vue'
 import TheFooter from '@/components/navigation/TheFooter.vue'
 </script>
