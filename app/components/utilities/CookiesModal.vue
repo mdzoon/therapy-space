@@ -14,17 +14,23 @@ const { initialize, enableAnalytics, disableAnalytics } = useGtag()
 let isInitialized = false
 
 function clearGaCookies() {
+    if (!import.meta.client) return
+
     const names = document.cookie
         .split('; ')
         .map((c) => c.split('=')[0])
         .filter((n): n is string => !!n && (n.startsWith('_ga') || n === '_gid'))
 
-    const rootDomain = location.hostname.replace(/^www\./, '')
+    const parts = location.hostname.split('.')
+    const domains = parts
+        .slice(0, -1)
+        .map((_, i) => '.' + parts.slice(i).join('.'))
+
     for (const name of names) {
-        // cover host-only, exact-host, and dot-root-domain scopes
         document.cookie = `${name}=; Max-Age=0; path=/`
-        document.cookie = `${name}=; Max-Age=0; path=/; domain=${location.hostname}`
-        document.cookie = `${name}=; Max-Age=0; path=/; domain=.${rootDomain}`
+        for (const domain of domains) {
+            document.cookie = `${name}=; Max-Age=0; path=/; domain=${domain}`
+        }
     }
 }
 
@@ -40,7 +46,7 @@ watch(
             } else {
                 enableAnalytics()
             }
-        } else if (isInitialized) {
+        } else {
             disableAnalytics()
             clearGaCookies()
         }

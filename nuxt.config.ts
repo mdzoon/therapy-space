@@ -1,4 +1,6 @@
 const mainBaseURL = 'https://www.therapy-space.uk/'
+const gaId = 'G-KNXXZ2K9TK'
+const gaSessionCookie = `_ga_${gaId.replace(/^G-/, '')}`
 
 export default defineNuxtConfig({
     compatibilityDate: '2026-04-27',
@@ -86,7 +88,7 @@ export default defineNuxtConfig({
     },
 
     gtag: {
-        id: 'G-KNXXZ2K9TK',
+        id: gaId,
         initMode: "manual",
     },
 
@@ -144,7 +146,7 @@ export default defineNuxtConfig({
                     name: {
                         en: 'Analytics'
                     },
-                    targetCookieIds: ['_ga', '_ga_XXXXXXXXXX', '_gid'], //TODO
+                    targetCookieIds: ['_ga', gaSessionCookie],
                 }
             ],
         },
