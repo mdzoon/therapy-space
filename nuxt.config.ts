@@ -95,6 +95,8 @@ export default defineNuxtConfig({
     cookieControl: {
         locales: ['en'],
 
+        declineAllAcceptsNecessary: true,
+
         localeTexts: {
             en: {
                 accept: 'Accept All',
