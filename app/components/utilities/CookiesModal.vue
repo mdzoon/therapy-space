@@ -1,7 +1,7 @@
 <template>
     <CookieControl>
         <template #modal>
-            <h3 class="modal-title">Customize Consent Preferences</h3>
+            <h1 class="modal-title">Customize Consent Preferences</h1>
             <p>I use cookies to help you navigate efficiently and perform certain functions. A decision on cookie usage permissions can be changed anytime using the cookie button that will appear after a selection has been made on this modal. You will find detailed information about all cookies on <nuxt-link to="/cookies-policy">Cookies Policy</nuxt-link> page.</p>
         </template>
     </CookieControl>
@@ -59,8 +59,28 @@ watch(
 .cookieControl {
     z-index: 1090;
 
+    &:has(.cookieControl__Modal) &__Bar {
+        display: none;
+    }
+
     &__ModalContent {
         border-radius: var(--radius-small);
+
+        & h1, h2 {
+            font-size: large;
+        }
+        & div {
+            font-size: small;
+        }
+
+        & a {
+            color: var(--colour-link);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--colour-link-hover);
+            }
+        }
 
         .cookieControl__ModalClose {
             position: absolute;
@@ -79,15 +99,70 @@ watch(
                 line-height: 1;
             }
         }
+
+        .cookieControl__ModalInputWrapper input + button {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .cookieControl__ModalInputWrapper input:disabled + button {
+            background-color: rgba(0, 0, 0, .5);
+            &::before {
+                background-color: #e9ecef;
+            }
+        }
+
+        .cookieControl__ModalInputWrapper input:not(:disabled) + button {
+            background-color: var(--colour-background);
+            border: 1px solid #dee2e6   ;
+
+            &::before {
+                background-color: rgba(0, 0, 0, .25);
+            }
+
+            &:focus {
+                border-color: var(--colour-link);
+                box-shadow: 0 0 0 .25rem rgba(0, 109, 139, .25);
+
+                &::before {
+                    background-color: var(--colour-link);
+                }
+            }
+        }
+
+        .cookieControl__ModalInputWrapper input:checked:not(:disabled) + button {
+            background-color: var(--colour-link);
+
+            &::before {
+                background-color: var(--colour-background);
+            }
+
+            &:focus {
+                --bs-form-switch-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
+            }
+        }
+    }
+
+    .cookieControl__ModalUnsaved {
+        font-size: medium;
+        bottom: 80px;
     }
 
     .cookieControl__Bar {
-        background: linear-gradient(225deg,rgba(0, 198, 255, .75) 0%, rgba(255, 113, 205, .75) 100%);
+        background: linear-gradient(225deg,rgb(111, 224, 255) 0%, rgb(253, 166, 223) 100%);
+        padding: 15px;
+
+        .cookieControl__BarContainer {
+            background-color: var(--colour-background);
+            padding: 15px;
+        }
     }
 
     .cookieControl__ModalButtons,
     .cookieControl__BarButtons {
         gap: 10;
+        align-items: center;
+        justify-content: center;
 
         button {
             border: 1px solid var(--colour-font);
@@ -96,8 +171,7 @@ watch(
             color: initial;
             transition: var(--transition);
             padding: .75rem 1.25rem;
-            letter-spacing: 2px;
-            min-width: 150px;
+            font-size: small;
 
             &:hover,
             &:active,

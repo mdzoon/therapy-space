@@ -121,7 +121,7 @@ export default defineNuxtConfig({
             modalButtonColor: '#004e65',
             modalButtonHoverBackground: '#FFF',
             modalButtonHoverColor: '#006d8b',
-            modalOverlayOpacity: 0.3,
+            modalOverlayOpacity: 0.35,
         },
 
         cookies: {
