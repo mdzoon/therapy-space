@@ -40,7 +40,7 @@ export default defineNuxtConfig({
         '~/assets/main.scss'
     ],
 
-    modules: ['@bootstrap-vue-next/nuxt', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxt/eslint', '@nuxtjs/fontaine', '@dargmuesli/nuxt-cookie-control'],
+    modules: ['@bootstrap-vue-next/nuxt', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxt/eslint', '@nuxtjs/fontaine', '@dargmuesli/nuxt-cookie-control', 'nuxt-gtag'],
 
     fontMetrics: {
         fonts: ['Montserrat', 'Quicksand']
@@ -85,10 +85,33 @@ export default defineNuxtConfig({
         }
     },
 
+    gtag: {
+        id: 'G-KNXXZ2K9TK',
+        initMode: "manual",
+    },
+
     cookieControl: {
         locales: ['en'],
 
+        localeTexts: {
+            en: {
+                accept: 'Accept All',
+                decline: 'Reject All',
+                acceptAll: 'Accept All',
+                declineAll: 'Reject All',
+                save: 'Confirm My Choices'
+            },
+        },
+
+        // barPosition: 'bottom-left',
+
         colors: {
+            barBackground: '#FFF',
+            barButtonBackground: '#FFF',
+            barButtonColor: '#004e65',
+            barButtonHoverBackground: '#FFF',
+            barButtonHoverColor: '#006d8b',
+            barTextColor: '#444',
             controlButtonIconColor: '#444',
             controlButtonHoverBackground: '#FFF',
             controlButtonIconHoverColor: '#006d8b',
@@ -100,8 +123,30 @@ export default defineNuxtConfig({
         },
 
         cookies: {
-            necessary: [],
-            optional: [],
+            necessary: [
+                {
+                    description: {
+                        en: 'Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data and cannot be disabled.'
+                    },
+                    id: 'n',
+                    name: {
+                        en: 'Strictly Necessary'
+                    },
+                }
+            ],
+            optional: [
+                {
+                    description: {
+                        en: 'Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.'
+                    },
+                    id: 'ga',
+                    isPreselected: false,
+                    name: {
+                        en: 'Analytics'
+                    },
+                    targetCookieIds: ['_ga', '_ga_XXXXXXXXXX', '_gid'], //TODO
+                }
+            ],
         },
     }
 })
