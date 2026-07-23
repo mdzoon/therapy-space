@@ -114,7 +114,7 @@ watch(
 
         .cookieControl__ModalInputWrapper input:not(:disabled) + button {
             background-color: var(--colour-background);
-            border: 1px solid #dee2e6   ;
+            border: 1px solid #dee2e6;
 
             &::before {
                 background-color: rgba(0, 0, 0, .25);
@@ -150,7 +150,7 @@ watch(
 
     .cookieControl__Bar {
         background: linear-gradient(225deg,rgb(111, 224, 255) 0%, rgb(253, 166, 223) 100%);
-        padding: 15px;
+        padding: 7px;
 
         .cookieControl__BarContainer {
             background-color: var(--colour-background);
