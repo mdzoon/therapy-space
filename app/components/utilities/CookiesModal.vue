@@ -1,7 +1,7 @@
 <template>
     <CookieControl>
         <template #modal>
-            <h1 class="modal-title">Customize Consent Preferences</h1>
+            <h1 class="modal-title">Customise Consent Preferences</h1>
             <p>I use cookies to help you navigate efficiently and perform certain functions. A decision on cookie usage permissions can be changed anytime using the cookie button that will appear after a selection has been made on this modal. You will find detailed information about all cookies on <nuxt-link to="/cookies-policy">Cookies Policy</nuxt-link> page.</p>
         </template>
     </CookieControl>
@@ -155,12 +155,13 @@ watch(
         .cookieControl__BarContainer {
             background-color: var(--colour-background);
             padding: 15px;
+            gap: 10px;
         }
     }
 
     .cookieControl__ModalButtons,
     .cookieControl__BarButtons {
-        gap: 10;
+        gap: 10px;
         align-items: center;
         justify-content: center;
 
@@ -172,6 +173,7 @@ watch(
             transition: var(--transition);
             padding: .75rem 1.25rem;
             font-size: small;
+            margin: 0;
 
             &:hover,
             &:active,
@@ -180,6 +182,21 @@ watch(
                 border-color: var(--colour-link-hover);
                 color: var(--colour-link-hover);
                 box-shadow: var(--box-shadow);
+            }
+        }
+    }
+
+    .cookieControl__BarButtons {
+
+        @media only screen and (min-width: 769px) {
+            width: 50%;
+        }
+
+        @media only screen and (min-width: 769px) and (max-width: 1199px) {
+            flex-direction: column;
+
+            button {
+                width: 100%;
             }
         }
     }

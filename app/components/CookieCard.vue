@@ -53,7 +53,7 @@ const displayedCookies = computed(() =>
 
             li {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: flex-start;
                 justify-content: space-evenly;
                 align-content: stretch;
@@ -61,7 +61,7 @@ const displayedCookies = computed(() =>
                 padding: 3px 0;
 
                 div:first-child {
-                    width: 200px;
+                    width: 100px;
                     font-weight: 600;
                     word-break: break-word;
                     word-wrap: break-word;
@@ -71,6 +71,10 @@ const displayedCookies = computed(() =>
                     flex: 1;
                     word-break: break-word;
                     word-wrap: break-word;
+                }
+
+                @media only screen and (min-width: 576px) {
+                    flex-direction: row;
                 }
             }
         }

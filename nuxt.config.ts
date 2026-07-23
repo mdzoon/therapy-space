@@ -103,7 +103,7 @@ export default defineNuxtConfig({
                 decline: 'Reject All',
                 acceptAll: 'Accept All',
                 declineAll: 'Reject All',
-                save: 'Confirm My Choices'
+                save: 'Confirm My Choices',
             },
         },
 
