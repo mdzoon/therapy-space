@@ -1,5 +1,9 @@
 <template>
     <CookieControl>
+        <template #bar>
+            <h3 class="modal-title">Customise Consent Preferences</h3>
+            <p>I use cookies to help you navigate efficiently and perform certain functions. A decision on cookie usage permissions can be changed anytime using the cookie button that will appear after a selection has been made on this modal. You will find detailed information about all cookies on <nuxt-link to="/cookies-policy">Cookies Policy</nuxt-link> page.</p>
+        </template>
         <template #modal>
             <h1 class="modal-title">Customise Consent Preferences</h1>
             <p>I use cookies to help you navigate efficiently and perform certain functions. A decision on cookie usage permissions can be changed anytime using the cookie button that will appear after a selection has been made on this modal. You will find detailed information about all cookies on <nuxt-link to="/cookies-policy">Cookies Policy</nuxt-link> page.</p>
